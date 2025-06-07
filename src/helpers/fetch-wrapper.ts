@@ -13,9 +13,6 @@ export const fetchWrapper = {
     post: request('POST'),
     put: request('PUT'),
     delete: request('DELETE'),
-    postWithCSRF: requestWithCSRF('POST'),
-    putWithCSRF: requestWithCSRF('PUT'),
-    deleteWithCSRF: requestWithCSRF('DELETE')
 };
 
 /**
@@ -72,7 +69,7 @@ function addAuthHeaders(headers: Headers): void {
  * Realiza una request HTTP básica (sin CSRF)
  */
 function request(method: string) {
-    return async (path: string, body?: unknown): Promise<unknown> => {
+    return async (path: string, body?: unknown, csrfToken?: string): Promise<unknown> => {
         const url = `${BASE_URL}${path}`;
 
         if (!isValidHttpUrl(url)) {
@@ -85,6 +82,19 @@ function request(method: string) {
         const requestHeaders = createCommonHeaders();
         addAuthHeaders(requestHeaders);
 
+        if (method === 'POST' || method === 'PUT' || method === 'DELETE') {
+            if (csrfToken) {
+                requestHeaders.set('X-CSRF-TOKEN', csrfToken);
+            } else {
+                try {
+                    const tokenData = await csrfService.getCSRFData();
+                    const headerName = tokenData.headerName || 'X-CSRF-TOKEN';
+                    requestHeaders.set(headerName, tokenData.token);
+                } catch (error) {
+                    console.warn('Failed to get CSRF token:', error);
+                }
+            }
+        }
         const requestOptions: RequestInit = {
             method,
             headers: requestHeaders,
@@ -100,48 +110,6 @@ function request(method: string) {
     };
 }
 
-/**
- * Realiza una request HTTP con protección CSRF
- */
-function requestWithCSRF(method: string) {
-    return async (path: string, body?: unknown, csrfToken?: string): Promise<unknown> => {
-        const url = `${BASE_URL}${path}`;
-
-        if (!isValidHttpUrl(url)) {
-            return Promise.reject({
-                status: ERROR_BAD_URL.code,
-                message: ERROR_BAD_URL.message
-            });
-        }
-
-        const requestHeaders = createCommonHeaders();
-        addAuthHeaders(requestHeaders);
-
-        if (csrfToken) {
-            requestHeaders.set('X-CSRF-TOKEN', csrfToken);
-        } else {
-            try {
-                const tokenData = await csrfService.getCSRFData();
-                const headerName = tokenData.header_name || 'X-CSRF-TOKEN';
-                requestHeaders.set(headerName, tokenData.token);
-            } catch (error) {
-                console.warn('Failed to get CSRF token:', error);
-            }
-        }
-
-        const requestOptions: RequestInit = {
-            method,
-            headers: requestHeaders,
-            credentials: 'include',
-        };
-
-        if (method !== 'GET' && method !== 'HEAD' && body) {
-            requestOptions.body = JSON.stringify(body);
-        }
-
-        return executeRequest(url, requestOptions, requestHeaders);
-    };
-}
 
 /**
  * Ejecuta la request con manejo de refresh token

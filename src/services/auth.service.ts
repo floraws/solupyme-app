@@ -1,8 +1,9 @@
 import { ACCESS_TOKEN, apiUrls, CLIENT_ID, USER_ID } from "../constants";
-import { AuthRequest } from "@/models/AuthRequest";
 import { fetchWrapper } from "@/helpers";
 import { decodeAccessToken } from "@/lib/utils";
+import { AuthRequest } from "@/types/api";
 import Cookies from 'js-cookie';
+import { set } from "zod/v4";
 
 /**
  * Configuración de cookies seguras
@@ -23,7 +24,7 @@ const TOKEN_EXPIRY_THRESHOLD = 300;
  */
 interface AuthResponse {
     status: number;
-    user_id?: string;
+    userId?: string;
     message: string;
 }
 
@@ -31,9 +32,9 @@ interface AuthResponse {
  * Interfaz para la respuesta del API de autenticación
  */
 interface ApiAuthResponse {
-    access_token: string;
-    token_type?: string;
-    expires_at?: number;
+    accessToken: string;
+    tokenType?: string;
+    expiresAt?: number;
 }
 
 /**
@@ -149,7 +150,25 @@ export const authService = {
     /**
      * Verifica si el token actual está próximo a expirar
      */
-    isTokenExpiringSoon
+    isTokenExpiringSoon,
+
+    /**
+     * 
+     */
+    set clientId(clientId: string) {
+        try {
+            // Almacenar en cookies seguras
+            Cookies.set(CLIENT_ID, clientId, COOKIE_OPTIONS);
+            
+            // Fallback a localStorage para compatibilidad
+            if (typeof window !== "undefined") {
+                localStorage.setItem(CLIENT_ID, clientId);
+            }
+        } catch (error) {
+            console.error('Error al almacenar clientId:', error);
+            throw new Error('No se pudo almacenar el ID del cliente');
+        }
+    }
 }
 
 /**
@@ -165,22 +184,22 @@ async function login(data: AuthRequest): Promise<AuthResponse> {
     try {
         const response: ApiAuthResponse = await fetchWrapper.post(apiUrls.auth.login, data) as ApiAuthResponse;
         
-        if (!response?.access_token) {
+        if (!response?.accessToken) {
             throw new Error('Respuesta inválida del servidor: token no recibido');
         }
 
-        const payload = decodeAccessToken(response.access_token);
+        const payload = decodeAccessToken(response.accessToken);
         
-        if (!payload?.user_id) {
-            throw new Error('Token inválido: no contiene user_id');
+        if (!payload?.userId) {
+            throw new Error('Token inválido: no contiene userId');
         }
 
         // Almacenar tokens de forma segura
-        storeTokenSecurely(response.access_token, payload.user_id);
+        storeTokenSecurely(response.accessToken, payload.userId);
         
         return { 
             status: 200, 
-            user_id: payload.user_id, 
+            userId: payload.userId, 
             message: "Login exitoso" 
         };
     } catch (error) {
@@ -217,22 +236,22 @@ async function refreshToken(): Promise<AuthResponse | false> {
             token: currentToken 
         }) as ApiAuthResponse;
         
-        if (!response?.access_token) {
+        if (!response?.accessToken) {
             throw new Error('Respuesta inválida del servidor: token no recibido');
         }
 
-        const payload = decodeAccessToken(response.access_token);
+        const payload = decodeAccessToken(response.accessToken);
         
-        if (!payload?.user_id) {
+        if (!payload?.userId) {
             throw new Error('Token inválido: no contiene user_id');
         }
 
         // Almacenar el nuevo token de forma segura
-        storeTokenSecurely(response.access_token, payload.user_id);
+        storeTokenSecurely(response.accessToken, payload.userId);
         
         return { 
             status: 200, 
-            user_id: payload.user_id, 
+            userId: payload.userId, 
             message: "Token refrescado exitosamente" 
         };
     } catch (error) {

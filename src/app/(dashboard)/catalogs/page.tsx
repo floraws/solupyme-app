@@ -9,6 +9,8 @@ import {
   BellIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
+import { PageHeader, Card } from "@/components/ui";
+import Link from "next/link";
 
 const settings = [
   {
@@ -71,18 +73,23 @@ const settings = [
 
 export default function SettingsPage() {
   return (
-    <div className="max-w-4xl mx-auto py-10">
+    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <PageHeader
+        title="Catálogos"
+        subtitle="Configura los datos maestros del sistema"
+      />
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {settings.map((setting) => {
           const IconComponent = setting.icon;
           return (
-            <div key={setting.id} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <Card key={setting.id} className="hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <IconComponent className="h-8 w-8 text-blue-600 mr-3" />
                 <h3 className="text-lg font-semibold text-gray-900">{setting.name}</h3>
               </div>
               <p className="text-sm text-gray-600 mb-4">{setting.description}</p>
-              <a
+              <Link
                 href={setting.link}
                 className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
               >
@@ -90,8 +97,8 @@ export default function SettingsPage() {
                 <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
-            </div>
+              </Link>
+            </Card>
           );
         })}
       </div>

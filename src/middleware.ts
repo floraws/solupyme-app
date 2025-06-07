@@ -4,12 +4,12 @@ import { ACCESS_TOKEN } from "./constants";
 
 export function middleware(request: NextRequest) {
   const token = request.cookies.get(ACCESS_TOKEN)?.value;
-  
+
   // Rutas protegidas que requieren autenticación
   const protectedPaths = [
     "/(dashboard)",
     "/countries",
-    "/accounts", 
+    "/accounts",
     "/bpartners",
     "/catalogs",
     "/dashboards",
@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
     "/settings"
   ];
 
-  const isProtectedPath = protectedPaths.some(path => 
+  const isProtectedPath = protectedPaths.some(path =>
     request.nextUrl.pathname.startsWith(path)
   );
 
@@ -33,15 +33,14 @@ export function middleware(request: NextRequest) {
   // Obtener la URL de la API desde variables de entorno
   const apiUrl = process.env.NEXT_PUBLIC_URL_API || 'http://localhost:8080';
   const apiDomain = new URL(apiUrl).origin;
-    // Security headers
+  // Security headers
   response.headers.set('X-Frame-Options', 'DENY');
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('X-XSS-Protection', '1; mode=block');
   response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=()');
-  
-  // CSP header actualizado para permitir conexiones a la API
+
   response.headers.set(
     'Content-Security-Policy',
     [

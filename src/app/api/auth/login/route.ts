@@ -1,6 +1,6 @@
 import { ACCESS_TOKEN, apiUrls } from "@/constants";
 import { fetchWrapper } from "@/helpers";
-import { AccessTokenResponse } from "@/models";
+import { AccessTokenResponse } from "@/types/api";
 import { cookies } from "next/headers";
 
 

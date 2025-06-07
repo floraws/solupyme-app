@@ -1,31 +1,42 @@
 "use client";
 
-const products = [
+import { PageHeader, Table, TableColumn } from "@/components/ui";
+
+interface Product {
+  code: string;
+  description: string;
+}
+
+const products: Product[] = [
   { code: "P001", description: "Producto A" },
   { code: "P002", description: "Producto B" },
   { code: "P003", description: "Producto C" },
 ];
 
+const columns: TableColumn<Product>[] = [
+  {
+    key: 'code',
+    label: 'Código',
+    render: (product) => product.code
+  },
+  {
+    key: 'description',
+    label: 'Descripción',
+    render: (product) => product.description
+  }
+];
+
 export default function ProductPage() {
   return (
-    <div className="max-w-2xl mx-auto py-10">
-      <h1 className="text-2xl font-bold mb-6">Lista de Productos</h1>
-      <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
-        <thead className="bg-gray-100">
-          <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Código</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.code} className="border-b last:border-b-0">
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{product.code}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{product.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <PageHeader
+        title="Lista de Productos"
+        subtitle="Gestiona el catálogo de productos"
+      />
+        <Table
+        data={products}
+        columns={columns}
+      />
     </div>
   );
 }

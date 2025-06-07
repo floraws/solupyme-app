@@ -1,10 +1,11 @@
 "use client";
-import { useLogout } from "@/hooks/useLogout";
+
+import { useAuth } from "@/hooks/useAuth";
 
 export function LogoutButton() {
-  const logout = useLogout();
+  const { logout: authLogout } = useAuth();
   return (
-    <span onClick={logout} className="text-sm font-medium text-gray-600 group-hover:text-gray-900 cursor-pointer">
+    <span onClick={authLogout} className="text-sm font-medium text-gray-600 group-hover:text-gray-900 cursor-pointer">
       Cerrar sesión
     </span>
   );

@@ -2,8 +2,8 @@ import { BASE_URL } from "@/constants";
 
 interface CSRFResponse {
     token: string;
-    header_name: string;
-    parameter_name: string;
+    headerName: string;
+    parameterName: string;
 }
 
 export const csrfService = {
@@ -14,7 +14,7 @@ export const csrfService = {
      */
     async getCSRFData(): Promise<CSRFResponse> {
         try {
-            const response = await fetch(`${BASE_URL}/auth/csrf`, {
+            const response = await fetch(`${BASE_URL}/auth/csrf-token`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -39,7 +39,7 @@ export const csrfService = {
      */
     async getCSRFToken(): Promise<string> {
         try {
-            const response = await fetch(`${BASE_URL}/auth/csrf`, {
+            const response = await fetch(`${BASE_URL}/auth/csrf-token`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -64,7 +64,7 @@ export const csrfService = {
      */
     async getCSRFHeaderName(): Promise<string> {
         try {
-            const response = await fetch(`${BASE_URL}/auth/csrf`, {
+            const response = await fetch(`${BASE_URL}/auth/csrf-token`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -77,7 +77,7 @@ export const csrfService = {
             }
 
             const data: CSRFResponse = await response.json();
-            return data.header_name;
+            return data.headerName;
         } catch (error) {
             console.error('Error fetching CSRF header name:', error);
             return 'X-XSRF-TOKEN'; // Fallback por defecto

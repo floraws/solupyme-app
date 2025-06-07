@@ -1,4 +1,4 @@
 export interface ClientResponse {
     id: string;
-    name: string;
+    businessName: string;
 }

@@ -1,3 +1,5 @@
+import { UpdateAccountRequest } from "@/types/api/requests";
+
 /**
  *
  */
@@ -7,6 +9,13 @@ export const apiUrls = {
         refresh: '/auth/refresh',
         csrf: '/auth/csrf'
     },
+
+    account: {
+        create: (userId: string, updateAccountRequest: UpdateAccountRequest) => `/accounts/${userId}`,
+        update: '/accounts/update',
+        changePassword: '/accounts/change-password',
+        getById: (id: string) => `/accounts/${id}`,
+    },
     organizations: {
         getAll: '/organizations',
         getById: (id: string) => `/organization/${id}`,
@@ -14,10 +23,10 @@ export const apiUrls = {
         insert: '/organization',
         update: (id: string) => `/organization/${id}`,
         delete: (id: string) => `/organization/${id}`,
-    },    
+    },
     clients: {
         findByUserId: (id: string | null) => id ? `/clients/by-user?userId=${id}` : "",
-    },        
+    },
     airlines: {
         getAll: '/airlines',
         getById: (id: string) => `/airlines/${id}`,
@@ -31,8 +40,8 @@ export const apiUrls = {
         addUser: (id: string) => `users/${id}`,
     },
     states: {
-        getStates: '/states/labelValueList',
-        getStateById: (id: string) => `/states/${id}`
+        getAll: '/states',
+        getById: (id: string) => `/states/${id}`
     },
     countries: {
         insert: '/countries',
@@ -73,7 +82,7 @@ export const apiUrls = {
         delete: (id: string) => `/products/${id}`,
         labelValuesList: `/products/labelValueList`
     },
-    colors:{
+    colors: {
         getAll: '/colors',
         getById: (id: string) => `/colors/${id}`,
         insert: '/colors',
@@ -97,7 +106,7 @@ export const apiUrls = {
         delete: (id: string) => `/varietyTypes/${id}`,
         labelValuesList: `/varietyTypes/labelValueList`
     },
-    carriers:{
+    carriers: {
         getAll: '/carriers',
         getById: (id: string) => `/carriers/${id}`,
         insert: '/carriers',
@@ -105,7 +114,7 @@ export const apiUrls = {
         delete: (id: string) => `/carriers/${id}`,
         labelValuesList: `/carriers/labelValueList`
     },
-    unitsMeasure:{
+    unitsMeasure: {
         getAll: '/unitsMeasure',
         getById: (id: string) => `/unitsMeasure/${id}`,
         insert: '/unitsMeasure',
@@ -113,7 +122,7 @@ export const apiUrls = {
         delete: (id: string) => `/unitsMeasure/${id}`,
         labelValuesList: `/unitsMeasure/labelValueList`
     },
-    tariffItems:{
+    tariffItems: {
         getAll: '/tariffItems',
         getById: (id: string) => `/tariffItems/${id}`,
         insert: '/tariffItems',
@@ -127,9 +136,9 @@ export const apiUrls = {
         insert: '/categories',
         update: (id: string) => `/categories/${id}`,
         delete: (id: string) => `/categories/${id}`,
-        labelValuesList:`/categories/labelValueList`
+        labelValuesList: `/categories/labelValueList`
     },
-    flowersMeasure:{
+    flowersMeasure: {
         getAll: '/flowersMeasure',
         getById: (id: string) => `/flowersMeasure/${id}`,
         insert: '/flowersMeasure',
@@ -137,7 +146,7 @@ export const apiUrls = {
         delete: (id: string) => `/flowersMeasure/${id}`,
         labelValuesList: `/flowersMeasure/labelValueList`
     },
-    flowersSleeve:{
+    flowersSleeve: {
         getAll: '/flowersSleeve',
         getById: (id: string) => `/flowersSleeve/${id}`,
         insert: '/flowersSleeve',
@@ -145,7 +154,7 @@ export const apiUrls = {
         delete: (id: string) => `/flowersSleeve/${id}`,
         labelValuesList: `/flowersSleeve/labelValueList`
     },
-    customers:{
+    customers: {
         getAll: '/customers',
         getById: (id: string) => `/customers/${id}`,
         insert: '/customers',
@@ -153,7 +162,7 @@ export const apiUrls = {
         delete: (id: string) => `/customers/${id}`,
         labelValuesList: `/customers/labelValueList`
     },
-    growers:{
+    growers: {
         getAll: '/growers',
         getById: (id: string) => `/growers/${id}`,
         insert: '/growers',
@@ -161,7 +170,7 @@ export const apiUrls = {
         delete: (id: string) => `/growers/${id}`,
         labelValuesList: `/growers/labelValueList`
     },
-    productTypes:{
+    productTypes: {
         getAll: '/productTypes',
         getById: (id: string) => `/productTypes/${id}`,
         insert: '/productTypes',
@@ -169,25 +178,25 @@ export const apiUrls = {
         delete: (id: string) => `/productTypes/${id}`,
         labelValuesList: `/productTypes/labelValueList`
     },
-    businessPartnerLocations:{
-        labelValuesListShipping:(businessPartnerId: string)=> `/businessPartnerLocations/${businessPartnerId}/labelValueList/shipping`,
-        labelValuesListBilling:(businessPartnerId: string)=> `/businessPartnerLocations/${businessPartnerId}/labelValueList/billing`
+    businessPartnerLocations: {
+        labelValuesListShipping: (businessPartnerId: string) => `/businessPartnerLocations/${businessPartnerId}/labelValueList/shipping`,
+        labelValuesListBilling: (businessPartnerId: string) => `/businessPartnerLocations/${businessPartnerId}/labelValueList/billing`
     },
-    orders:{
-        findByPurchaseDate:(purchaseDate:string)=> `/orders/findByPurchaseDate/${purchaseDate}`,
+    orders: {
+        findByPurchaseDate: (purchaseDate: string) => `/orders/findByPurchaseDate/${purchaseDate}`,
         getById: (id: string) => `/orders/${id}`,
         insert: '/orders',
         update: (id: string) => `/orders/${id}`,
         delete: (id: string) => `/orders/${id}`,
         clone: (id: string) => `/orders/${id}/clone`,
     },
-    orderItems:{
-        findByOrderItem:(orderItemId:string)=> `/orders/details/${orderItemId}`,
+    orderItems: {
+        findByOrderItem: (orderItemId: string) => `/orders/details/${orderItemId}`,
         upsert: (orderId: string) => `/orders/details/${orderId}`,
-        findOrderItems:(orderId:string)=> `/orders/details/${orderId}/list`,
+        findOrderItems: (orderId: string) => `/orders/details/${orderId}/list`,
 
     },
-    boxTypes:{
+    boxTypes: {
         getAll: '/boxTypes',
         getById: (id: string) => `/boxTypes/${id}`,
         insert: '/boxTypes',
