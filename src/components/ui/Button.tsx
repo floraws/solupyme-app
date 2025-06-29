@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoadingSpinner } from './LoadingSpinner';
+import { LoadingSpinner } from './Loading';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger' | 'success' | 'ghost';
