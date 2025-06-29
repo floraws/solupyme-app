@@ -101,7 +101,7 @@ function request(method: string) {
             credentials: 'include',
         };
 
-        // Solo agregar body para métodos que lo requieren
+        // Si es GET o HEAD, no enviar body
         if (method !== 'GET' && method !== 'HEAD' && body) {
             requestOptions.body = JSON.stringify(body);
         }

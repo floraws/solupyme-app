@@ -2,16 +2,16 @@
 import { countryService } from "@/services/country.service";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { 
-  PageHeader, 
-  SearchBar, 
-  LoadingSpinner, 
-  Alert, 
-  Table, 
+import {
+  PageHeader,
+  SearchBar,
+  LoadingSpinner,
+  Alert,
+  Table,
   ActionButtonGroup,
   ConfirmDialog,
   EmptyState,
-  StatsCard 
+  StatsCard
 } from "@/components/ui";
 import { CountryResponse } from "@/types/api/responses/country.response";
 
@@ -56,7 +56,7 @@ const CountryPage = () => {
     }
   };
 
-  const filteredCountries = countries.filter(country => 
+  const filteredCountries = countries.filter(country =>
     country.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     country.code.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -79,7 +79,7 @@ const CountryPage = () => {
     },
     {
       key: 'actions',
-      label: 'Acciones',      render: (value: any, country: CountryResponse) => (
+      label: 'Acciones', render: (value: any, country: CountryResponse) => (
         <ActionButtonGroup
           actions={[
             {
@@ -118,24 +118,24 @@ const CountryPage = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">      <PageHeader
-        title="Países"
-        subtitle="Gestiona la información de los países del sistema"
-        backButton={{
-          href: "/catalogs",
-          label: "Atrás"
-        }}
-        actions={
-          <Link 
-            href="/countries/create" 
-            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg shadow-sm hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-semibold text-sm"
-          >
-            <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-            </svg>
-            Agregar País
-          </Link>
-        }
-      />
+      title="Países"
+      subtitle="Gestiona la información de los países del sistema"
+      backButton={{
+        href: "/catalogs",
+        label: "Atrás"
+      }}
+      actions={
+        <Link
+          href="/countries/create"
+          className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg shadow-sm hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-semibold text-sm"
+        >
+          <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+          Agregar País
+        </Link>
+      }
+    />
 
       <SearchBar
         value={searchTerm}
@@ -153,37 +153,29 @@ const CountryPage = () => {
       )}
 
       {filteredCountries.length > 0 ? (
-        <>          <StatsCard
-            title="Países registrados"
-            value={filteredCountries.length}
-            subtitle={`${countries.length} países en total`}
-            className="mb-6"
-          />
-          
-          <Table
-            data={filteredCountries}
-            columns={tableColumns}
-            emptyMessage="No se encontraron países"
-          />
-        </>
-      ) : (        <EmptyState
-          title={searchTerm ? 'No se encontraron países' : 'No hay países para mostrar'}
-          description={searchTerm 
-            ? `No hay países que coincidan con "${searchTerm}"`
-            : 'Comienza agregando tu primer país al sistema'
-          }
-          action={!searchTerm ? (
-            <Link 
-              href="/countries/create"
-              className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-            >
-              <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-              Agregar Primer País
-            </Link>
-          ) : undefined}
+        <Table
+          data={filteredCountries}
+          columns={tableColumns}
+          emptyMessage="No se encontraron países"
         />
+      ) : (<EmptyState
+        title={searchTerm ? 'No se encontraron países' : 'No hay países para mostrar'}
+        description={searchTerm
+          ? `No hay países que coincidan con "${searchTerm}"`
+          : 'Comienza agregando tu primer país al sistema'
+        }
+        action={!searchTerm ? (
+          <Link
+            href="/countries/create"
+            className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+          >
+            <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            Agregar Primer País
+          </Link>
+        ) : undefined}
+      />
       )}
 
       <ConfirmDialog

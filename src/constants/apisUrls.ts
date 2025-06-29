@@ -1,5 +1,3 @@
-import { UpdateAccountRequest } from "@/types/api/requests";
-
 /**
  *
  */
@@ -9,10 +7,8 @@ export const apiUrls = {
         refresh: '/auth/refresh',
         csrf: '/auth/csrf'
     },
-
     account: {
-        create: (userId: string, updateAccountRequest: UpdateAccountRequest) => `/accounts/${userId}`,
-        update: '/accounts/update',
+        update: (clientId: string) => `/accounts/${clientId}`,
         changePassword: '/accounts/change-password',
         getById: (id: string) => `/accounts/${id}`,
     },
@@ -41,17 +37,30 @@ export const apiUrls = {
     },
     states: {
         getAll: '/states',
-        getById: (id: string) => `/states/${id}`
+        getById: (id: string) => `/states/${id}`,
+        insert: '/states',
+        update: (id: string) => `/states/${id}`,
+        delete: (id: string) => `/states/${id}`,
+        labelValuesListByCountry: (countryId: string) => `/states/label-value-list?countryId=${countryId}`,
+        createStatesColombia: '/states/create-states-co',
     },
     countries: {
         insert: '/countries',
         update: (id: string) => `/countries/${id}`,
         delete: (id: string) => `/countries/${id}`,
         getById: (id: string) => `/countries/${id}`,
-        getAll: `/countries`
-    },
-    cities: {
-        labelValuesList: (stateEntityId: string) => `/cities/${stateEntityId}/labelValueList`
+        getAll: `/countries`,
+        createCountryCo: '/countries/create-country-co',
+        createAllCountries: '/countries/create-all-countries',
+        labelValuesList: '/countries/label-value-list'
+    }, cities: {
+        getAll: '/cities',
+        getById: (id: string) => `/cities/${id}`,
+        insert: '/cities',
+        update: (id: string) => `/cities/${id}`,
+        delete: (id: string) => `/cities/${id}`,
+        labelValuesList: (stateEntityId: string) => `/cities/label-value-list?stateId=${stateEntityId}`,
+        createCitiesColombia: '/cities/create-cities-co',
     },
     ports: {
         getAll: '/ports',
@@ -66,6 +75,21 @@ export const apiUrls = {
         insert: '/employees',
         update: (id: string) => `/employees/${id}`,
         delete: (id: string) => `/employees/${id}`,
+        search: (query: string) => `/employees/search?q=${encodeURIComponent(query)}`,
+        getByDepartment: (department: string) => `/employees?department=${encodeURIComponent(department)}`,
+        getByStatus: (status: string) => `/employees?status=${status}`,
+        getByEmploymentType: (type: string) => `/employees?employmentType=${type}`,
+        getByLevel: (level: string) => `/employees?level=${level}`,
+        getByLocation: (location: string) => `/employees?location=${encodeURIComponent(location)}`,
+        getByManager: (managerId: string) => `/employees?manager=${managerId}`,
+        getBySkill: (skill: string, level?: string) => `/employees/skills?skill=${encodeURIComponent(skill)}${level ? `&level=${level}` : ''}`,
+        getPendingReviews: '/employees/pending-reviews',
+        getExpiringCertifications: (days?: number) => `/employees/expiring-certifications${days ? `?days=${days}` : ''}`,
+        getTopPerformers: (limit?: number) => `/employees/top-performers${limit ? `?limit=${limit}` : ''}`,
+        getNewHires: (days?: number) => `/employees/new-hires${days ? `?days=${days}` : ''}`,
+        getBirthdaysThisMonth: '/employees/birthdays-this-month',
+        getStats: '/employees/stats',
+        labelValuesList: '/employees/labelValuesList'
     },
     dischargePorts: {
         getAll: '/dischargePorts',
@@ -203,5 +227,51 @@ export const apiUrls = {
         update: (id: string) => `/boxTypes/${id}`,
         delete: (id: string) => `/boxTypes/${id}`,
         labelValuesList: `/boxTypes/labelValueList`
+    },
+    invoices: {
+        findLastInvoice: '/invoices/findLastInvoice',
+        getAllInvoices: '/invoices',
+        getInvoiceById: (id: string) => `/invoices/${id}`,
+        insert: '/invoices',
+        update: (id: string) => `/invoices/${id}`,
+        delete: (id: string) => `/invoices/${id}`,
+        labelValuesList: '/invoices/labelValuesList',
+        findByInvoiceNumber: (invoiceNumber: string) => `/invoices/findByInvoiceNumber/${invoiceNumber}`,
+    },
+    bpartners: {
+        getAll: '/bpartners',
+        getById: (id: string) => `/bpartners/${id}`,
+        insert: '/bpartners',
+        update: (id: string) => `/bpartners/${id}`,
+        delete: (id: string) => `/bpartners/${id}`,
+        search: (query: string) => `/bpartners/search?q=${encodeURIComponent(query)}`,
+        getByType: (type: string) => `/bpartners?type=${type}`,
+        getByStatus: (status: string) => `/bpartners?status=${status}`,
+        getBySegment: (segment: string) => `/bpartners?segment=${segment}`,
+        getStats: '/bpartners/stats',
+        getTopByValue: (limit?: number) => `/bpartners/top${limit ? `?limit=${limit}` : ''}`,
+        labelValuesList: '/bpartners/labelValuesList'
+    },
+    employees: {
+        getAll: '/employees',
+        getById: (id: string) => `/employees/${id}`,
+        insert: '/employees',
+        update: (id: string) => `/employees/${id}`,
+        delete: (id: string) => `/employees/${id}`,
+        search: (query: string) => `/employees/search?q=${encodeURIComponent(query)}`,
+        getByDepartment: (department: string) => `/employees?department=${encodeURIComponent(department)}`,
+        getByStatus: (status: string) => `/employees?status=${status}`,
+        getByEmploymentType: (type: string) => `/employees?employmentType=${type}`,
+        getByLevel: (level: string) => `/employees?level=${level}`,
+        getByLocation: (location: string) => `/employees?location=${encodeURIComponent(location)}`,
+        getByManager: (managerId: string) => `/employees?manager=${managerId}`,
+        getBySkill: (skill: string, level?: string) => `/employees/skills?skill=${encodeURIComponent(skill)}${level ? `&level=${level}` : ''}`,
+        getPendingReviews: '/employees/pending-reviews',
+        getExpiringCertifications: (days?: number) => `/employees/expiring-certifications${days ? `?days=${days}` : ''}`,
+        getTopPerformers: (limit?: number) => `/employees/top-performers${limit ? `?limit=${limit}` : ''}`,
+        getNewHires: (days?: number) => `/employees/new-hires${days ? `?days=${days}` : ''}`,
+        getBirthdaysThisMonth: '/employees/birthdays-this-month',
+        getStats: '/employees/stats',
+        labelValuesList: '/employees/labelValuesList'
     },
 }

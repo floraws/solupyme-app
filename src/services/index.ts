@@ -4,3 +4,8 @@ export * from "./client.service";
 export * from "./csrf.service";
 export * from "./country.service";
 export * from "./notification.service";
+export * from "./states.service";
+export * from "./city.service";
+export * from "./invoices.service";
+export * from "./bpartner.service";
+export * from "./employee.service";

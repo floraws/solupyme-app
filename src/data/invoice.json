@@ -1,0 +1,89 @@
+{
+  "id": "inv_001_2025_001234",
+  "number": "FAC-2025-001234",
+  
+  "date": "2025-06-28T10:30:00Z",
+  "dueDate": "2025-07-28T23:59:59Z",
+  "createdAt": "2025-06-28T10:30:00Z",
+  "updatedAt": "2025-06-28T10:30:00Z",
+  
+  "status": "sent",
+  "paymentStatus": "pending",
+  
+  "customer": {
+    "id": "customer_001",
+    "name": "Distribuidora El Águila S.A.S.",
+    "email": "facturacion@elaguila.com.co",
+    "phone": "+57 300 123 4567"
+  },
+  
+  "items": [
+    {
+      "id": "item_001",
+      "description": "Consultoría en desarrollo de software ERP",
+      "quantity": 40,
+      "unitPrice": 125000,
+      "total": 5000000
+    },
+    {
+      "id": "item_002", 
+      "description": "Licencia de software SoluPYME Pro - 1 año",
+      "quantity": 1,
+      "unitPrice": 2400000,
+      "total": 2400000
+    },
+    {
+      "id": "item_003",
+      "description": "Soporte técnico especializado - 20 horas",
+      "quantity": 20,
+      "unitPrice": 85000,
+      "total": 1700000
+    }
+  ],
+  
+  "currency": "COP",
+  "exchangeRate": 1.0,
+  
+  "subtotal": 9100000,
+  "taxRate": 0.19,
+  "taxAmount": 1729000,
+  "discount": 455000,
+  "total": 10374000,
+  
+  "paymentTerms": "Pago a 30 días calendario a partir de la fecha de factura. Transferencia bancaria a cuenta corriente Bancolombia No. 123-456-789",
+  
+  "notes": "Gracias por confiar en SoluPYME para sus necesidades de software empresarial. Cualquier consulta, contacte nuestro equipo de soporte.",
+  
+  "attachments": [
+    {
+      "id": "att_001",
+      "fileName": "contrato_servicio_001234.pdf",
+      "fileType": "application/pdf",
+      "fileSize": 245760,
+      "url": "https://storage.solupyme.com/invoices/001234/attachments/contrato_servicio_001234.pdf"
+    },
+    {
+      "id": "att_002",
+      "fileName": "especificaciones_tecnicas.docx",
+      "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "fileSize": 87432,
+      "url": "https://storage.solupyme.com/invoices/001234/attachments/especificaciones_tecnicas.docx"
+    }
+  ],
+  
+  "customFields": {
+    "projectCode": "PROJ-2025-ERP-001",
+    "salesRepresentative": "Ana María González",
+    "deliveryAddress": "Calle 123 #45-67, Bogotá, Colombia",
+    "purchaseOrderNumber": "PO-2025-0789"
+  },
+  
+  "metadata": {
+    "source": "web_portal",
+    "generatedBy": "user_admin_001",
+    "emailSent": true,
+    "emailSentAt": "2025-06-28T10:35:00Z",
+    "printCount": 2,
+    "lastPrintedAt": "2025-06-28T11:00:00Z"
+  }
+}

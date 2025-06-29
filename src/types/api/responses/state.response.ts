@@ -3,4 +3,5 @@ export interface StateResponse {
     code: string;
     name: string;
     countryId: string;
+    countryName?: string;
 }

@@ -31,9 +31,10 @@ export const accountService = {
      * @param account Detalles de la cuenta a actualizar.
      * @returns Promesa que resuelve con los detalles actualizados de la cuenta.
      */
-    create: async (id: string, updateAccountRequest: UpdateAccountRequest): Promise<AccountResponse> => {
+    update: async (id: string, updateAccountRequest: UpdateAccountRequest): Promise<AccountResponse> => {
         try {
-            const response = await fetchWrapper.put(apiUrls.account.create(id, updateAccountRequest));
+            console.log("Updating account with ID:", id, "and request:", updateAccountRequest);
+            const response = await fetchWrapper.put(apiUrls.account.update(id), updateAccountRequest);
             return response as AccountResponse;
         } catch (error) {
             console.error("Error updating account details:", error);

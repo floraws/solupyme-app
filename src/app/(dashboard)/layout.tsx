@@ -16,7 +16,8 @@ import { useAuth } from "@/hooks/useAuth";
 const navigation = [
   { name: "Inicio", href: "/dashboards", icon: HomeIcon, current: true },
   { name: "Productos", href: "/products", icon: UserGroupIcon, current: false },
-  { name: "Socios", href: "/bpartners", icon: UserGroupIcon, current: false },
+  { name: "Terceros", href: "/bpartners", icon: UserGroupIcon, current: false },
+  { name: "Empleados", href: "/employees", icon: UserGroupIcon, current: false },
   { name: "Documentos", href: "/documents", icon: UserGroupIcon, current: false },
   { name: "Configuración", href: "/settings", icon: Cog6ToothIcon, current: false },
 ];

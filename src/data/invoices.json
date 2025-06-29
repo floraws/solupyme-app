@@ -1,0 +1,314 @@
+[
+  {
+    "id": "inv_001_2025_001234",
+    "number": "FAC-2025-001234",
+    
+    "date": "2025-06-28T10:30:00Z",
+    "dueDate": "2025-07-28T23:59:59Z",
+    "createdAt": "2025-06-28T10:30:00Z",
+    "updatedAt": "2025-06-28T10:30:00Z",
+    
+    "status": "sent",
+    "paymentStatus": "pending",
+    
+    "customer": {
+      "id": "customer_001",
+      "name": "Distribuidora El Águila S.A.S.",
+      "email": "facturacion@elaguila.com.co",
+      "phone": "+57 300 123 4567"
+    },
+    
+    "items": [
+      {
+        "id": "item_001",
+        "description": "Consultoría en desarrollo de software ERP",
+        "quantity": 40,
+        "unitPrice": 125000,
+        "total": 5000000
+      },
+      {
+        "id": "item_002", 
+        "description": "Licencia de software SoluPYME Pro - 1 año",
+        "quantity": 1,
+        "unitPrice": 2400000,
+        "total": 2400000
+      },
+      {
+        "id": "item_003",
+        "description": "Soporte técnico especializado - 20 horas",
+        "quantity": 20,
+        "unitPrice": 85000,
+        "total": 1700000
+      }
+    ],
+    
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    
+    "subtotal": 9100000,
+    "taxRate": 0.19,
+    "taxAmount": 1729000,
+    "discount": 455000,
+    "total": 10374000
+  },
+  {
+    "id": "inv_002_2025_001235",
+    "number": "FAC-2025-001235",
+    
+    "date": "2025-06-25T14:15:00Z",
+    "dueDate": "2025-07-25T23:59:59Z",
+    "createdAt": "2025-06-25T14:15:00Z",
+    "updatedAt": "2025-06-27T09:20:00Z",
+    
+    "status": "paid",
+    "paymentStatus": "completed",
+    
+    "customer": {
+      "id": "customer_002",
+      "name": "Supermercados La Canasta Ltda.",
+      "email": "contabilidad@lacanasta.com.co",
+      "phone": "+57 310 987 6543"
+    },
+    
+    "items": [
+      {
+        "id": "item_004",
+        "description": "Sistema POS para retail - Instalación",
+        "quantity": 3,
+        "unitPrice": 850000,
+        "total": 2550000
+      },
+      {
+        "id": "item_005",
+        "description": "Capacitación personal - 8 horas",
+        "quantity": 8,
+        "unitPrice": 95000,
+        "total": 760000
+      }
+    ],
+    
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    
+    "subtotal": 3310000,
+    "taxRate": 0.19,
+    "taxAmount": 628900,
+    "discount": 0,
+    "total": 3938900
+  },
+  {
+    "id": "inv_003_2025_001236",
+    "number": "FAC-2025-001236",
+    
+    "date": "2025-06-20T09:45:00Z",
+    "dueDate": "2025-08-19T23:59:59Z",
+    "createdAt": "2025-06-20T09:45:00Z",
+    "updatedAt": "2025-06-20T09:45:00Z",
+    
+    "status": "draft",
+    "paymentStatus": "pending",
+    
+    "customer": {
+      "id": "customer_003",
+      "name": "Transportes Rápidos del Norte S.A.",
+      "email": "admin@rapidosnorte.com.co",
+      "phone": "+57 320 456 7890"
+    },
+    
+    "items": [
+      {
+        "id": "item_006",
+        "description": "Software de gestión de flota vehicular",
+        "quantity": 1,
+        "unitPrice": 4500000,
+        "total": 4500000
+      },
+      {
+        "id": "item_007",
+        "description": "Módulo GPS tracking - 50 vehículos",
+        "quantity": 50,
+        "unitPrice": 45000,
+        "total": 2250000
+      },
+      {
+        "id": "item_008",
+        "description": "Configuración inicial y puesta en marcha",
+        "quantity": 1,
+        "unitPrice": 1200000,
+        "total": 1200000
+      }
+    ],
+    
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    
+    "subtotal": 7950000,
+    "taxRate": 0.19,
+    "taxAmount": 1510500,
+    "discount": 397500,
+    "total": 9062500
+  },
+  {
+    "id": "inv_004_2025_001237",
+    "number": "FAC-2025-001237",
+    
+    "date": "2025-06-18T16:20:00Z",
+    "dueDate": "2025-07-03T23:59:59Z",
+    "createdAt": "2025-06-18T16:20:00Z",
+    "updatedAt": "2025-06-26T11:10:00Z",
+    
+    "status": "overdue",
+    "paymentStatus": "overdue",
+    
+    "customer": {
+      "id": "customer_004",
+      "name": "Clínica Dental Sonrisas Ltda.",
+      "email": "facturacion@sonrisas.com.co",
+      "phone": "+57 315 234 5678"
+    },
+    
+    "items": [
+      {
+        "id": "item_009",
+        "description": "Software de gestión clínica - Licencia básica",
+        "quantity": 1,
+        "unitPrice": 1800000,
+        "total": 1800000
+      },
+      {
+        "id": "item_010",
+        "description": "Módulo citas médicas y recordatorios",
+        "quantity": 1,
+        "unitPrice": 650000,
+        "total": 650000
+      },
+      {
+        "id": "item_011",
+        "description": "Migración de datos históricos",
+        "quantity": 1,
+        "unitPrice": 950000,
+        "total": 950000
+      }
+    ],
+    
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    
+    "subtotal": 3400000,
+    "taxRate": 0.19,
+    "taxAmount": 646000,
+    "discount": 170000,
+    "total": 3876000
+  },
+  {
+    "id": "inv_005_2025_001238",
+    "number": "FAC-2025-001238",
+    
+    "date": "2025-06-15T11:30:00Z",
+    "dueDate": "2025-07-15T23:59:59Z",
+    "createdAt": "2025-06-15T11:30:00Z",
+    "updatedAt": "2025-06-28T08:45:00Z",
+    
+    "status": "sent",
+    "paymentStatus": "partial",
+    
+    "customer": {
+      "id": "customer_005",
+      "name": "Restaurante Sabores Únicos S.A.S.",
+      "email": "gerencia@saboresunicosmedellin.com",
+      "phone": "+57 305 876 5432"
+    },
+    
+    "items": [
+      {
+        "id": "item_012",
+        "description": "Sistema de gestión restaurante - POS + Cocina",
+        "quantity": 1,
+        "unitPrice": 2200000,
+        "total": 2200000
+      },
+      {
+        "id": "item_013",
+        "description": "Módulo inventarios y costos",
+        "quantity": 1,
+        "unitPrice": 800000,
+        "total": 800000
+      },
+      {
+        "id": "item_014",
+        "description": "App delivery integrada",
+        "quantity": 1,
+        "unitPrice": 1100000,
+        "total": 1100000
+      },
+      {
+        "id": "item_015",
+        "description": "Capacitación equipo - 12 horas",
+        "quantity": 12,
+        "unitPrice": 85000,
+        "total": 1020000
+      }
+    ],
+    
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    
+    "subtotal": 5120000,
+    "taxRate": 0.19,
+    "taxAmount": 972800,
+    "discount": 256000,
+    "total": 5836800
+  },
+  {
+    "id": "inv_006_2025_001239",
+    "number": "FAC-2025-001239",
+    
+    "date": "2025-06-12T13:00:00Z",
+    "dueDate": "2025-06-27T23:59:59Z",
+    "createdAt": "2025-06-12T13:00:00Z",
+    "updatedAt": "2025-06-28T15:30:00Z",
+    
+    "status": "cancelled",
+    "paymentStatus": "cancelled",
+    
+    "customer": {
+      "id": "customer_006",
+      "name": "Constructora Edificar Futuro Ltda.",
+      "email": "proyectos@edificarfuturo.com.co",
+      "phone": "+57 318 345 6789"
+    },
+    
+    "items": [
+      {
+        "id": "item_016",
+        "description": "Software de gestión de proyectos construcción",
+        "quantity": 1,
+        "unitPrice": 5500000,
+        "total": 5500000
+      },
+      {
+        "id": "item_017",
+        "description": "Módulo control de obras y presupuestos",
+        "quantity": 1,
+        "unitPrice": 2800000,
+        "total": 2800000
+      },
+      {
+        "id": "item_018",
+        "description": "App móvil supervisores de obra",
+        "quantity": 5,
+        "unitPrice": 350000,
+        "total": 1750000
+      }
+    ],
+    
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    
+    "subtotal": 10050000,
+    "taxRate": 0.19,
+    "taxAmount": 1909500,
+    "discount": 502500,
+    "total": 11457000
+  }
+]

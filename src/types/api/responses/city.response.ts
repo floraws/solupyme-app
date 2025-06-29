@@ -4,8 +4,6 @@ export interface CityResponse {
     code: string;
     stateId: string;
     stateName: string;
+    countryId: string;
     countryName: string;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
 }

@@ -10,7 +10,9 @@ const defaultAccount: AccountResponse = {
   id: "",
   businessName: "",
   email: "",
-  countryId: ""
+  countryId: "",
+  stateId: "",
+  cityId: ""
 };
 
 

@@ -1,5 +1,5 @@
 "use client";
-import { LoadingSpinner } from "@/components/common/Alert";
+import { LoadingSpinner } from "@/components/ui/Loading";
 import { useRouter } from "next/navigation";
 import { authService, clientService } from "@/services";
 import { ClientResponse } from "@/types/api";

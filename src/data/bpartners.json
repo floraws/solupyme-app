@@ -1,0 +1,455 @@
+[
+  {
+    "id": "bp_001_2025_001",
+    "name": "TechnoSoft Solutions S.A.S.",
+    "legalName": "TechnoSoft Solutions Sociedad por Acciones Simplificada",
+    "tradeName": "TechnoSoft",
+    "email": "contacto@technosoft.com.co",
+    "phone": "+57 1 234 5678",
+    "address": "Carrera 15 #85-32, Oficina 501",
+    "city": "Bogotá",
+    "country": "Colombia",
+    "taxId": "900123456-1",
+    "registrationNumber": "S0012345",
+    "website": "https://www.technosoft.com.co",
+    "type": "customer",
+    "status": "active",
+    "createdAt": "2025-01-15T08:30:00Z",
+    "updatedAt": "2025-06-20T14:25:00Z",
+    "industry": "Tecnología de la Información",
+    "companySize": "medium",
+    "employeeCount": 85,
+    "annualRevenue": 4500000000,
+    "foundedYear": 2018,
+    
+    "billingAddress": {
+      "street": "Carrera 15 #85-32, Oficina 501",
+      "city": "Bogotá",
+      "state": "Cundinamarca",
+      "postalCode": "110221",
+      "country": "Colombia"
+    },
+    
+    "shippingAddress": {
+      "street": "Carrera 15 #85-32, Oficina 501",
+      "city": "Bogotá", 
+      "state": "Cundinamarca",
+      "postalCode": "110221",
+      "country": "Colombia"
+    },
+    
+    "contactPersons": [
+      {
+        "id": "contact_001",
+        "name": "Carlos Eduardo Mendoza",
+        "email": "carlos.mendoza@technosoft.com.co",
+        "phone": "+57 300 123 4567",
+        "position": "Gerente General",
+        "preferredContactMethod": "email"
+      },
+      {
+        "id": "contact_002", 
+        "name": "María Fernanda Ruiz",
+        "email": "maria.ruiz@technosoft.com.co",
+        "phone": "+57 310 987 6543",
+        "position": "Directora de Compras",
+        "preferredContactMethod": "phone"
+      }
+    ],
+    
+    "accountManager": "Ana Sofía González",
+    "salesRepresentative": "Luis Fernando Patiño",
+    "segment": "premium",
+    "customerLifecycleStage": "customer",
+    "leadSource": "referral",
+    "territory": "Centro",
+    "region": "Cundinamarca",
+    "timezone": "America/Bogota",
+    
+    "paymentTerms": "Pago a 30 días calendario",
+    "creditLimit": 50000000,
+    "creditBalance": 12000000,
+    "defaultCurrency": "COP",
+    "priceList": "Corporativo Premium",
+    "discountLevel": 15,
+    "riskLevel": "low",
+    
+    "totalLifetimeValue": 45000000,
+    "averageOrderValue": 2500000,
+    "totalOrderCount": 18,
+    "churnRisk": 15,
+    "loyaltyPoints": 2850,
+    "loyaltyTier": "gold",
+    "memberSince": "2025-01-15T08:30:00Z",
+    "membershipNumber": "GOLD001",
+    
+    "lastContacted": "2025-06-25T10:15:00Z",
+    "lastSaleDate": "2025-06-20T00:00:00Z",
+    "lastPurchaseDate": "2025-06-20T00:00:00Z",
+    "preferredContactMethod": "email",
+    
+    "deliveryInstructions": "Entregar en recepción del edificio. Horario: 8:00 AM - 6:00 PM",
+    "preferredDeliveryTime": "morning",
+    
+    "socialMedia": {
+      "linkedin": "https://linkedin.com/company/technosoft-solutions",
+      "facebook": "https://facebook.com/TechnoSoftColombia",
+      "twitter": "https://twitter.com/TechnoSoftCO"
+    },
+    
+    "preferences": {
+      "language": "es",
+      "communicationFrequency": "weekly",
+      "marketingOptIn": true
+    },
+    
+    "gdprConsent": true,
+    "dataProcessingConsent": true,
+    "blacklisted": false,
+    "source": "manual",
+    
+    "tags": ["tecnología", "software", "corporativo", "premium"],
+    
+    "salesHistory": [
+      {
+        "date": "2025-06-20T00:00:00Z",
+        "amount": 3200000,
+        "currency": "COP",
+        "description": "Licencias software ERP"
+      },
+      {
+        "date": "2025-05-15T00:00:00Z", 
+        "amount": 1800000,
+        "currency": "COP",
+        "description": "Consultoría técnica"
+      }
+    ],
+    
+    "notesHistory": [
+      {
+        "date": "2025-06-25T10:15:00Z",
+        "note": "Cliente interesado en expandir licencias para nuevas sucursales"
+      },
+      {
+        "date": "2025-06-01T14:30:00Z",
+        "note": "Renovación de contrato anual aprobada"
+      }
+    ],
+    
+    "notes": "Cliente estratégico con alto potencial de crecimiento. Requiere soporte técnico especializado.",
+    
+    "externalIds": {
+      "salesforce": "SF001234",
+      "hubspot": "HS567890"
+    }
+  },
+  
+  {
+    "id": "bp_002_2025_002",
+    "name": "Distribuciones El Dorado Ltda.",
+    "legalName": "Distribuciones El Dorado Limitada",
+    "tradeName": "El Dorado",
+    "email": "ventas@eldorado.com.co",
+    "phone": "+57 4 456 7890",
+    "address": "Calle 50 #45-30, Bodega 15",
+    "city": "Medellín",
+    "country": "Colombia",
+    "taxId": "800987654-3",
+    "registrationNumber": "S0098765",
+    "website": "https://www.eldorado.com.co",
+    "type": "supplier",
+    "status": "active",
+    "createdAt": "2024-11-20T09:15:00Z",
+    "updatedAt": "2025-06-28T11:45:00Z",
+    "industry": "Distribución y Comercio",
+    "companySize": "large",
+    "employeeCount": 340,
+    "annualRevenue": 15000000000,
+    "foundedYear": 1998,
+    
+    "billingAddress": {
+      "street": "Calle 50 #45-30",
+      "city": "Medellín",
+      "state": "Antioquia", 
+      "postalCode": "050012",
+      "country": "Colombia"
+    },
+    
+    "shippingAddress": {
+      "street": "Calle 50 #45-30, Bodega 15",
+      "city": "Medellín",
+      "state": "Antioquia",
+      "postalCode": "050012", 
+      "country": "Colombia"
+    },
+    
+    "contactPersons": [
+      {
+        "id": "contact_003",
+        "name": "Roberto Jiménez Vargas",
+        "email": "roberto.jimenez@eldorado.com.co",
+        "phone": "+57 315 234 5678",
+        "position": "Director Comercial",
+        "preferredContactMethod": "phone"
+      },
+      {
+        "id": "contact_004",
+        "name": "Sandra Milena Torres",
+        "email": "sandra.torres@eldorado.com.co", 
+        "phone": "+57 320 876 5432",
+        "position": "Jefe de Logística",
+        "preferredContactMethod": "email"
+      }
+    ],
+    
+    "accountManager": "Diego Alejandro Morales",
+    "salesRepresentative": "Claudia Patricia Herrera",
+    "segment": "standard",
+    "customerLifecycleStage": "customer",
+    "leadSource": "trade_show",
+    "territory": "Occidente",
+    "region": "Antioquia",
+    "timezone": "America/Bogota",
+    
+    "paymentTerms": "Pago a 45 días calendario", 
+    "creditLimit": 80000000,
+    "creditBalance": 22000000,
+    "defaultCurrency": "COP",
+    "priceList": "Mayorista",
+    "discountLevel": 8,
+    "riskLevel": "medium",
+    
+    "totalLifetimeValue": 125000000,
+    "averageOrderValue": 4200000,
+    "totalOrderCount": 42,
+    "churnRisk": 25,
+    "loyaltyPoints": 5200,
+    "loyaltyTier": "silver", 
+    "memberSince": "2024-11-20T09:15:00Z",
+    "membershipNumber": "SILVER002",
+    
+    "lastContacted": "2025-06-28T09:30:00Z",
+    "lastSaleDate": "2025-06-25T00:00:00Z",
+    "lastPurchaseDate": "2025-06-25T00:00:00Z",
+    "preferredContactMethod": "phone",
+    
+    "deliveryInstructions": "Coordinar entrega con bodega. Personal disponible 24/7",
+    "preferredDeliveryTime": "afternoon",
+    
+    "socialMedia": {
+      "facebook": "https://facebook.com/DistribucionesElDorado",
+      "instagram": "https://instagram.com/eldoradocol"
+    },
+    
+    "preferences": {
+      "language": "es",
+      "communicationFrequency": "monthly",
+      "marketingOptIn": false
+    },
+    
+    "gdprConsent": true,
+    "dataProcessingConsent": true,
+    "blacklisted": false,
+    "source": "import",
+    
+    "tags": ["distribución", "logística", "mayorista", "tradicional"],
+    
+    "purchaseHistory": [
+      {
+        "date": "2025-06-25T00:00:00Z",
+        "amount": 5800000,
+        "currency": "COP",
+        "description": "Productos de consumo masivo"
+      },
+      {
+        "date": "2025-06-10T00:00:00Z",
+        "amount": 3400000,
+        "currency": "COP", 
+        "description": "Inventario para temporada alta"
+      }
+    ],
+    
+    "notesHistory": [
+      {
+        "date": "2025-06-28T09:30:00Z",
+        "note": "Solicitud de ampliación de crédito para nueva línea de productos"
+      },
+      {
+        "date": "2025-06-15T16:45:00Z",
+        "note": "Evaluación positiva de desempeño comercial trimestral"
+      }
+    ],
+    
+    "notes": "Proveedor confiable con excelente capacidad logística. Requiere términos de pago flexibles.",
+    
+    "externalIds": {
+      "sap": "SAP002345",
+      "oracle": "ORC789012"
+    }
+  },
+  
+  {
+    "id": "bp_003_2025_003",
+    "name": "Restaurante Gourmet Plaza",
+    "legalName": "Inversiones Gastronómicas Plaza S.A.S.",
+    "tradeName": "Gourmet Plaza",
+    "email": "administracion@gourmetplaza.com",
+    "phone": "+57 2 345 6789",
+    "address": "Avenida 6N #15-25, Centro Comercial Plaza Mayor",
+    "city": "Cali",
+    "country": "Colombia",
+    "taxId": "900345678-9",
+    "registrationNumber": "S0034567",
+    "website": "https://www.gourmetplaza.com",
+    "type": "both",
+    "status": "active",
+    "createdAt": "2025-03-10T12:00:00Z",
+    "updatedAt": "2025-06-27T18:20:00Z",
+    "industry": "Restaurantes y Gastronomía",
+    "companySize": "small",
+    "employeeCount": 25,
+    "annualRevenue": 800000000,
+    "foundedYear": 2020,
+    
+    "billingAddress": {
+      "street": "Avenida 6N #15-25",
+      "city": "Cali",
+      "state": "Valle del Cauca",
+      "postalCode": "760001",
+      "country": "Colombia"
+    },
+    
+    "shippingAddress": {
+      "street": "Avenida 6N #15-25, Centro Comercial Plaza Mayor, Local 205",
+      "city": "Cali",
+      "state": "Valle del Cauca", 
+      "postalCode": "760001",
+      "country": "Colombia"
+    },
+    
+    "contactPersons": [
+      {
+        "id": "contact_005",
+        "name": "Isabella Ramírez Castro",
+        "email": "isabella@gourmetplaza.com",
+        "phone": "+57 318 765 4321",
+        "position": "Gerente Propietaria",
+        "preferredContactMethod": "email"
+      },
+      {
+        "id": "contact_006",
+        "name": "Andrés Felipe Moreno",
+        "email": "andres@gourmetplaza.com",
+        "phone": "+57 350 234 5678",
+        "position": "Chef Ejecutivo",
+        "preferredContactMethod": "phone"
+      }
+    ],
+    
+    "accountManager": "Valentina Córdoba Sánchez",
+    "salesRepresentative": "Miguel Ángel Castillo",
+    "segment": "basic",
+    "customerLifecycleStage": "customer",
+    "leadSource": "social_media",
+    "territory": "Pacífico",
+    "region": "Valle del Cauca",
+    "timezone": "America/Bogota",
+    
+    "paymentTerms": "Pago a 15 días calendario",
+    "creditLimit": 8000000,
+    "creditBalance": 1200000,
+    "defaultCurrency": "COP", 
+    "priceList": "PYME",
+    "discountLevel": 5,
+    "riskLevel": "low",
+    
+    "totalLifetimeValue": 15000000,
+    "averageOrderValue": 750000,
+    "totalOrderCount": 28,
+    "churnRisk": 10,
+    "loyaltyPoints": 890,
+    "loyaltyTier": "bronze",
+    "memberSince": "2025-03-10T12:00:00Z",
+    "membershipNumber": "BRONZE003",
+    
+    "lastContacted": "2025-06-27T16:30:00Z",
+    "lastSaleDate": "2025-06-26T00:00:00Z",
+    "lastPurchaseDate": "2025-06-27T00:00:00Z",
+    "preferredContactMethod": "email",
+    
+    "deliveryInstructions": "Entregar por entrada de proveedores del centro comercial. Horario: 6:00 AM - 10:00 AM",
+    "preferredDeliveryTime": "morning",
+    
+    "socialMedia": {
+      "instagram": "https://instagram.com/gourmetplazacali",
+      "facebook": "https://facebook.com/RestauranteGourmetPlaza",
+      "other": {
+        "tiktok": "https://tiktok.com/@gourmetplazacali"
+      }
+    },
+    
+    "preferences": {
+      "language": "es",
+      "communicationFrequency": "weekly",
+      "marketingOptIn": true
+    },
+    
+    "gdprConsent": true,
+    "dataProcessingConsent": true,
+    "blacklisted": false,
+    "source": "api",
+    
+    "tags": ["restaurante", "gourmet", "pyme", "gastronomía", "cali"],
+    
+    "salesHistory": [
+      {
+        "date": "2025-06-26T00:00:00Z",
+        "amount": 450000,
+        "currency": "COP",
+        "description": "Sistema POS para restaurante"
+      },
+      {
+        "date": "2025-06-15T00:00:00Z",
+        "amount": 320000,
+        "currency": "COP",
+        "description": "Módulo de inventarios"
+      }
+    ],
+    
+    "purchaseHistory": [
+      {
+        "date": "2025-06-27T00:00:00Z",
+        "amount": 280000,
+        "currency": "COP",
+        "description": "Ingredientes especiales importados"
+      },
+      {
+        "date": "2025-06-20T00:00:00Z",
+        "amount": 150000,
+        "currency": "COP",
+        "description": "Utensilios de cocina profesional"
+      }
+    ],
+    
+    "notesHistory": [
+      {
+        "date": "2025-06-27T16:30:00Z",
+        "note": "Interés en módulo de delivery integrado para el sistema POS"
+      },
+      {
+        "date": "2025-06-20T11:15:00Z",
+        "note": "Cliente satisfecho con implementación inicial. Considera expansión"
+      }
+    ],
+    
+    "notes": "Cliente emergente con gran potencial. Busca soluciones tecnológicas para optimizar operaciones.",
+    
+    "parentCompany": "Grupo Gastronómico Valle S.A.S.",
+    "referredBy": "TechnoSoft Solutions S.A.S.",
+    
+    "externalIds": {
+      "pos_system": "POS003456",
+      "delivery_app": "DEL789123"
+    }
+  }
+]

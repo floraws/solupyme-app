@@ -1,0 +1,628 @@
+[
+  {
+    "id": "emp_001_2025_001",
+    "employeeNumber": "EMP-2025-001",
+    "firstName": "María",
+    "lastName": "González Rodríguez",
+    "fullName": "María González Rodríguez",
+    "email": "maria.gonzalez@solupyme.com",
+    "phone": "+57 300 123 4567",
+    "alternativePhone": "+57 1 234 5678",
+    "personalEmail": "maria.gonzalez.personal@gmail.com",
+    
+    "position": "Gerente de Desarrollo de Software",
+    "department": "Tecnología",
+    "directManager": "emp_002_2025_002",
+    "team": "Desarrollo Frontend",
+    "workLocation": "Bogotá - Oficina Principal",
+    "employmentType": "full-time",
+    "workSchedule": "Lunes a Viernes 8:00 AM - 5:00 PM",
+    
+    "hireDate": "2023-03-15T08:00:00Z",
+    "startDate": "2024-01-01T08:00:00Z",
+    "probationEndDate": "2023-06-15T08:00:00Z",
+    "nextReviewDate": "2025-07-01T08:00:00Z",
+    
+    "salary": 8500000,
+    "currency": "COP",
+    "salaryType": "monthly",
+    "payrollFrequency": "monthly",
+    "bankAccount": "12345678901",
+    "bankName": "Banco de Bogotá",
+    
+    "status": "active",
+    "employeeLevel": "senior",
+    "employeeType": "employee",
+    
+    "dateOfBirth": "1990-08-15",
+    "nationalId": "1234567890",
+    "passport": "CC1234567",
+    "nationality": "Colombiana",
+    "maritalStatus": "married",
+    "gender": "female",
+    
+    "homeAddress": {
+      "street": "Carrera 45 #123-45, Apartamento 801",
+      "city": "Bogotá",
+      "state": "Cundinamarca",
+      "postalCode": "110221",
+      "country": "Colombia"
+    },
+    
+    "emergencyContacts": [
+      {
+        "id": "emergency_001",
+        "name": "Carlos González",
+        "relationship": "Esposo",
+        "phone": "+57 300 987 6543",
+        "email": "carlos.gonzalez@gmail.com",
+        "address": "Carrera 45 #123-45, Apartamento 801, Bogotá",
+        "isPrimary": true
+      },
+      {
+        "id": "emergency_002",
+        "name": "Ana Rodríguez",
+        "relationship": "Madre",
+        "phone": "+57 310 456 7890",
+        "email": "ana.rodriguez@hotmail.com",
+        "address": "Calle 67 #89-12, Bogotá",
+        "isPrimary": false
+      }
+    ],
+    
+    "education": [
+      {
+        "id": "edu_001",
+        "institution": "Universidad Nacional de Colombia",
+        "degree": "Ingeniería de Sistemas",
+        "fieldOfStudy": "Ingeniería de Software",
+        "graduationYear": 2013,
+        "isVerified": true
+      },
+      {
+        "id": "edu_002",
+        "institution": "Universidad de los Andes",
+        "degree": "Maestría en Ingeniería de Software",
+        "fieldOfStudy": "Arquitectura de Software",
+        "graduationYear": 2016,
+        "isVerified": true
+      }
+    ],
+    
+    "certifications": [
+      {
+        "id": "cert_001",
+        "name": "AWS Certified Solutions Architect",
+        "issuingOrganization": "Amazon Web Services",
+        "issueDate": "2023-06-15",
+        "expirationDate": "2026-06-15",
+        "credentialId": "AWS-SAA-C03-123456",
+        "isActive": true
+      },
+      {
+        "id": "cert_002",
+        "name": "Certified ScrumMaster",
+        "issuingOrganization": "Scrum Alliance",
+        "issueDate": "2022-09-10",
+        "expirationDate": "2024-09-10",
+        "credentialId": "CSM-789123",
+        "isActive": true
+      },
+      {
+        "id": "cert_003",
+        "name": "Google Cloud Professional Developer",
+        "issuingOrganization": "Google Cloud",
+        "issueDate": "2024-02-20",
+        "expirationDate": "2026-02-20",
+        "credentialId": "GCP-PD-456789",
+        "isActive": true
+      }
+    ],
+    
+    "skills": [
+      {
+        "name": "React",
+        "level": "expert",
+        "category": "Frontend",
+        "yearsOfExperience": 6
+      },
+      {
+        "name": "TypeScript",
+        "level": "advanced",
+        "category": "Programming",
+        "yearsOfExperience": 5
+      },
+      {
+        "name": "Node.js",
+        "level": "advanced",
+        "category": "Backend",
+        "yearsOfExperience": 4
+      },
+      {
+        "name": "AWS",
+        "level": "intermediate",
+        "category": "Cloud",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Team Leadership",
+        "level": "advanced",
+        "category": "Management",
+        "yearsOfExperience": 2
+      }
+    ],
+    
+    "languages": [
+      {
+        "language": "Español",
+        "proficiency": "native",
+        "canRead": true,
+        "canWrite": true,
+        "canSpeak": true
+      },
+      {
+        "language": "Inglés",
+        "proficiency": "fluent",
+        "canRead": true,
+        "canWrite": true,
+        "canSpeak": true
+      },
+      {
+        "language": "Francés",
+        "proficiency": "conversational",
+        "canRead": true,
+        "canWrite": false,
+        "canSpeak": true
+      }
+    ],
+    
+    "vacationDaysTotal": 30,
+    "vacationDaysUsed": 12,
+    "vacationDaysRemaining": 18,
+    "sickDaysUsed": 3,
+    "personalDaysUsed": 2,
+    
+    "performanceRating": "excellent",
+    "lastPerformanceReview": "2024-12-15",
+    "careerGoals": "Convertirse en Directora de Tecnología en los próximos 3 años, liderar la transformación digital de la empresa y desarrollar un equipo de desarrollo de clase mundial.",
+    "developmentPlan": "Completar certificación en arquitectura de microservicios, tomar curso de liderazgo ejecutivo, y participar en conferencias tecnológicas internacionales.",
+    
+    "positionHistory": [
+      {
+        "position": "Desarrolladora Senior",
+        "department": "Tecnología",
+        "startDate": "2023-03-15",
+        "endDate": "2023-12-31",
+        "reason": "Promoción",
+        "salary": 6500000
+      },
+      {
+        "position": "Gerente de Desarrollo de Software",
+        "department": "Tecnología",
+        "startDate": "2024-01-01",
+        "reason": "Promoción por excelente desempeño",
+        "salary": 8500000
+      }
+    ],
+    
+    "currentObjectives": [
+      {
+        "id": "obj_001",
+        "title": "Implementar nueva arquitectura de microservicios",
+        "description": "Liderar la migración de la aplicación monolítica a microservicios para mejorar escalabilidad y mantenibilidad",
+        "dueDate": "2025-09-30",
+        "status": "in-progress",
+        "priority": "high"
+      },
+      {
+        "id": "obj_002",
+        "title": "Mejorar métricas de productividad del equipo",
+        "description": "Aumentar la velocidad de desarrollo del equipo en un 25% mediante mejores prácticas y herramientas",
+        "dueDate": "2025-06-30",
+        "status": "in-progress",
+        "priority": "medium"
+      },
+      {
+        "id": "obj_003",
+        "title": "Completar certificación de arquitectura",
+        "description": "Obtener certificación avanzada en arquitectura de software en la nube",
+        "dueDate": "2025-08-15",
+        "status": "not-started",
+        "priority": "medium"
+      }
+    ],
+    
+    "benefits": [
+      {
+        "type": "Salud",
+        "name": "Seguro de Salud Premium",
+        "description": "Cobertura médica completa para empleado y familia",
+        "isActive": true,
+        "startDate": "2023-03-15",
+        "cost": 250000
+      },
+      {
+        "type": "Educación",
+        "name": "Presupuesto de Capacitación",
+        "description": "Presupuesto anual para cursos y certificaciones",
+        "isActive": true,
+        "startDate": "2023-03-15",
+        "cost": 2000000
+      },
+      {
+        "type": "Tecnología",
+        "name": "Equipo de Trabajo",
+        "description": "MacBook Pro y equipos de desarrollo",
+        "isActive": true,
+        "startDate": "2023-03-15",
+        "cost": 8000000
+      },
+      {
+        "type": "Transporte",
+        "name": "Auxilio de Transporte",
+        "description": "Subsidio mensual para transporte",
+        "isActive": true,
+        "startDate": "2023-03-15",
+        "cost": 140000
+      }
+    ],
+    
+    "healthInsurance": {
+      "provider": "Sura EPS",
+      "policyNumber": "POL-123456789",
+      "beneficiaries": [
+        {
+          "name": "Carlos González",
+          "relationship": "Esposo",
+          "dateOfBirth": "1988-12-10"
+        },
+        {
+          "name": "Sofia González",
+          "relationship": "Hija",
+          "dateOfBirth": "2020-05-22"
+        }
+      ]
+    },
+    
+    "workEmail": "maria.gonzalez@solupyme.com",
+    "workPhone": "+57 1 234 5678",
+    "workExtension": "1234",
+    "computerAssetId": "COMP-2023-001",
+    "accessCardId": "ACC-001-2023",
+    
+    "systemAccess": [
+      {
+        "system": "GitHub Enterprise",
+        "role": "Admin",
+        "permissions": ["read", "write", "admin", "manage-users"],
+        "grantedDate": "2023-03-15",
+        "isActive": true
+      },
+      {
+        "system": "AWS Console",
+        "role": "Developer",
+        "permissions": ["ec2:*", "s3:*", "lambda:*", "cloudwatch:*"],
+        "grantedDate": "2023-03-15",
+        "isActive": true
+      },
+      {
+        "system": "Jira",
+        "role": "Project Admin",
+        "permissions": ["create-projects", "manage-users", "view-reports"],
+        "grantedDate": "2024-01-01",
+        "isActive": true
+      },
+      {
+        "system": "Slack",
+        "role": "Workspace Admin",
+        "permissions": ["manage-channels", "manage-users", "view-analytics"],
+        "grantedDate": "2024-01-01",
+        "isActive": true
+      }
+    ],
+    
+    "notes": "Empleada ejemplar con excelente liderazgo técnico. Ha demostrado capacidad excepcional para gestionar equipos y proyectos complejos. Muy valorada por su mentoría a desarrolladores junior.",
+    "confidentialNotes": "Candidata ideal para futuras promociones. Recibió oferta externa de $12M pero decidió quedarse. Considerar aumento salarial en próxima revisión.",
+    
+    "documents": [
+      {
+        "id": "doc_001",
+        "type": "contract",
+        "name": "Contrato de Trabajo",
+        "fileName": "contrato_maria_gonzalez_2023.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 245760,
+        "uploadDate": "2023-03-15",
+        "url": "/documents/employees/emp_001_2025_001/contrato_maria_gonzalez_2023.pdf",
+        "isConfidential": true
+      },
+      {
+        "id": "doc_002",
+        "type": "id-copy",
+        "name": "Copia de Cédula",
+        "fileName": "cedula_maria_gonzalez.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 125440,
+        "uploadDate": "2023-03-15",
+        "url": "/documents/employees/emp_001_2025_001/cedula_maria_gonzalez.pdf",
+        "isConfidential": true
+      },
+      {
+        "id": "doc_003",
+        "type": "resume",
+        "name": "Hoja de Vida",
+        "fileName": "cv_maria_gonzalez_2023.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 890240,
+        "uploadDate": "2023-03-15",
+        "url": "/documents/employees/emp_001_2025_001/cv_maria_gonzalez_2023.pdf",
+        "isConfidential": false
+      },
+      {
+        "id": "doc_004",
+        "type": "evaluation",
+        "name": "Evaluación de Desempeño 2024",
+        "fileName": "evaluacion_maria_gonzalez_2024.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 456720,
+        "uploadDate": "2024-12-15",
+        "url": "/documents/employees/emp_001_2025_001/evaluacion_maria_gonzalez_2024.pdf",
+        "isConfidential": true
+      }
+    ],
+    
+    "createdAt": "2023-03-15T08:00:00Z",
+    "updatedAt": "2025-06-28T10:30:00Z",
+    "createdBy": "admin_001",
+    "updatedBy": "hr_manager_002",
+    
+    "tags": ["tech-lead", "high-performer", "mentor", "full-stack", "cloud"],
+    "customFields": {
+      "preferredWorkingHours": "flexible",
+      "remoteWorkPreference": "hybrid",
+      "specialProjects": ["microservices-migration", "team-mentoring"],
+      "techStack": ["React", "TypeScript", "Node.js", "AWS", "Docker"],
+      "personalInterests": ["photography", "hiking", "tech-conferences"],
+      "volunteerWork": "Mentora en programas de mujeres en tecnología"
+    },
+    
+    "productivity": {
+      "punctualityScore": 95,
+      "attendanceRate": 98.5,
+      "projectsCompleted": 12,
+      "trainingHoursCompleted": 45,
+      "feedbackScore": 4.8
+    },
+    
+    "achievements": [
+      {
+        "id": "ach_001",
+        "title": "Empleada del Año 2024",
+        "description": "Reconocimiento por excelencia en liderazgo técnico y resultados excepcionales",
+        "date": "2024-12-20",
+        "category": "performance",
+        "awardedBy": "CEO"
+      },
+      {
+        "id": "ach_002",
+        "title": "Innovación en Arquitectura de Software",
+        "description": "Propuesta e implementación de nueva arquitectura que redujo tiempos de desarrollo en 40%",
+        "date": "2024-08-15",
+        "category": "innovation",
+        "awardedBy": "CTO"
+      },
+      {
+        "id": "ach_003",
+        "title": "Mejor Mentor del Equipo",
+        "description": "Reconocimiento por mentoría excepcional a desarrolladores junior",
+        "date": "2024-06-10",
+        "category": "leadership",
+        "awardedBy": "Equipo de Desarrollo"
+      },
+      {
+        "id": "ach_004",
+        "title": "Certificación AWS Solutions Architect",
+        "description": "Obtención de certificación profesional en arquitectura de soluciones en la nube",
+        "date": "2023-06-15",
+        "category": "performance",
+        "awardedBy": "AWS"
+      }
+    ]
+  },
+  {
+    "id": "emp_002_2025_002",
+    "employeeNumber": "EMP-2025-002",
+    "firstName": "Carlos",
+    "lastName": "Rodríguez Martínez",
+    "fullName": "Carlos Rodríguez Martínez",
+    "email": "carlos.rodriguez@solupyme.com",
+    "phone": "+57 301 234 5678",
+    "alternativePhone": "+57 1 345 6789",
+    "personalEmail": "carlos.rodriguez.personal@outlook.com",
+    
+    "position": "Director de Tecnología",
+    "department": "Tecnología",
+    "directManager": null,
+    "team": "Liderazgo Ejecutivo",
+    "workLocation": "Bogotá - Oficina Principal",
+    "employmentType": "full-time",
+    "workSchedule": "Lunes a Viernes 8:00 AM - 6:00 PM",
+    
+    "hireDate": "2020-01-15T08:00:00Z",
+    "startDate": "2020-01-15T08:00:00Z",
+    "probationEndDate": "2020-04-15T08:00:00Z",
+    "nextReviewDate": "2025-01-15T08:00:00Z",
+    
+    "salary": 15000000,
+    "currency": "COP",
+    "salaryType": "monthly",
+    "payrollFrequency": "monthly",
+    "bankAccount": "98765432109",
+    "bankName": "Bancolombia",
+    
+    "status": "active",
+    "employeeLevel": "director",
+    "employeeType": "employee",
+    
+    "dateOfBirth": "1985-03-20",
+    "nationalId": "9876543210",
+    "passport": "CC9876543",
+    "nationality": "Colombiana",
+    "maritalStatus": "married",
+    "gender": "male",
+    
+    "homeAddress": {
+      "street": "Calle 85 #12-34, Apartamento 501",
+      "city": "Bogotá",
+      "state": "Cundinamarca",
+      "postalCode": "110221",
+      "country": "Colombia"
+    },
+    
+    "emergencyContacts": [
+      {
+        "id": "emergency_003",
+        "name": "Ana María Martínez",
+        "relationship": "Esposa",
+        "phone": "+57 302 123 4567",
+        "email": "ana.martinez@gmail.com",
+        "address": "Calle 85 #12-34, Apartamento 501, Bogotá",
+        "isPrimary": true
+      }
+    ],
+    
+    "skills": [
+      {
+        "name": "Liderazgo Estratégico",
+        "level": "expert",
+        "category": "Management",
+        "yearsOfExperience": 8
+      },
+      {
+        "name": "Arquitectura de Software",
+        "level": "expert",
+        "category": "Technical",
+        "yearsOfExperience": 12
+      },
+      {
+        "name": "Transformación Digital",
+        "level": "expert",
+        "category": "Business",
+        "yearsOfExperience": 6
+      }
+    ],
+    
+    "vacationDaysTotal": 30,
+    "vacationDaysUsed": 15,
+    "vacationDaysRemaining": 15,
+    "sickDaysUsed": 1,
+    "personalDaysUsed": 0,
+    
+    "performanceRating": "excellent",
+    "lastPerformanceReview": "2024-12-01",
+    "careerGoals": "Liderar la transformación digital completa de la empresa y establecer SoluPYME como referente tecnológico en el mercado colombiano.",
+    
+    "createdAt": "2020-01-15T08:00:00Z",
+    "updatedAt": "2025-06-28T10:30:00Z",
+    "createdBy": "admin_001",
+    "updatedBy": "hr_manager_001"
+  },
+  {
+    "id": "emp_003_2025_003",
+    "employeeNumber": "EMP-2025-003",
+    "firstName": "Laura",
+    "lastName": "Sánchez López",
+    "fullName": "Laura Sánchez López",
+    "email": "laura.sanchez@solupyme.com",
+    "phone": "+57 315 123 4567",
+    "alternativePhone": "+57 1 456 7890",
+    "personalEmail": "laura.sanchez.personal@hotmail.com",
+    
+    "position": "Analista de Recursos Humanos",
+    "department": "Recursos Humanos",
+    "directManager": "emp_004_2025_004",
+    "team": "Gestión de Talento",
+    "workLocation": "Bogotá - Oficina Principal",
+    "employmentType": "full-time",
+    "workSchedule": "Lunes a Viernes 8:00 AM - 5:00 PM",
+    
+    "hireDate": "2022-06-01T08:00:00Z",
+    "startDate": "2022-06-01T08:00:00Z",
+    "probationEndDate": "2022-09-01T08:00:00Z",
+    "nextReviewDate": "2025-12-01T08:00:00Z",
+    
+    "salary": 4500000,
+    "currency": "COP",
+    "salaryType": "monthly",
+    "payrollFrequency": "monthly",
+    "bankAccount": "55667788990",
+    "bankName": "Banco de Bogotá",
+    
+    "status": "active",
+    "employeeLevel": "mid",
+    "employeeType": "employee",
+    
+    "dateOfBirth": "1992-11-10",
+    "nationalId": "5566778899",
+    "passport": "CC5566778",
+    "nationality": "Colombiana",
+    "maritalStatus": "single",
+    "gender": "female",
+    
+    "homeAddress": {
+      "street": "Carrera 30 #67-89, Casa 23",
+      "city": "Bogotá",
+      "state": "Cundinamarca",
+      "postalCode": "110231",
+      "country": "Colombia"
+    },
+    
+    "emergencyContacts": [
+      {
+        "id": "emergency_004",
+        "name": "Patricia López",
+        "relationship": "Madre",
+        "phone": "+57 320 234 5678",
+        "email": "patricia.lopez@gmail.com",
+        "address": "Carrera 30 #67-89, Casa 23, Bogotá",
+        "isPrimary": true
+      }
+    ],
+    
+    "skills": [
+      {
+        "name": "Gestión de Talento",
+        "level": "advanced",
+        "category": "HR",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Reclutamiento",
+        "level": "advanced",
+        "category": "HR",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Excel Avanzado",
+        "level": "advanced",
+        "category": "Technical",
+        "yearsOfExperience": 4
+      }
+    ],
+    
+    "vacationDaysTotal": 30,
+    "vacationDaysUsed": 8,
+    "vacationDaysRemaining": 22,
+    "sickDaysUsed": 2,
+    "personalDaysUsed": 1,
+    
+    "performanceRating": "good",
+    "lastPerformanceReview": "2024-11-15",
+    "careerGoals": "Especializarse en desarrollo organizacional y liderar proyectos de cultura empresarial.",
+    
+    "createdAt": "2022-06-01T08:00:00Z",
+    "updatedAt": "2025-06-28T10:30:00Z",
+    "createdBy": "hr_manager_001",
+    "updatedBy": "hr_manager_001"
+  }
+]

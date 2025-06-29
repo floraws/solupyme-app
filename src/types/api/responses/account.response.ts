@@ -9,16 +9,15 @@ export interface AccountResponse {
 
     countryId: string;
     countryName?: string;
-    stateId?: string;
+    stateId: string;
     stateName?: string;
-    cityId?: string;
+    cityId: string;
     cityName?: string;
 
-    identifierType?: string;
     organizationType?: string;
-    identificationNumber?: string;
+    identifierType?: string;
+    identificationNumber?: number;
 
     contactName?: string;
-    contactEmail?: string;
-    contactPhone?: string;
+
 }

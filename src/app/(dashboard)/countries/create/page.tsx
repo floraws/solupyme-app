@@ -6,7 +6,6 @@ import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { useCSRF } from "@/hooks/useCSRF";
 import { fetchWrapper } from "@/helpers/fetch-wrapper";
-import Link from "next/link";
 import {
     Breadcrumb,
     PageHeader,
