@@ -1,0 +1,686 @@
+[
+  {
+    "id": "prod_001_2025_001",
+    "sku": "LAPTOP-DEL-001",
+    "barcode": "7891234567890",
+    "productCode": "DEL-INSP-15-001",
+    
+    "name": "Laptop Dell Inspiron 15 3000",
+    "description": "Laptop Dell Inspiron 15 3000 con procesador Intel Core i5 de 11ª generación, 8GB de RAM, 256GB SSD, pantalla de 15.6 pulgadas Full HD, ideal para trabajo y estudio.",
+    "shortDescription": "Laptop Dell Inspiron 15 con Intel Core i5, 8GB RAM, 256GB SSD",
+    "specifications": "Procesador: Intel Core i5-1135G7 (11ª Gen), RAM: 8GB DDR4, Almacenamiento: 256GB SSD PCIe NVMe, Pantalla: 15.6\" Full HD (1920x1080) LED, Gráficos: Intel Iris Xe, Conectividad: Wi-Fi 802.11ac, Bluetooth 5.1, Puertos: 2x USB 3.2, 1x USB 2.0, HDMI, lector de tarjetas SD, Sistema Operativo: Windows 11 Home",
+    
+    "category": "Tecnología",
+    "subcategory": "Computadores",
+    "brand": "Dell",
+    "manufacturer": "Dell Technologies",
+    "model": "Inspiron 15 3000",
+    
+    "price": 2499000,
+    "currency": "COP",
+    "costPrice": 1899000,
+    "wholesalePrice": 2299000,
+    "retailPrice": 2499000,
+    "discountPrice": 2199000,
+    "taxRate": 19,
+    
+    "stock": 25,
+    "minStock": 5,
+    "maxStock": 50,
+    "reorderPoint": 10,
+    "stockLocation": "Almacén A - Estante 3B",
+    
+    "weight": 1950,
+    "dimensions": {
+      "length": 35.8,
+      "width": 23.6,
+      "height": 1.99
+    },
+    
+    "status": "active",
+    "available": true,
+    "visibility": "public",
+    
+    "images": [
+      {
+        "id": "img_001",
+        "url": "/products/dell-inspiron-15/main.jpg",
+        "altText": "Dell Inspiron 15 3000 - Vista principal",
+        "isPrimary": true,
+        "order": 1
+      },
+      {
+        "id": "img_002",
+        "url": "/products/dell-inspiron-15/side.jpg",
+        "altText": "Dell Inspiron 15 3000 - Vista lateral",
+        "isPrimary": false,
+        "order": 2
+      },
+      {
+        "id": "img_003",
+        "url": "/products/dell-inspiron-15/keyboard.jpg",
+        "altText": "Dell Inspiron 15 3000 - Teclado",
+        "isPrimary": false,
+        "order": 3
+      }
+    ],
+    
+    "supplierId": "bp_001_2025_001",
+    "alternativeSuppliers": ["bp_002_2025_002", "bp_003_2025_003"],
+    "relatedProducts": ["prod_002_2025_002", "prod_003_2025_003"],
+    "bundleProducts": [
+      {
+        "productId": "prod_015_2025_015",
+        "quantity": 1
+      },
+      {
+        "productId": "prod_016_2025_016",
+        "quantity": 1
+      }
+    ],
+    
+    "salesCount": 45,
+    "revenue": 112455000,
+    "averageRating": 4.3,
+    "reviewCount": 28,
+    
+    "isTaxable": true,
+    "allowBackorders": false,
+    "trackInventory": true,
+    "requiresShipping": true,
+    "isDigital": false,
+    "downloadable": false,
+    
+    "warranty": {
+      "duration": 12,
+      "type": "manufacturer",
+      "terms": "Garantía del fabricante por 12 meses que cubre defectos de fabricación y fallas técnicas. No cubre daños por mal uso o accidentes."
+    },
+    
+    "tags": ["laptop", "dell", "inspiron", "estudiantes", "trabajo", "portatil"],
+    "keywords": ["laptop", "computador", "dell", "inspiron", "core i5", "windows"],
+    "customFields": {
+      "targetAudience": "estudiantes-profesionales",
+      "energyRating": "A+",
+      "noiseLevel": "bajo"
+    },
+    
+    "seoTitle": "Laptop Dell Inspiron 15 3000 - Core i5, 8GB RAM, 256GB SSD",
+    "seoDescription": "Compra la Laptop Dell Inspiron 15 3000 con Intel Core i5, 8GB RAM y 256GB SSD. Ideal para trabajo y estudio. Envío gratis en Colombia.",
+    "seoKeywords": ["laptop dell", "inspiron 15", "core i5", "computador portatil"],
+    "slug": "laptop-dell-inspiron-15-3000-core-i5",
+    
+    "createdAt": "2025-01-15T08:00:00Z",
+    "updatedAt": "2025-06-28T14:30:00Z",
+    "publishedAt": "2025-01-20T10:00:00Z",
+    "lastSoldAt": "2025-06-27T16:45:00Z",
+    "lastRestockedAt": "2025-06-25T09:00:00Z",
+    
+    "createdBy": "admin_001",
+    "updatedBy": "inventory_manager_001",
+    
+    "priceHistory": [
+      {
+        "price": 2699000,
+        "effectiveDate": "2025-01-15T08:00:00Z",
+        "reason": "Precio inicial de lanzamiento",
+        "changedBy": "admin_001"
+      },
+      {
+        "price": 2499000,
+        "effectiveDate": "2025-03-01T08:00:00Z",
+        "reason": "Reducción de precio por competitividad",
+        "changedBy": "pricing_manager_001"
+      }
+    ],
+    
+    "variations": [
+      {
+        "id": "var_001",
+        "name": "Color",
+        "values": ["Negro", "Plateado"]
+      },
+      {
+        "id": "var_002",
+        "name": "Configuración RAM",
+        "values": ["8GB", "16GB"]
+      }
+    ],
+    
+    "region": "Colombia",
+    "countryOfOrigin": "China",
+    "hsCode": "8471.30.00",
+    
+    "shippingClass": "electronico-mediano",
+    "shippingWeight": 2200,
+    "shippingDimensions": {
+      "length": 40,
+      "width": 30,
+      "height": 8
+    },
+    
+    "popularity": 85,
+    "profitMargin": 24.1,
+    "turnoverRate": 2.8,
+    
+    "activePromotions": [
+      {
+        "id": "promo_001",
+        "name": "Descuento de Temporada",
+        "discountType": "percentage",
+        "discountValue": 12,
+        "startDate": "2025-06-01T00:00:00Z",
+        "endDate": "2025-07-31T23:59:59Z"
+      }
+    ],
+    
+    "alerts": [
+      {
+        "type": "low-stock",
+        "message": "Stock bajo: quedan 25 unidades",
+        "severity": "medium",
+        "createdAt": "2025-06-28T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "prod_002_2025_002",
+    "sku": "MOUSE-LOG-001",
+    "barcode": "7891234567891",
+    "productCode": "LOG-MX-MASTER-001",
+    
+    "name": "Mouse Logitech MX Master 3",
+    "description": "Mouse inalámbrico Logitech MX Master 3 con tecnología Darkfield de alta precisión, scroll electromagnético MagSpeed, hasta 70 días de batería y conectividad multidispositivo.",
+    "shortDescription": "Mouse inalámbrico Logitech MX Master 3 de alta precisión",
+    "specifications": "Sensor: Darkfield de alta precisión 4000 DPI, Conectividad: USB-C, Bluetooth, Receptor Unifying, Batería: Hasta 70 días con carga rápida, Botones: 7 botones programables, Scroll: Electromagnético MagSpeed, Compatibilidad: Windows, macOS, Linux, iPadOS",
+    
+    "category": "Tecnología",
+    "subcategory": "Accesorios",
+    "brand": "Logitech",
+    "manufacturer": "Logitech International",
+    "model": "MX Master 3",
+    
+    "price": 359000,
+    "currency": "COP",
+    "costPrice": 259000,
+    "wholesalePrice": 329000,
+    "retailPrice": 359000,
+    "discountPrice": 319000,
+    "taxRate": 19,
+    
+    "stock": 67,
+    "minStock": 15,
+    "maxStock": 100,
+    "reorderPoint": 25,
+    "stockLocation": "Almacén B - Estante 1A",
+    
+    "weight": 141,
+    "dimensions": {
+      "length": 12.4,
+      "width": 8.4,
+      "height": 5.1
+    },
+    
+    "status": "active",
+    "available": true,
+    "visibility": "public",
+    
+    "images": [
+      {
+        "id": "img_004",
+        "url": "/products/logitech-mx-master-3/main.jpg",
+        "altText": "Logitech MX Master 3 - Vista principal",
+        "isPrimary": true,
+        "order": 1
+      },
+      {
+        "id": "img_005",
+        "url": "/products/logitech-mx-master-3/side.jpg",
+        "altText": "Logitech MX Master 3 - Vista lateral",
+        "isPrimary": false,
+        "order": 2
+      }
+    ],
+    
+    "supplierId": "bp_004_2025_004",
+    "alternativeSuppliers": ["bp_005_2025_005"],
+    "relatedProducts": ["prod_001_2025_001", "prod_003_2025_003"],
+    
+    "salesCount": 123,
+    "revenue": 44157000,
+    "averageRating": 4.7,
+    "reviewCount": 89,
+    
+    "isTaxable": true,
+    "allowBackorders": true,
+    "trackInventory": true,
+    "requiresShipping": true,
+    "isDigital": false,
+    "downloadable": false,
+    
+    "warranty": {
+      "duration": 24,
+      "type": "manufacturer",
+      "terms": "Garantía del fabricante por 24 meses que cubre defectos de fabricación."
+    },
+    
+    "tags": ["mouse", "logitech", "inalambrico", "precision", "productividad"],
+    "keywords": ["mouse", "logitech", "mx master", "inalambrico", "bluetooth"],
+    
+    "seoTitle": "Mouse Logitech MX Master 3 Inalámbrico - Alta Precisión",
+    "seoDescription": "Mouse Logitech MX Master 3 inalámbrico con sensor Darkfield 4000 DPI y scroll electromagnético. Perfecto para profesionales.",
+    "seoKeywords": ["mouse logitech", "mx master 3", "mouse inalambrico", "alta precision"],
+    "slug": "mouse-logitech-mx-master-3-inalambrico",
+    
+    "createdAt": "2025-02-01T08:00:00Z",
+    "updatedAt": "2025-06-28T14:30:00Z",
+    "publishedAt": "2025-02-05T10:00:00Z",
+    "lastSoldAt": "2025-06-28T12:30:00Z",
+    "lastRestockedAt": "2025-06-20T14:00:00Z",
+    
+    "createdBy": "admin_001",
+    "updatedBy": "inventory_manager_001",
+    
+    "variations": [
+      {
+        "id": "var_003",
+        "name": "Color",
+        "values": ["Grafito", "Blanco", "Rosa"]
+      }
+    ],
+    
+    "region": "Colombia",
+    "countryOfOrigin": "China",
+    "hsCode": "8471.60.00",
+    
+    "shippingClass": "accesorio-pequeno",
+    "shippingWeight": 200,
+    "shippingDimensions": {
+      "length": 15,
+      "width": 12,
+      "height": 8
+    },
+    
+    "popularity": 92,
+    "profitMargin": 27.9,
+    "turnoverRate": 4.2
+  },
+  {
+    "id": "prod_003_2025_003",
+    "sku": "MONITOR-ASUS-001",
+    "barcode": "7891234567892",
+    "productCode": "ASUS-VA24-001",
+    
+    "name": "Monitor ASUS VA24EHE 24 Pulgadas Full HD",
+    "description": "Monitor ASUS VA24EHE de 24 pulgadas con resolución Full HD 1920x1080, panel IPS, tiempo de respuesta de 5ms, conectividad HDMI y VGA, diseño sin marcos para configuraciones multiples.",
+    "shortDescription": "Monitor ASUS 24\" Full HD IPS con conectividad HDMI/VGA",
+    "specifications": "Tamaño: 24 pulgadas, Resolución: 1920x1080 Full HD, Panel: IPS, Tiempo de respuesta: 5ms, Frecuencia: 75Hz, Brillo: 250 cd/m², Contraste: 1000:1, Conectividad: HDMI, VGA, Montaje VESA: 100x100mm",
+    
+    "category": "Tecnología",
+    "subcategory": "Monitores",
+    "brand": "ASUS",
+    "manufacturer": "ASUSTeK Computer Inc.",
+    "model": "VA24EHE",
+    
+    "price": 549000,
+    "currency": "COP",
+    "costPrice": 399000,
+    "wholesalePrice": 509000,
+    "retailPrice": 549000,
+    "discountPrice": 499000,
+    "taxRate": 19,
+    
+    "stock": 18,
+    "minStock": 8,
+    "maxStock": 40,
+    "reorderPoint": 12,
+    "stockLocation": "Almacén A - Estante 2C",
+    
+    "weight": 3200,
+    "dimensions": {
+      "length": 53.9,
+      "width": 32.1,
+      "height": 4.2
+    },
+    
+    "status": "active",
+    "available": true,
+    "visibility": "public",
+    
+    "images": [
+      {
+        "id": "img_006",
+        "url": "/products/asus-va24ehe/main.jpg",
+        "altText": "Monitor ASUS VA24EHE - Vista frontal",
+        "isPrimary": true,
+        "order": 1
+      },
+      {
+        "id": "img_007",
+        "url": "/products/asus-va24ehe/side.jpg",
+        "altText": "Monitor ASUS VA24EHE - Vista lateral",
+        "isPrimary": false,
+        "order": 2
+      },
+      {
+        "id": "img_008",
+        "url": "/products/asus-va24ehe/ports.jpg",
+        "altText": "Monitor ASUS VA24EHE - Puertos de conexión",
+        "isPrimary": false,
+        "order": 3
+      }
+    ],
+    
+    "supplierId": "bp_006_2025_006",
+    "alternativeSuppliers": ["bp_007_2025_007"],
+    "relatedProducts": ["prod_001_2025_001", "prod_002_2025_002"],
+    "bundleProducts": [
+      {
+        "productId": "prod_017_2025_017",
+        "quantity": 1
+      }
+    ],
+    
+    "salesCount": 34,
+    "revenue": 18666000,
+    "averageRating": 4.2,
+    "reviewCount": 21,
+    
+    "isTaxable": true,
+    "allowBackorders": false,
+    "trackInventory": true,
+    "requiresShipping": true,
+    "isDigital": false,
+    "downloadable": false,
+    
+    "warranty": {
+      "duration": 36,
+      "type": "manufacturer",
+      "terms": "Garantía del fabricante por 36 meses que cubre defectos de fabricación y píxeles muertos."
+    },
+    
+    "tags": ["monitor", "asus", "24 pulgadas", "full hd", "ips", "oficina"],
+    "keywords": ["monitor", "asus", "24 pulgadas", "full hd", "ips", "hdmi"],
+    
+    "seoTitle": "Monitor ASUS VA24EHE 24\" Full HD IPS - Conectividad HDMI/VGA",
+    "seoDescription": "Monitor ASUS VA24EHE de 24 pulgadas Full HD con panel IPS y conectividad HDMI/VGA. Ideal para oficina y trabajo profesional.",
+    "seoKeywords": ["monitor asus", "24 pulgadas", "full hd", "ips", "hdmi"],
+    "slug": "monitor-asus-va24ehe-24-pulgadas-full-hd",
+    
+    "createdAt": "2025-01-20T08:00:00Z",
+    "updatedAt": "2025-06-28T14:30:00Z",
+    "publishedAt": "2025-01-25T10:00:00Z",
+    "lastSoldAt": "2025-06-26T11:15:00Z",
+    "lastRestockedAt": "2025-06-22T16:30:00Z",
+    
+    "createdBy": "admin_001",
+    "updatedBy": "inventory_manager_001",
+    
+    "region": "Colombia",
+    "countryOfOrigin": "China",
+    "hsCode": "8528.72.00",
+    
+    "shippingClass": "electronico-grande",
+    "shippingWeight": 4500,
+    "shippingDimensions": {
+      "length": 60,
+      "width": 40,
+      "height": 15
+    },
+    
+    "popularity": 71,
+    "profitMargin": 27.3,
+    "turnoverRate": 2.1,
+    
+    "alerts": [
+      {
+        "type": "low-stock",
+        "message": "Stock bajo: quedan 18 unidades",
+        "severity": "medium",
+        "createdAt": "2025-06-28T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "prod_004_2025_004",
+    "sku": "SOFTWARE-OFFICE-001",
+    "barcode": null,
+    "productCode": "MSFT-O365-001",
+    
+    "name": "Microsoft Office 365 Personal - Suscripción Anual",
+    "description": "Suscripción anual a Microsoft Office 365 Personal que incluye Word, Excel, PowerPoint, Outlook, OneNote, Publisher y Access. 1TB de almacenamiento en OneDrive y funciones premium en todas las aplicaciones.",
+    "shortDescription": "Suscripción anual Microsoft Office 365 Personal con 1TB OneDrive",
+    "specifications": "Aplicaciones incluidas: Word, Excel, PowerPoint, Outlook, OneNote, Publisher, Access. Almacenamiento: 1TB OneDrive. Dispositivos: Hasta 5 dispositivos (PC, Mac, tablets, smartphones). Actualizaciones automáticas. Soporte técnico incluido.",
+    
+    "category": "Software",
+    "subcategory": "Productividad",
+    "brand": "Microsoft",
+    "manufacturer": "Microsoft Corporation",
+    "model": "Office 365 Personal",
+    
+    "price": 269000,
+    "currency": "COP",
+    "costPrice": 189000,
+    "wholesalePrice": 249000,
+    "retailPrice": 269000,
+    "discountPrice": 229000,
+    "taxRate": 19,
+    
+    "stock": 999,
+    "minStock": 50,
+    "maxStock": 9999,
+    "reorderPoint": 100,
+    "stockLocation": "Digital - Licencias",
+    
+    "weight": 0,
+    "dimensions": {
+      "length": 0,
+      "width": 0,
+      "height": 0
+    },
+    
+    "status": "active",
+    "available": true,
+    "visibility": "public",
+    
+    "images": [
+      {
+        "id": "img_009",
+        "url": "/products/office-365/main.jpg",
+        "altText": "Microsoft Office 365 Personal",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    
+    "supplierId": "bp_008_2025_008",
+    "relatedProducts": ["prod_001_2025_001"],
+    
+    "salesCount": 187,
+    "revenue": 50303000,
+    "averageRating": 4.6,
+    "reviewCount": 143,
+    
+    "isTaxable": true,
+    "allowBackorders": true,
+    "trackInventory": false,
+    "requiresShipping": false,
+    "isDigital": true,
+    "downloadable": true,
+    
+    "warranty": {
+      "duration": 12,
+      "type": "store",
+      "terms": "Soporte técnico incluido durante la vigencia de la suscripción."
+    },
+    
+    "tags": ["software", "microsoft", "office", "productividad", "suscripcion", "digital"],
+    "keywords": ["office 365", "microsoft office", "word", "excel", "powerpoint", "onedrive"],
+    
+    "seoTitle": "Microsoft Office 365 Personal - Suscripción Anual con 1TB OneDrive",
+    "seoDescription": "Suscripción Microsoft Office 365 Personal con Word, Excel, PowerPoint y 1TB OneDrive. Licencia digital para 5 dispositivos.",
+    "seoKeywords": ["office 365", "microsoft office", "suscripcion office", "word excel"],
+    "slug": "microsoft-office-365-personal-suscripcion-anual",
+    
+    "createdAt": "2025-01-10T08:00:00Z",
+    "updatedAt": "2025-06-28T14:30:00Z",
+    "publishedAt": "2025-01-15T10:00:00Z",
+    "lastSoldAt": "2025-06-28T15:20:00Z",
+    
+    "createdBy": "admin_001",
+    "updatedBy": "software_manager_001",
+    
+    "region": "Colombia",
+    "countryOfOrigin": "Estados Unidos",
+    
+    "shippingClass": "digital",
+    "shippingWeight": 0,
+    "shippingDimensions": {
+      "length": 0,
+      "width": 0,
+      "height": 0
+    },
+    
+    "popularity": 94,
+    "profitMargin": 29.7,
+    "turnoverRate": 8.5,
+    
+    "activePromotions": [
+      {
+        "id": "promo_002",
+        "name": "Descuento Software Digital",
+        "discountType": "percentage",
+        "discountValue": 15,
+        "startDate": "2025-06-15T00:00:00Z",
+        "endDate": "2025-07-15T23:59:59Z"
+      }
+    ]
+  },
+  {
+    "id": "prod_005_2025_005",
+    "sku": "CABLE-HDMI-001",
+    "barcode": "7891234567893",
+    "productCode": "CBL-HDMI-2M-001",
+    
+    "name": "Cable HDMI 4K Ultra HD - 2 Metros",
+    "description": "Cable HDMI 2.0 de alta velocidad con soporte para resolución 4K Ultra HD a 60Hz, HDR, 3D, Ethernet y Audio Return Channel (ARC). Compatible con todos los dispositivos HDMI.",
+    "shortDescription": "Cable HDMI 4K 2.0 de 2 metros con soporte HDR",
+    "specifications": "Versión: HDMI 2.0, Longitud: 2 metros, Resolución máxima: 4K UHD 3840x2160 @ 60Hz, Soporte: HDR, 3D, Ethernet, ARC, Ancho de banda: 18 Gbps, Conectores: Chapados en oro, Certificación: Premium High Speed",
+    
+    "category": "Tecnología",
+    "subcategory": "Cables y Conectores",
+    "brand": "TechConnect",
+    "manufacturer": "TechConnect Solutions",
+    "model": "TC-HDMI-2M",
+    
+    "price": 45000,
+    "currency": "COP",
+    "costPrice": 25000,
+    "wholesalePrice": 39000,
+    "retailPrice": 45000,
+    "discountPrice": 35000,
+    "taxRate": 19,
+    
+    "stock": 156,
+    "minStock": 50,
+    "maxStock": 300,
+    "reorderPoint": 75,
+    "stockLocation": "Almacén B - Estante 4D",
+    
+    "weight": 180,
+    "dimensions": {
+      "length": 200,
+      "width": 1.2,
+      "height": 1.2
+    },
+    
+    "status": "active",
+    "available": true,
+    "visibility": "public",
+    
+    "images": [
+      {
+        "id": "img_010",
+        "url": "/products/cable-hdmi/main.jpg",
+        "altText": "Cable HDMI 4K - 2 metros",
+        "isPrimary": true,
+        "order": 1
+      },
+      {
+        "id": "img_011",
+        "url": "/products/cable-hdmi/connector.jpg",
+        "altText": "Cable HDMI - Conectores chapados en oro",
+        "isPrimary": false,
+        "order": 2
+      }
+    ],
+    
+    "supplierId": "bp_009_2025_009",
+    "alternativeSuppliers": ["bp_010_2025_010"],
+    "relatedProducts": ["prod_003_2025_003", "prod_001_2025_001"],
+    
+    "salesCount": 289,
+    "revenue": 13005000,
+    "averageRating": 4.1,
+    "reviewCount": 167,
+    
+    "isTaxable": true,
+    "allowBackorders": true,
+    "trackInventory": true,
+    "requiresShipping": true,
+    "isDigital": false,
+    "downloadable": false,
+    
+    "warranty": {
+      "duration": 12,
+      "type": "store",
+      "terms": "Garantía de 12 meses por defectos de fabricación."
+    },
+    
+    "tags": ["cable", "hdmi", "4k", "ultra hd", "hdr", "audio", "video"],
+    "keywords": ["cable hdmi", "hdmi 4k", "cable 4k", "ultra hd", "hdr"],
+    
+    "seoTitle": "Cable HDMI 4K Ultra HD 2 Metros - Soporte HDR y ARC",
+    "seoDescription": "Cable HDMI 4K 2.0 de 2 metros con soporte para Ultra HD, HDR y ARC. Conectores chapados en oro y alta calidad.",
+    "seoKeywords": ["cable hdmi", "hdmi 4k", "cable ultra hd", "hdmi 2 metros"],
+    "slug": "cable-hdmi-4k-ultra-hd-2-metros",
+    
+    "createdAt": "2025-02-15T08:00:00Z",
+    "updatedAt": "2025-06-28T14:30:00Z",
+    "publishedAt": "2025-02-20T10:00:00Z",
+    "lastSoldAt": "2025-06-28T13:45:00Z",
+    "lastRestockedAt": "2025-06-26T11:00:00Z",
+    
+    "createdBy": "admin_001",
+    "updatedBy": "inventory_manager_001",
+    
+    "variations": [
+      {
+        "id": "var_004",
+        "name": "Longitud",
+        "values": ["1 metro", "2 metros", "3 metros", "5 metros"]
+      },
+      {
+        "id": "var_005",
+        "name": "Color",
+        "values": ["Negro", "Blanco"]
+      }
+    ],
+    
+    "region": "Colombia",
+    "countryOfOrigin": "China",
+    "hsCode": "8544.42.00",
+    
+    "shippingClass": "accesorio-pequeno",
+    "shippingWeight": 220,
+    "shippingDimensions": {
+      "length": 25,
+      "width": 15,
+      "height": 3
+    },
+    
+    "popularity": 76,
+    "profitMargin": 44.4,
+    "turnoverRate": 6.2
+  }
+]

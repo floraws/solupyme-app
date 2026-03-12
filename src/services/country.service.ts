@@ -1,8 +1,7 @@
 import { apiUrls } from "@/constants";
 import { fetchWrapper } from "@/helpers";
 import { CountryResponse, CountryRequest } from "@/types/api";
-import { LabelValuePair } from "@/models";
-
+import { LabelValuePair } from "@/types/common";
 export const countryService = {
     getAll,
     getById,

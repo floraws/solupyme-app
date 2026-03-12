@@ -13,3 +13,15 @@ export interface SpringErrorResponse {
   message: string;
   path: string;
 }
+
+export interface LabelValuePair {
+    label: string;
+    value: string;
+}
+export interface PaginatedResponse<T> {
+    content: T[];
+    totalElements: number;
+    totalPages: number;
+    size: number;
+    number: number;
+}

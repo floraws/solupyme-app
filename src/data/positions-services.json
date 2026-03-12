@@ -1,0 +1,492 @@
+[
+  {
+    "id": "pos_svc_001",
+    "name": "Consultor Senior en Transformación Digital",
+    "description": "Lidera proyectos de transformación digital para empresas, implementando soluciones tecnológicas y procesos optimizados",
+    "departmentId": "dept_consulting",
+    "departmentName": "Consultoría",
+    "jobTitle": "Senior Digital Transformation Consultant",
+    "jobLevel": "senior",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-12-01T14:30:00Z",
+    "responsibilities": [
+      "Evaluar procesos empresariales actuales y identificar oportunidades de mejora",
+      "Diseñar estrategias de transformación digital personalizadas",
+      "Liderar equipos multidisciplinarios en proyectos de implementación",
+      "Capacitar a clientes en nuevas tecnologías y procesos",
+      "Realizar seguimiento y medición de resultados de transformación"
+    ],
+    "requirements": [
+      "Título profesional en Ingeniería, Administración o afines",
+      "Mínimo 5 años de experiencia en consultoría empresarial",
+      "Certificaciones en metodologías ágiles (Scrum, Lean)",
+      "Conocimiento en tecnologías cloud y automatización",
+      "Excelentes habilidades de comunicación y liderazgo"
+    ],
+    "salaryRange": {
+      "min": 8000000,
+      "max": 12000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Seguro de salud premium",
+      "Bonos por cumplimiento de objetivos",
+      "Capacitación técnica continua",
+      "Trabajo híbrido",
+      "Viáticos para viajes de trabajo"
+    ],
+    "skills": [
+      "Consultoría empresarial",
+      "Transformación digital",
+      "Gestión de proyectos",
+      "Análisis de procesos",
+      "Liderazgo de equipos"
+    ],
+    "reportsTo": "pos_svc_050",
+    "teamSize": 3,
+    "isRemote": true
+  },
+  {
+    "id": "pos_svc_002",
+    "name": "Asesor de Servicios Financieros",
+    "description": "Brinda asesoría especializada en planificación financiera, inversiones y seguros a clientes corporativos y personas naturales",
+    "departmentId": "dept_financial",
+    "departmentName": "Servicios Financieros",
+    "jobTitle": "Financial Services Advisor",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-02-01T09:00:00Z",
+    "updatedAt": "2024-11-15T16:45:00Z",
+    "responsibilities": [
+      "Evaluar situación financiera de clientes y sus necesidades",
+      "Desarrollar planes de inversión y ahorro personalizados",
+      "Recomendar productos financieros apropiados (seguros, fondos, etc.)",
+      "Realizar seguimiento periódico de carteras de inversión",
+      "Mantener actualización constante sobre mercados financieros"
+    ],
+    "requirements": [
+      "Título en Finanzas, Economía o Administración",
+      "Certificación como asesor financiero",
+      "Mínimo 3 años de experiencia en servicios financieros",
+      "Conocimiento de mercados de capitales",
+      "Licencia para comercialización de productos financieros"
+    ],
+    "salaryRange": {
+      "min": 4500000,
+      "max": 7000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Comisiones por ventas",
+      "Seguro de vida",
+      "Capacitación financiera continua",
+      "Horarios flexibles",
+      "Bonos por cumplimiento de metas"
+    ],
+    "skills": [
+      "Asesoría financiera",
+      "Análisis de inversiones",
+      "Gestión de riesgos",
+      "Atención al cliente",
+      "Negociación"
+    ],
+    "reportsTo": "pos_svc_051",
+    "teamSize": 1,
+    "isRemote": false
+  },
+  {
+    "id": "pos_svc_003",
+    "name": "Especialista en Soporte Técnico Cloud",
+    "description": "Proporciona soporte técnico especializado para servicios en la nube, resuelve incidencias y optimiza infraestructuras cloud",
+    "departmentId": "dept_tech_support",
+    "departmentName": "Soporte Técnico",
+    "jobTitle": "Cloud Technical Support Specialist",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-03-10T11:30:00Z",
+    "updatedAt": "2024-12-10T10:15:00Z",
+    "responsibilities": [
+      "Resolver tickets de soporte técnico relacionados con servicios cloud",
+      "Monitorear infraestructuras cloud y detectar problemas proactivamente",
+      "Implementar soluciones de backup y recuperación de desastres",
+      "Capacitar a usuarios finales en herramientas cloud",
+      "Documentar procedimientos y mejores prácticas"
+    ],
+    "requirements": [
+      "Título técnico o profesional en Sistemas o Ingeniería",
+      "Certificaciones en AWS, Azure o Google Cloud",
+      "Experiencia mínima 2 años en soporte técnico",
+      "Conocimientos en scripting (Python, Bash)",
+      "Inglés técnico intermedio"
+    ],
+    "salaryRange": {
+      "min": 3800000,
+      "max": 6000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Certificaciones técnicas pagadas",
+      "Trabajo remoto",
+      "Horarios flexibles",
+      "Seguro de salud",
+      "Equipos de trabajo actualizados"
+    ],
+    "skills": [
+      "Servicios cloud (AWS/Azure/GCP)",
+      "Scripting y automatización",
+      "Monitoreo de infraestructura",
+      "Resolución de problemas",
+      "Atención al cliente técnico"
+    ],
+    "reportsTo": "pos_svc_052",
+    "teamSize": 1,
+    "isRemote": true
+  },
+  {
+    "id": "pos_svc_004",
+    "name": "Coordinador de Servicios de Limpieza",
+    "description": "Gestiona y coordina servicios de limpieza para clientes corporativos, supervisa equipos de trabajo y garantiza calidad del servicio",
+    "departmentId": "dept_cleaning",
+    "departmentName": "Servicios de Limpieza",
+    "jobTitle": "Cleaning Services Coordinator",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-20T08:00:00Z",
+    "updatedAt": "2024-11-30T17:20:00Z",
+    "responsibilities": [
+      "Coordinar horarios y rutas de equipos de limpieza",
+      "Supervisar calidad del servicio en instalaciones de clientes",
+      "Gestionar inventario de suministros y equipos de limpieza",
+      "Atender reclamos y solicitudes especiales de clientes",
+      "Entrenar nuevo personal en protocolos de limpieza"
+    ],
+    "requirements": [
+      "Bachillerato completo mínimo",
+      "Experiencia mínima 2 años en coordinación de servicios",
+      "Conocimientos en manejo de personal",
+      "Licencia de conducción vigente",
+      "Disponibilidad de horarios flexibles"
+    ],
+    "salaryRange": {
+      "min": 2800000,
+      "max": 4200000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Vehículo de la empresa",
+      "Seguro de salud",
+      "Prima de servicios",
+      "Uniformes incluidos",
+      "Bonos por calidad de servicio"
+    ],
+    "skills": [
+      "Gestión de equipos",
+      "Control de calidad",
+      "Atención al cliente",
+      "Organización y planificación",
+      "Manejo de inventarios"
+    ],
+    "reportsTo": "pos_svc_053",
+    "teamSize": 15,
+    "isRemote": false
+  },
+  {
+    "id": "pos_svc_005",
+    "name": "Consultor en Recursos Humanos",
+    "description": "Brinda consultoría especializada en gestión de talento humano, implementa procesos de selección y desarrollo organizacional",
+    "departmentId": "dept_hr_consulting",
+    "departmentName": "Consultoría en RRHH",
+    "jobTitle": "Human Resources Consultant",
+    "jobLevel": "senior",
+    "employmentType": "contract",
+    "status": "active",
+    "createdAt": "2024-04-05T13:15:00Z",
+    "updatedAt": "2024-12-05T09:45:00Z",
+    "responsibilities": [
+      "Evaluar y rediseñar procesos de gestión humana en empresas cliente",
+      "Implementar sistemas de evaluación de desempeño",
+      "Desarrollar planes de capacitación y desarrollo de competencias",
+      "Realizar diagnósticos de clima organizacional",
+      "Asesorar en temas de legislación laboral y compliance"
+    ],
+    "requirements": [
+      "Título profesional en Psicología, Administración o RRHH",
+      "Mínimo 4 años de experiencia en consultoría en RRHH",
+      "Conocimientos actualizados en legislación laboral",
+      "Certificaciones en herramientas de evaluación psicológica",
+      "Experiencia en diseño organizacional"
+    ],
+    "salaryRange": {
+      "min": 6000000,
+      "max": 9500000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Trabajo por proyectos",
+      "Flexibilidad horaria total",
+      "Capacitación continua",
+      "Seguro profesional",
+      "Bonos por resultados"
+    ],
+    "skills": [
+      "Consultoría en RRHH",
+      "Desarrollo organizacional",
+      "Selección de personal",
+      "Evaluación de desempeño",
+      "Legislación laboral"
+    ],
+    "reportsTo": "pos_svc_054",
+    "teamSize": 2,
+    "isRemote": true
+  },
+  {
+    "id": "pos_svc_006",
+    "name": "Técnico en Mantenimiento Industrial",
+    "description": "Realiza mantenimiento preventivo y correctivo de equipos industriales en instalaciones de clientes del sector manufacturero",
+    "departmentId": "dept_maintenance",
+    "departmentName": "Mantenimiento Industrial",
+    "jobTitle": "Industrial Maintenance Technician",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-02-15T07:30:00Z",
+    "updatedAt": "2024-11-20T15:10:00Z",
+    "responsibilities": [
+      "Ejecutar rutinas de mantenimiento preventivo programado",
+      "Diagnosticar y reparar fallas en equipos industriales",
+      "Mantener registros detallados de mantenimientos realizados",
+      "Coordinar con proveedores para suministro de repuestos",
+      "Cumplir con protocolos de seguridad industrial"
+    ],
+    "requirements": [
+      "Técnico en Mecánica Industrial, Eléctrica o Electrónica",
+      "Mínimo 3 años de experiencia en mantenimiento industrial",
+      "Conocimientos en sistemas hidráulicos y neumáticos",
+      "Certificaciones en seguridad industrial",
+      "Disponibilidad para trabajo en campo"
+    ],
+    "salaryRange": {
+      "min": 3200000,
+      "max": 5000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Seguro de riesgos laborales premium",
+      "Herramientas de trabajo incluidas",
+      "Capacitación técnica continua",
+      "Transporte a sitios de trabajo",
+      "Bonos por disponibilidad"
+    ],
+    "skills": [
+      "Mantenimiento industrial",
+      "Sistemas hidráulicos",
+      "Sistemas neumáticos",
+      "Seguridad industrial",
+      "Diagnóstico de fallas"
+    ],
+    "reportsTo": "pos_svc_055",
+    "teamSize": 1,
+    "isRemote": false
+  },
+  {
+    "id": "pos_svc_007",
+    "name": "Gestor de Cuentas Clave",
+    "description": "Gestiona relaciones con clientes estratégicos, desarrolla nuevas oportunidades de negocio y asegura la satisfacción del cliente",
+    "departmentId": "dept_account_mgmt",
+    "departmentName": "Gestión de Cuentas",
+    "jobTitle": "Key Account Manager",
+    "jobLevel": "senior",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-03-01T10:45:00Z",
+    "updatedAt": "2024-12-15T11:20:00Z",
+    "responsibilities": [
+      "Mantener y desarrollar relaciones con clientes estratégicos",
+      "Identificar oportunidades de crecimiento en cuentas existentes",
+      "Negociar contratos y renovaciones de servicios",
+      "Coordinar equipos internos para entrega de servicios",
+      "Monitorear satisfacción del cliente y resolver escalamientos"
+    ],
+    "requirements": [
+      "Título profesional en Administración, Ingeniería o afines",
+      "Mínimo 5 años de experiencia en gestión de cuentas B2B",
+      "Experiencia comprobada en ventas de servicios",
+      "Excelentes habilidades de negociación",
+      "Inglés conversacional"
+    ],
+    "salaryRange": {
+      "min": 6500000,
+      "max": 10000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Comisiones por crecimiento de cuentas",
+      "Vehículo de la empresa",
+      "Seguro de salud premium",
+      "Viáticos para visitas de clientes",
+      "Bonos por retención de clientes"
+    ],
+    "skills": [
+      "Gestión de cuentas clave",
+      "Desarrollo de negocios",
+      "Negociación comercial",
+      "Relaciones cliente-empresa",
+      "Análisis de oportunidades"
+    ],
+    "reportsTo": "pos_svc_056",
+    "teamSize": 2,
+    "isRemote": false
+  },
+  {
+    "id": "pos_svc_008",
+    "name": "Especialista en Seguridad y Vigilancia",
+    "description": "Coordina servicios de seguridad privada, supervisa personal de vigilancia y implementa protocolos de seguridad",
+    "departmentId": "dept_security",
+    "departmentName": "Seguridad y Vigilancia",
+    "jobTitle": "Security and Surveillance Specialist",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-10T09:20:00Z",
+    "updatedAt": "2024-10-25T14:50:00Z",
+    "responsibilities": [
+      "Supervisar personal de vigilancia en diferentes sitios",
+      "Implementar y actualizar protocolos de seguridad",
+      "Realizar evaluaciones de riesgo en instalaciones de clientes",
+      "Coordinar con autoridades en casos de emergencia",
+      "Entrenar personal en procedimientos de seguridad"
+    ],
+    "requirements": [
+      "Técnico o profesional en Seguridad, Criminología o afines",
+      "Licencia vigente de vigilancia y seguridad privada",
+      "Mínimo 3 años de experiencia en seguridad privada",
+      "Conocimientos en sistemas de seguridad electrónica",
+      "Disponibilidad 24/7 para emergencias"
+    ],
+    "salaryRange": {
+      "min": 3500000,
+      "max": 5500000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Seguro de vida alto valor",
+      "Equipos de comunicación",
+      "Capacitación en seguridad",
+      "Turnos rotativos",
+      "Bonos por disponibilidad"
+    ],
+    "skills": [
+      "Supervisión de personal",
+      "Protocolos de seguridad",
+      "Evaluación de riesgos",
+      "Sistemas de vigilancia",
+      "Manejo de emergencias"
+    ],
+    "reportsTo": "pos_svc_057",
+    "teamSize": 25,
+    "isRemote": false
+  },
+  {
+    "id": "pos_svc_009",
+    "name": "Analista de Servicios al Cliente",
+    "description": "Analiza métricas de satisfacción del cliente, identifica oportunidades de mejora y desarrolla estrategias de retención",
+    "departmentId": "dept_customer_service",
+    "departmentName": "Servicio al Cliente",
+    "jobTitle": "Customer Service Analyst",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-05-12T12:00:00Z",
+    "updatedAt": "2024-12-01T16:30:00Z",
+    "responsibilities": [
+      "Analizar datos de satisfacción y experiencia del cliente",
+      "Identificar patrones en reclamos y sugerencias",
+      "Desarrollar reportes ejecutivos sobre calidad del servicio",
+      "Proponer mejoras en procesos de atención al cliente",
+      "Coordinar programas de fidelización de clientes"
+    ],
+    "requirements": [
+      "Título profesional en Administración, Ingeniería Industrial o afines",
+      "Experiencia mínima 2 años en análisis de datos",
+      "Conocimientos en herramientas de análisis (Excel, Power BI, Tableau)",
+      "Experiencia en servicio al cliente o contact center",
+      "Habilidades analíticas y de presentación"
+    ],
+    "salaryRange": {
+      "min": 3800000,
+      "max": 5800000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Capacitación en herramientas de análisis",
+      "Trabajo híbrido",
+      "Seguro de salud",
+      "Bonos por mejoras implementadas",
+      "Horarios flexibles"
+    ],
+    "skills": [
+      "Análisis de datos",
+      "Servicio al cliente",
+      "Herramientas de BI",
+      "Mejora de procesos",
+      "Gestión de la experiencia"
+    ],
+    "reportsTo": "pos_svc_058",
+    "teamSize": 1,
+    "isRemote": true
+  },
+  {
+    "id": "pos_svc_010",
+    "name": "Coordinador de Servicios de Catering",
+    "description": "Planifica y coordina servicios de alimentación para eventos corporativos y empresas, supervisa calidad y logística",
+    "departmentId": "dept_catering",
+    "departmentName": "Servicios de Catering",
+    "jobTitle": "Catering Services Coordinator",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-04-20T08:15:00Z",
+    "updatedAt": "2024-11-10T13:25:00Z",
+    "responsibilities": [
+      "Planificar menús y servicios de catering según requerimientos",
+      "Coordinar personal de cocina y servicio para eventos",
+      "Supervisar montaje y desmontaje en eventos",
+      "Gestionar inventario de equipos y suministros",
+      "Asegurar cumplimiento de normas de seguridad alimentaria"
+    ],
+    "requirements": [
+      "Técnico o tecnólogo en Gastronomía o Administración Hotelera",
+      "Mínimo 2 años de experiencia en servicios de catering",
+      "Conocimientos en manipulación de alimentos",
+      "Experiencia en coordinación de eventos",
+      "Disponibilidad para trabajo fines de semana"
+    ],
+    "salaryRange": {
+      "min": 2800000,
+      "max": 4500000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Alimentación incluida",
+      "Transporte a eventos",
+      "Uniformes profesionales",
+      "Capacitación en gastronomía",
+      "Bonos por eventos exitosos"
+    ],
+    "skills": [
+      "Coordinación de eventos",
+      "Gestión de personal",
+      "Seguridad alimentaria",
+      "Planificación logística",
+      "Atención al cliente"
+    ],
+    "reportsTo": "pos_svc_059",
+    "teamSize": 8,
+    "isRemote": false
+  }
+]

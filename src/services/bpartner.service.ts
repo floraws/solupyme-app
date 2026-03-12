@@ -1,13 +1,26 @@
-import { BPartnerResponse } from '@/types/api/responses/bpartner.response';
+import { LabelValuePair } from "@/types/api/common";
+import { BPartnerResponse, BPartnerListResponse } from '@/types/api/responses/bpartner.response';
 import bpartnersData from '@/data/bpartners.json';
+import { fetchWrapper } from '@/helpers';
+import { apiUrls } from '@/constants';
+import { BPartnerRequest } from '@/types/api';
 
-export class BPartnerService {
-  private static bpartners: BPartnerResponse[] = bpartnersData as BPartnerResponse[];
+export interface IBPartnerService {
+  getLabelValuesList: () => Promise<LabelValuePair[]>;
+}
+
+export class BPartnerServiceImpl implements IBPartnerService {
+  private bpartners: BPartnerResponse[] = bpartnersData as BPartnerResponse[];
+
+
+  async getLabelValuesList(): Promise<LabelValuePair[]> {
+    return await fetchWrapper.get(apiUrls.bpartners.labelValuesList) as LabelValuePair[];
+  }
 
   /**
    * Obtiene todos los business partners
    */
-  static async getAll(): Promise<BPartnerResponse[]> {
+  async getAll(): Promise<BPartnerResponse[]> {
     // Simular delay de red
     await new Promise(resolve => setTimeout(resolve, 300));
     return [...this.bpartners];
@@ -16,7 +29,7 @@ export class BPartnerService {
   /**
    * Obtiene un business partner por ID
    */
-  static async getById(id: string): Promise<BPartnerResponse | null> {
+  async getById(id: string): Promise<BPartnerResponse | null> {
     await new Promise(resolve => setTimeout(resolve, 200));
     const bpartner = this.bpartners.find(bp => bp.id === id);
     return bpartner ? { ...bpartner } : null;
@@ -25,9 +38,9 @@ export class BPartnerService {
   /**
    * Busca business partners por nombre, email o razón social
    */
-  static async search(query: string): Promise<BPartnerResponse[]> {
+  async search(query: string): Promise<BPartnerResponse[]> {
     await new Promise(resolve => setTimeout(resolve, 250));
-    
+
     if (!query.trim()) {
       return this.getAll();
     }
@@ -47,7 +60,7 @@ export class BPartnerService {
   /**
    * Filtra business partners por tipo
    */
-  static async getByType(type: 'customer' | 'supplier' | 'both'): Promise<BPartnerResponse[]> {
+  async getByType(type: 'customer' | 'supplier' | 'both'): Promise<BPartnerResponse[]> {
     await new Promise(resolve => setTimeout(resolve, 200));
     return this.bpartners.filter(bp => bp.type === type);
   }
@@ -55,7 +68,7 @@ export class BPartnerService {
   /**
    * Filtra business partners por estado
    */
-  static async getByStatus(status: 'active' | 'inactive' | 'pending'): Promise<BPartnerResponse[]> {
+  async getByStatus(status: 'active' | 'inactive' | 'pending'): Promise<BPartnerResponse[]> {
     await new Promise(resolve => setTimeout(resolve, 200));
     return this.bpartners.filter(bp => bp.status === status);
   }
@@ -63,7 +76,7 @@ export class BPartnerService {
   /**
    * Filtra business partners por segmento
    */
-  static async getBySegment(segment: 'premium' | 'standard' | 'basic'): Promise<BPartnerResponse[]> {
+  async getBySegment(segment: 'premium' | 'standard' | 'basic'): Promise<BPartnerResponse[]> {
     await new Promise(resolve => setTimeout(resolve, 200));
     return this.bpartners.filter(bp => bp.segment === segment);
   }
@@ -71,26 +84,50 @@ export class BPartnerService {
   /**
    * Crea un nuevo business partner
    */
-  static async create(bpartner: Omit<BPartnerResponse, 'id' | 'createdAt' | 'updatedAt'>): Promise<BPartnerResponse> {
-    await new Promise(resolve => setTimeout(resolve, 400));
-    
-    const newBPartner: BPartnerResponse = {
-      ...bpartner,
-      id: `bp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    };
+  /**
+   * Crea un nuevo business partner
+   */
+  async create(bpartner: BPartnerRequest): Promise<BPartnerResponse> {
+    try {
+      const newBPartner = await fetchWrapper.post(apiUrls.bpartners.insert, bpartner) as BPartnerResponse;
 
-    this.bpartners.push(newBPartner);
-    return { ...newBPartner };
+      this.bpartners.push(newBPartner);
+      return { ...newBPartner };
+    } catch (error: unknown) {
+      if (typeof error === 'object' && error !== null && 'status' in error) {
+        const err = error as { status?: number; data?: any; message?: string; details?: string[] };
+        if (err.status === 400 || err.status === 409) {
+          const errorData = err.data || err;
+
+          // Error de código duplicado
+          if (errorData.details && errorData.details[0]?.includes('duplicate key value violates unique constraint')) {
+            throw new Error('DUPLICATE_CODE');
+          }
+
+
+          // Error de validación general
+          if (errorData.message) {
+            throw new Error(`VALIDATION_ERROR: ${errorData.message}`);
+          }
+        }
+
+        // Error de servidor
+        if (err.status && err.status >= 500) {
+          throw new Error('SERVER_ERROR');
+        }
+      }
+
+      // Error de red o desconocido
+      throw new Error('NETWORK_ERROR');
+    }
   }
 
   /**
    * Actualiza un business partner existente
    */
-  static async update(id: string, updates: Partial<BPartnerResponse>): Promise<BPartnerResponse | null> {
+  async update(id: string, updates: Partial<BPartnerResponse>): Promise<BPartnerResponse | null> {
     await new Promise(resolve => setTimeout(resolve, 350));
-    
+
     const index = this.bpartners.findIndex(bp => bp.id === id);
     if (index === -1) {
       return null;
@@ -108,9 +145,9 @@ export class BPartnerService {
   /**
    * Elimina un business partner
    */
-  static async delete(id: string): Promise<boolean> {
+  async delete(id: string): Promise<boolean> {
     await new Promise(resolve => setTimeout(resolve, 300));
-    
+
     const index = this.bpartners.findIndex(bp => bp.id === id);
     if (index === -1) {
       return false;
@@ -123,7 +160,7 @@ export class BPartnerService {
   /**
    * Obtiene estadísticas de business partners
    */
-  static async getStats(): Promise<{
+  async getStats(): Promise<{
     total: number;
     customers: number;
     suppliers: number;
@@ -133,7 +170,7 @@ export class BPartnerService {
     bySegment: Record<string, number>;
   }> {
     await new Promise(resolve => setTimeout(resolve, 150));
-    
+
     const stats = {
       total: this.bpartners.length,
       customers: this.bpartners.filter(bp => bp.type === 'customer').length,
@@ -154,13 +191,14 @@ export class BPartnerService {
   /**
    * Obtiene los top business partners por valor total
    */
-  static async getTopByValue(limit = 10): Promise<BPartnerResponse[]> {
+  async getTopByValue(limit = 10): Promise<BPartnerResponse[]> {
     await new Promise(resolve => setTimeout(resolve, 200));
-    
+
     return [...this.bpartners]
       .sort((a, b) => (b.totalLifetimeValue || 0) - (a.totalLifetimeValue || 0))
       .slice(0, limit);
   }
 }
 
-export default BPartnerService;
+export const bPartnerService = new BPartnerServiceImpl();
+

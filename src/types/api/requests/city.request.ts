@@ -1,21 +1,20 @@
 export interface CityRequest {
-    name: string;
-    code: string;
-    stateId: string;
-    stateName?: string;
+    regionId: string;
+    regionName?: string;
     countryName?: string;
+    code: string;
+    name: string;
 }
 
 export interface CreateCityRequest {
-    name: string;
+    regionId: string;
     code: string;
-    stateId: string;
-    isActive: boolean;
+    name: string;
 }
 
 export interface UpdateCityRequest {
-    name?: string;
+    regionId?: string;
     code?: string;
-    stateId?: string;
+    name?: string;
     isActive?: boolean;
 }

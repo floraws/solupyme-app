@@ -1,4 +1,4 @@
-export interface StateResponse {
+export interface RegionResponse {
     id: string;
     code: string;
     name: string;

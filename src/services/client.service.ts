@@ -1,7 +1,6 @@
 import { fetchWrapper } from "@/helpers";
 import { apiUrls } from "@/constants";
 import { ClientResponse } from "@/types/api";
-import { sleep } from "@/lib";
 
 
 export const clientService = {

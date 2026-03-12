@@ -5,20 +5,23 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { useCSRF } from "@/hooks/useCSRF";
-import { BPartnerService } from "@/services/bpartner.service";
+import { bPartnerService } from "@/services/bpartner.service";
 import {
     Breadcrumb,
     PageHeader,
     InputField,
-    SelectField,
     Button,
     LoadingSpinner,
     Alert,
-    Card
+    Card,
+    CheckboxGroup
 } from "@/components/ui";
 
 // Esquema de validación con Zod
 const bpartnerSchema = z.object({
+    code: z
+        .string()
+        .optional(),
     name: z
         .string()
         .min(1, "El nombre es obligatorio")
@@ -32,39 +35,8 @@ const bpartnerSchema = z.object({
     phone: z
         .string()
         .optional(),
-    address: z
-        .string()
-        .optional(),
-    city: z
-        .string()
-        .optional(),
-    country: z
-        .string()
-        .optional(),
-    taxId: z
-        .string()
-        .optional(),
-    type: z.enum(['customer', 'supplier', 'both'], {
-        required_error: "El tipo es obligatorio"
-    }),
-    status: z.enum(['active', 'inactive'], {
-        required_error: "El estado es obligatorio"
-    }),
-    legalName: z
-        .string()
-        .optional(),
-    tradeName: z
-        .string()
-        .optional(),
-    website: z
-        .string()
-        .url("Debe ser una URL válida")
-        .optional()
-        .or(z.literal("")),
-    industry: z
-        .string()
-        .optional(),
-    companySize: z.enum(['micro', 'small', 'medium', 'large', 'enterprise']).optional(),
+    type: z.array(z.enum(['customer', 'supplier', 'employee', 'producer', 'transporter', 'vendor', 'contractor', 'partner', 'distributor', 'reseller', 'affiliate', 'consultant', 'freelancer', 'agent', 'broker', 'manufacturer', 'wholesaler', 'retailer', 'investor', 'sponsor']))
+        .min(1, "Debe seleccionar al menos un tipo"),
     notes: z
         .string()
         .optional(),
@@ -73,16 +45,15 @@ const bpartnerSchema = z.object({
 type BPartnerFormData = z.infer<typeof bpartnerSchema>;
 
 const CreateBPartnerPage = () => {
-    const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<BPartnerFormData>({
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitting } } = useForm<BPartnerFormData>({
         resolver: zodResolver(bpartnerSchema),
         defaultValues: {
-            status: 'active',
-            type: 'customer'
+            type: []
         }
     });
     const [message, setMessage] = React.useState<string | null>(null);
     const router = useRouter();
-    
+
     const { token: csrfToken, loading: csrfLoading, error: csrfError, validateAndGetToken } = useCSRF();
 
     const onSubmit = async (data: BPartnerFormData) => {
@@ -90,20 +61,41 @@ const CreateBPartnerPage = () => {
         try {
             // Validar y obtener token CSRF
             await validateAndGetToken();
-            
+
             // Crear el business partner usando el servicio
-            await BPartnerService.create(data);
-            
+            await bPartnerService.create(data);
+
             setMessage('Business Partner creado exitosamente');
             reset();
             setTimeout(() => router.push("/bpartners"), 1500);
         } catch (error: unknown) {
             console.error('Error creating business partner:', error);
-            const errorObj = error as { status?: number };
-            if (errorObj.status === 403) {
-                setMessage('Error de seguridad: Token CSRF inválido. Por favor, recarga la página.');
-            } else {
-                setMessage('Error al crear el Business Partner. Inténtalo de nuevo.');
+
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+
+            // Manejar errores específicos
+            switch (errorMessage) {
+                case 'DUPLICATE_CODE':
+                    setMessage('Error: El código/identificación ya está registrado. Por favor, use un código diferente.');
+                    break;
+                case 'SERVER_ERROR':
+                    setMessage('Error interno del servidor. Por favor, inténtalo más tarde.');
+                    break;
+                case 'NETWORK_ERROR':
+                    setMessage('Error de conexión. Verifica tu conexión a internet.');
+                    break;
+                default:
+                    if (errorMessage.startsWith('VALIDATION_ERROR:')) {
+                        setMessage(`Error de validación: ${errorMessage.replace('VALIDATION_ERROR:', '').trim()}`);
+                    } else {
+                        const errorObj = error as { status?: number };
+                        if (errorObj.status === 403) {
+                            setMessage('Error de seguridad: Token CSRF inválido. Por favor, recarga la página.');
+                        } else {
+                            setMessage('Error al crear el Business Partner. Inténtalo de nuevo.');
+                        }
+                    }
+                    break;
             }
         }
     };
@@ -123,37 +115,27 @@ const CreateBPartnerPage = () => {
     }
 
     const breadcrumbItems = [
-        { label: 'Business Partners', href: '/bpartners' },
-        { label: 'Crear Business Partner' }
+        { label: 'Socio de negocio', href: '/bpartners' },
+        { label: 'Crear Socio de negocio' }
     ];
 
     const typeOptions = [
         { value: 'customer', label: 'Cliente' },
         { value: 'supplier', label: 'Proveedor' },
-        { value: 'both', label: 'Cliente y Proveedor' }
+        { value: 'employee', label: 'Empleado' },
+        { value: 'partner', label: 'Socio' },
     ];
 
-    const statusOptions = [
-        { value: 'active', label: 'Activo' },
-        { value: 'inactive', label: 'Inactivo' }
-    ];
-
-    const companySizeOptions = [
-        { value: 'micro', label: 'Microempresa' },
-        { value: 'small', label: 'Pequeña empresa' },
-        { value: 'medium', label: 'Mediana empresa' },
-        { value: 'large', label: 'Gran empresa' },
-        { value: 'enterprise', label: 'Corporación' }
-    ];
+    const watchedType = watch('type');
 
     return (
         <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
             <Breadcrumb items={breadcrumbItems} />
             <PageHeader
-                title="Crear Nuevo Business Partner"
+                title="Crear Nuevo Socio de Negocio"
                 subtitle="Agrega un nuevo socio de negocio al sistema"
             />
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 {/* Form */}
                 <div className="lg:col-span-3">
@@ -168,28 +150,28 @@ const CreateBPartnerPage = () => {
                         )}
 
                         {/* Información Básica */}
-                        <Card title="Información Básica" subtitle="Datos principales del socio de negocio">
+                        <Card>
                             {/* CSRF Token Hidden Field */}
                             {csrfToken && (
                                 <input type="hidden" name="csrf_token" value={csrfToken} />
                             )}
-                            
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <InputField
+                                    label="Codigo / Identificación / NIT"
+                                    {...register("code")}
+                                    error={errors.code?.message}
+                                    placeholder="900123456"
+                                />
                                 <InputField
                                     label="Nombre"
                                     {...register("name")}
                                     error={errors.name?.message}
                                     placeholder="Nombre del socio de negocio"
                                     required
+                                    className="md:col-span-2"
                                 />
 
-                                <SelectField
-                                    label="Tipo"
-                                    {...register("type")}
-                                    error={errors.type?.message}
-                                    options={typeOptions}
-                                    required
-                                />
 
                                 <InputField
                                     label="Email"
@@ -206,106 +188,16 @@ const CreateBPartnerPage = () => {
                                     placeholder="+57 1 234 5678"
                                 />
 
-                                <SelectField
-                                    label="Estado"
-                                    {...register("status")}
-                                    error={errors.status?.message}
-                                    options={statusOptions}
+                                <CheckboxGroup
+                                    label="Tipo"
+                                    options={typeOptions}
+                                    value={watchedType || []}
+                                    onChange={(values) => setValue('type', values as BPartnerFormData["type"])}
+                                    error={errors.type?.message}
+                                    required
+                                    className="md:col-span-2"
+                                    columns={3}
                                 />
-
-                                <InputField
-                                    label="ID Tributario"
-                                    {...register("taxId")}
-                                    error={errors.taxId?.message}
-                                    placeholder="900123456-1"
-                                />
-                            </div>
-                        </Card>
-
-                        {/* Información Legal */}
-                        <Card title="Información Legal" subtitle="Datos legales y corporativos">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <InputField
-                                    label="Razón Social"
-                                    {...register("legalName")}
-                                    error={errors.legalName?.message}
-                                    placeholder="Empresa S.A.S."
-                                />
-
-                                <InputField
-                                    label="Nombre Comercial"
-                                    {...register("tradeName")}
-                                    error={errors.tradeName?.message}
-                                    placeholder="Marca Comercial"
-                                />
-
-                                <InputField
-                                    label="Sitio Web"
-                                    type="url"
-                                    {...register("website")}
-                                    error={errors.website?.message}
-                                    placeholder="https://www.empresa.com"
-                                />
-
-                                <InputField
-                                    label="Industria"
-                                    {...register("industry")}
-                                    error={errors.industry?.message}
-                                    placeholder="Tecnología, Manufactura, etc."
-                                />
-
-                                <SelectField
-                                    label="Tamaño de Empresa"
-                                    {...register("companySize")}
-                                    error={errors.companySize?.message}
-                                    options={companySizeOptions}
-                                />
-                            </div>
-                        </Card>
-
-                        {/* Información de Ubicación */}
-                        <Card title="Ubicación" subtitle="Datos de dirección y ubicación">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <InputField
-                                    label="Dirección"
-                                    {...register("address")}
-                                    error={errors.address?.message}
-                                    placeholder="Carrera 15 #85-32, Oficina 501"
-                                />
-
-                                <InputField
-                                    label="Ciudad"
-                                    {...register("city")}
-                                    error={errors.city?.message}
-                                    placeholder="Bogotá"
-                                />
-
-                                <InputField
-                                    label="País"
-                                    {...register("country")}
-                                    error={errors.country?.message}
-                                    placeholder="Colombia"
-                                />
-                            </div>
-                        </Card>
-
-                        {/* Notas */}
-                        <Card title="Información Adicional" subtitle="Notas y comentarios">
-                            <div className="space-y-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Notas
-                                    </label>
-                                    <textarea
-                                        {...register("notes")}
-                                        rows={4}
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        placeholder="Información adicional sobre el socio de negocio..."
-                                    />
-                                    {errors.notes && (
-                                        <p className="mt-1 text-sm text-red-600">{errors.notes.message}</p>
-                                    )}
-                                </div>
                             </div>
                         </Card>
 
@@ -327,7 +219,7 @@ const CreateBPartnerPage = () => {
                             >
                                 Cancelar
                             </Button>
-                            
+
                             <Button
                                 type="submit"
                                 disabled={isSubmitting || !csrfToken}
@@ -355,12 +247,14 @@ const CreateBPartnerPage = () => {
                                 </svg>
                                 <div>
                                     <p className="font-medium text-gray-900">Tipos de Socios</p>
-                                    <p><strong>Cliente:</strong> Solo compra productos/servicios</p>
-                                    <p><strong>Proveedor:</strong> Solo suministra productos/servicios</p>
-                                    <p><strong>Ambos:</strong> Puede ser cliente y proveedor</p>
+                                    <p><strong>Cliente:</strong> Compra productos/servicios</p>
+                                    <p><strong>Proveedor:</strong> Suministra productos/servicios</p>
+                                    <p><strong>Socio:</strong> Colaboración estratégica</p>
+                                    <p><strong>Distribuidor:</strong> Vende productos a terceros</p>
+                                    <p><strong>Contratista:</strong> Servicios especializados</p>
                                 </div>
                             </div>
-                            
+
                             <div className="flex items-start">
                                 <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

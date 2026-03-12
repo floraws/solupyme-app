@@ -1,7 +1,7 @@
 import { apiUrls } from "@/constants";
 import { fetchWrapper } from "@/helpers";
 import { CityResponse, CreateCityRequest, UpdateCityRequest } from "@/types/api";
-import { LabelValuePair } from "@/models";
+import { LabelValuePair } from "@/types/common";
 
 export const cityService = {
     /**

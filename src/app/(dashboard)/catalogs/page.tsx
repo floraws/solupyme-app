@@ -23,7 +23,7 @@ const settings = [
   {
     id: "P002",
     name: "Departamentos",	
-    link: "/states",
+    link: "/regions",
     description: "Configuración de departamentos",
     icon: ArchiveBoxIcon
   },

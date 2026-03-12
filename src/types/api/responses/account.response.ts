@@ -9,14 +9,14 @@ export interface AccountResponse {
 
     countryId: string;
     countryName?: string;
-    stateId: string;
-    stateName?: string;
+    regionId: string;
+    regionName?: string;
     cityId: string;
     cityName?: string;
 
     organizationType?: string;
     identifierType?: string;
-    identificationNumber?: number;
+    identificationNumber?: string;
 
     contactName?: string;
 

@@ -1,0 +1,458 @@
+[
+  {
+    "id": "pay_2025_001",
+    "number": "PAY-2025-000001",
+    "reference": "TXN-BANCOLOMBIA-123456789",
+    "amount": 1500000,
+    "currency": "COP",
+    "exchangeRate": 1.0,
+    "date": "2025-06-30T10:30:00Z",
+    "processedAt": "2025-06-30T10:32:15Z",
+    "createdAt": "2025-06-30T10:30:00Z",
+    "updatedAt": "2025-06-30T10:32:15Z",
+    "method": "bank_transfer",
+    "status": "completed",
+    "bpartner": {
+      "id": "bp_001",
+      "name": "Empresa ABC S.A.S",
+      "email": "contabilidad@empresaabc.com",
+      "phone": "+57 300 123 4567",
+      "type": "customer"
+    },
+    "createdBy": "user_123",
+    "lastUpdatedBy": "user_123",
+    "description": "Pago de facturas pendientes - Servicios de consultoría",
+    "notes": "Pago realizado a través de transferencia bancaria. Cliente confirmó el pago vía email.",
+    "tags": ["consultoría", "servicios", "junio-2025"],
+    "attachments": [
+      {
+        "id": "att_001",
+        "fileName": "comprobante_pago_bancolombia.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 245678,
+        "url": "/api/attachments/att_001/download",
+        "uploadedAt": "2025-06-30T10:35:00Z",
+        "uploadedBy": "user_123"
+      }
+    ],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_001",
+        "number": "FAC-2025-000001",
+        "amount": 800000,
+        "paidAmount": 800000,
+        "status": "paid",
+        "dueDate": "2025-06-30T23:59:59Z",
+        "createdAt": "2025-06-15T08:00:00Z",
+        "updatedAt": "2025-06-30T10:32:15Z"
+      },
+      {
+        "id": "inv_2025_002",
+        "number": "FAC-2025-000002",
+        "amount": 700000,
+        "paidAmount": 700000,
+        "status": "paid",
+        "dueDate": "2025-07-15T23:59:59Z",
+        "createdAt": "2025-06-20T08:00:00Z",
+        "updatedAt": "2025-06-30T10:32:15Z"
+      }
+    ],
+    "relatedTransactions": [
+      {
+        "id": "txn_001",
+        "type": "credit",
+        "amount": 1500000,
+        "date": "2025-06-30T10:32:15Z",
+        "description": "Pago recibido - Empresa ABC S.A.S",
+        "accountId": "acc_caja_principal",
+        "createdAt": "2025-06-30T10:32:15Z",
+        "updatedAt": "2025-06-30T10:32:15Z"
+      }
+    ],
+    "processor": {
+      "name": "Bancolombia",
+      "transactionId": "BCO-2025-987654321",
+      "authCode": "AUTH-ABC123",
+      "fees": 5000,
+      "responseCode": "00",
+      "responseMessage": "Transacción exitosa"
+    },
+    "metadata": {
+      "ipAddress": "192.168.1.100",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "source": "web_app"
+    },
+    "customFields": {
+      "departamento": "Ventas",
+      "proyecto": "Consultoría Q2 2025",
+      "aprobadoPor": "gerente_ventas"
+    }
+  },
+  {
+    "id": "pay_2025_002",
+    "number": "PAY-2025-000002",
+    "reference": "PSE-789123456",
+    "amount": 250000,
+    "currency": "COP",
+    "date": "2025-06-30T14:15:00Z",
+    "processedAt": "2025-06-30T14:17:30Z",
+    "createdAt": "2025-06-30T14:15:00Z",
+    "updatedAt": "2025-06-30T14:17:30Z",
+    "method": "pse",
+    "status": "completed",
+    "bpartner": {
+      "id": "bp_003",
+      "name": "Juan Carlos Rodríguez",
+      "email": "juan.rodriguez@email.com",
+      "phone": "+57 301 234 5678",
+      "type": "customer"
+    },
+    "createdBy": "user_456",
+    "lastUpdatedBy": "user_456",
+    "description": "Pago de servicios profesionales - Consultoría independiente",
+    "notes": "Pago realizado exitosamente a través de PSE - Banco Davivienda",
+    "tags": ["consultoría", "independiente", "pse"],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_003",
+        "number": "FAC-2025-000003",
+        "amount": 250000,
+        "paidAmount": 250000,
+        "status": "paid",
+        "dueDate": "2025-07-10T23:59:59Z",
+        "createdAt": "2025-06-25T08:00:00Z",
+        "updatedAt": "2025-06-30T14:17:30Z"
+      }
+    ],
+    "processor": {
+      "name": "PSE - Banco Davivienda",
+      "transactionId": "PSE-DAV-2025-456789",
+      "authCode": "PSE-AUTH-XYZ789",
+      "fees": 3500,
+      "responseCode": "00",
+      "responseMessage": "Pago exitoso PSE"
+    },
+    "metadata": {
+      "banco": "Banco Davivienda",
+      "tipoTransaccion": "PSE",
+      "canalPago": "web"
+    }
+  },
+  {
+    "id": "pay_2025_003",
+    "number": "PAY-2025-000003",
+    "reference": "NEQUI-456789123",
+    "amount": 150000,
+    "currency": "COP",
+    "date": "2025-06-29T16:20:00Z",
+    "processedAt": "2025-06-29T16:21:05Z",
+    "createdAt": "2025-06-29T16:20:00Z",
+    "updatedAt": "2025-06-29T16:21:05Z",
+    "method": "digital_wallet",
+    "status": "completed",
+    "bpartner": {
+      "id": "bp_005",
+      "name": "María González Consultores",
+      "email": "maria.gonzalez@consultores.com",
+      "phone": "+57 302 345 6789",
+      "type": "customer"
+    },
+    "createdBy": "user_789",
+    "lastUpdatedBy": "user_789",
+    "description": "Pago por servicios de diseño gráfico",
+    "notes": "Pago rápido a través de Nequi. Cliente satisfecho con el servicio.",
+    "tags": ["diseño", "gráfico", "nequi"],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_004",
+        "number": "FAC-2025-000004",
+        "amount": 150000,
+        "paidAmount": 150000,
+        "status": "paid",
+        "dueDate": "2025-07-05T23:59:59Z",
+        "createdAt": "2025-06-22T08:00:00Z",
+        "updatedAt": "2025-06-29T16:21:05Z"
+      }
+    ],
+    "processor": {
+      "name": "Nequi",
+      "transactionId": "NEQUI-2025-789456",
+      "authCode": "NEQ-AUTH-456",
+      "fees": 1500,
+      "responseCode": "00",
+      "responseMessage": "Pago exitoso Nequi"
+    },
+    "metadata": {
+      "plataforma": "Nequi",
+      "tipoTransaccion": "digital_wallet",
+      "velocidad": "instantaneo"
+    }
+  },
+  {
+    "id": "pay_2025_004",
+    "number": "PAY-2025-000004",
+    "reference": "EFECTIVO-001",
+    "amount": 500000,
+    "currency": "COP",
+    "date": "2025-06-28T09:00:00Z",
+    "createdAt": "2025-06-28T09:00:00Z",
+    "updatedAt": "2025-06-28T09:00:00Z",
+    "method": "cash",
+    "status": "completed",
+    "bpartner": {
+      "id": "bp_007",
+      "name": "Constructora Los Andes",
+      "email": "pagos@constructoralosandes.com",
+      "phone": "+57 303 456 7890",
+      "type": "customer"
+    },
+    "createdBy": "user_101",
+    "lastUpdatedBy": "user_101",
+    "description": "Pago en efectivo por servicios de consultoría técnica",
+    "notes": "Pago realizado en efectivo en nuestras oficinas. Recibo entregado al cliente.",
+    "tags": ["efectivo", "construcción", "consultoría"],
+    "attachments": [
+      {
+        "id": "att_002",
+        "fileName": "recibo_efectivo_001.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 125000,
+        "url": "/api/attachments/att_002/download",
+        "uploadedAt": "2025-06-28T09:15:00Z",
+        "uploadedBy": "user_101"
+      }
+    ],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_005",
+        "number": "FAC-2025-000005",
+        "amount": 500000,
+        "paidAmount": 500000,
+        "status": "paid",
+        "dueDate": "2025-06-30T23:59:59Z",
+        "createdAt": "2025-06-18T08:00:00Z",
+        "updatedAt": "2025-06-28T09:00:00Z"
+      }
+    ],
+    "metadata": {
+      "formaPago": "efectivo",
+      "lugarPago": "oficina_principal",
+      "recibidoPor": "user_101"
+    }
+  },
+  {
+    "id": "pay_2025_005",
+    "number": "PAY-2025-000005",
+    "reference": "VISA-FAIL-789",
+    "amount": 300000,
+    "currency": "COP",
+    "date": "2025-06-30T16:45:00Z",
+    "createdAt": "2025-06-30T16:45:00Z",
+    "updatedAt": "2025-06-30T16:47:00Z",
+    "method": "credit_card",
+    "status": "failed",
+    "bpartner": {
+      "id": "bp_008",
+      "name": "Ana Patricia Morales",
+      "email": "ana.morales@diseño.com",
+      "phone": "+57 304 567 8901",
+      "type": "customer"
+    },
+    "createdBy": "user_202",
+    "lastUpdatedBy": "user_202",
+    "description": "Intento de pago con tarjeta de crédito - Servicios de diseño",
+    "notes": "Pago rechazado por fondos insuficientes. Cliente contactado para método alternativo. Se ofreció pago en cuotas.",
+    "tags": ["tarjeta", "fallido", "diseño"],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_006",
+        "number": "FAC-2025-000006",
+        "amount": 300000,
+        "paidAmount": 0,
+        "status": "unpaid",
+        "dueDate": "2025-07-20T23:59:59Z",
+        "createdAt": "2025-06-28T08:00:00Z",
+        "updatedAt": "2025-06-30T16:47:00Z"
+      }
+    ],
+    "processor": {
+      "name": "Credibanco - Visa",
+      "transactionId": "CREDI-2025-FAIL-123",
+      "responseCode": "51",
+      "responseMessage": "Fondos insuficientes"
+    },
+    "metadata": {
+      "motivoRechazo": "Fondos insuficientes",
+      "tipoTarjeta": "Visa",
+      "ultimosDigitos": "****1234",
+      "intentosRealizados": 2
+    }
+  },
+  {
+    "id": "pay_2025_006",
+    "number": "PAY-2025-000006",
+    "reference": "DAVIPLATA-789456",
+    "amount": 180000,
+    "currency": "COP",
+    "date": "2025-06-29T11:30:00Z",
+    "processedAt": "2025-06-29T11:31:10Z",
+    "createdAt": "2025-06-29T11:30:00Z",
+    "updatedAt": "2025-06-29T11:31:10Z",
+    "method": "digital_wallet",
+    "status": "completed",
+    "bpartner": {
+      "id": "bp_009",
+      "name": "Comercializadora del Norte",
+      "email": "tesoreria@comnorte.com",
+      "phone": "+57 305 678 9012",
+      "type": "customer"
+    },
+    "createdBy": "user_303",
+    "lastUpdatedBy": "user_303",
+    "description": "Pago por productos de inventario",
+    "notes": "Pago realizado a través de DaviPlata. Productos despachados el mismo día.",
+    "tags": ["productos", "inventario", "daviplata"],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_007",
+        "number": "FAC-2025-000007",
+        "amount": 180000,
+        "paidAmount": 180000,
+        "status": "paid",
+        "dueDate": "2025-07-15T23:59:59Z",
+        "createdAt": "2025-06-24T08:00:00Z",
+        "updatedAt": "2025-06-29T11:31:10Z"
+      }
+    ],
+    "processor": {
+      "name": "DaviPlata",
+      "transactionId": "DAVI-2025-456123",
+      "authCode": "DAVI-AUTH-789",
+      "fees": 2000,
+      "responseCode": "00",
+      "responseMessage": "Transacción exitosa DaviPlata"
+    },
+    "metadata": {
+      "plataforma": "DaviPlata",
+      "tipoTransaccion": "digital_wallet",
+      "despacho": "mismo_dia"
+    }
+  },
+  {
+    "id": "pay_2025_007",
+    "number": "PAY-2025-000007",
+    "reference": "CHEQUE-001-2025",
+    "amount": 850000,
+    "currency": "COP",
+    "date": "2025-06-27T14:00:00Z",
+    "processedAt": "2025-06-28T10:00:00Z",
+    "createdAt": "2025-06-27T14:00:00Z",
+    "updatedAt": "2025-06-28T10:00:00Z",
+    "method": "check",
+    "status": "completed",
+    "bpartner": {
+      "id": "bp_010",
+      "name": "Luis Fernando Vargas",
+      "email": "luis.vargas@contabilidad.com",
+      "phone": "+57 306 789 0123",
+      "type": "customer"
+    },
+    "createdBy": "user_404",
+    "lastUpdatedBy": "user_404",
+    "description": "Pago con cheque por servicios contables mensuales",
+    "notes": "Cheque recibido y consignado exitosamente. Cliente con excelente historial de pagos.",
+    "tags": ["cheque", "contabilidad", "mensual"],
+    "attachments": [
+      {
+        "id": "att_003",
+        "fileName": "cheque_escaneado_001.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 180000,
+        "url": "/api/attachments/att_003/download",
+        "uploadedAt": "2025-06-27T14:30:00Z",
+        "uploadedBy": "user_404"
+      },
+      {
+        "id": "att_004",
+        "fileName": "comprobante_consignacion.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 95000,
+        "url": "/api/attachments/att_004/download",
+        "uploadedAt": "2025-06-28T10:30:00Z",
+        "uploadedBy": "user_404"
+      }
+    ],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_008",
+        "number": "FAC-2025-000008",
+        "amount": 850000,
+        "paidAmount": 850000,
+        "status": "paid",
+        "dueDate": "2025-07-30T23:59:59Z",
+        "createdAt": "2025-06-15T08:00:00Z",
+        "updatedAt": "2025-06-28T10:00:00Z"
+      }
+    ],
+    "processor": {
+      "name": "Banco de Bogotá",
+      "transactionId": "BDB-CHEQUE-2025-001",
+      "responseCode": "00",
+      "responseMessage": "Cheque consignado exitosamente"
+    },
+    "metadata": {
+      "numeroCheque": "001234567",
+      "banco": "Banco de Bogotá",
+      "fechaConsignacion": "2025-06-28T10:00:00Z",
+      "tiempoCompensacion": "24_horas"
+    }
+  },
+  {
+    "id": "pay_2025_008",
+    "number": "PAY-2025-000008",
+    "reference": "PENDING-WIRE-001",
+    "amount": 2500000,
+    "currency": "COP",
+    "date": "2025-06-30T17:00:00Z",
+    "createdAt": "2025-06-30T17:00:00Z",
+    "updatedAt": "2025-06-30T17:00:00Z",
+    "method": "wire_transfer",
+    "status": "pending",
+    "bpartner": {
+      "id": "bp_002",
+      "name": "Corporación XYZ Ltda",
+      "email": "finanzas@corporacionxyz.com",
+      "phone": "+57 307 890 1234",
+      "type": "customer"
+    },
+    "createdBy": "user_505",
+    "lastUpdatedBy": "user_505",
+    "description": "Transferencia internacional pendiente - Servicios de consultoría internacional",
+    "notes": "Transferencia internacional iniciada. Se espera confirmación del banco en 2-3 días hábiles.",
+    "tags": ["internacional", "transferencia", "pendiente"],
+    "relatedInvoices": [
+      {
+        "id": "inv_2025_009",
+        "number": "FAC-2025-000009",
+        "amount": 2500000,
+        "paidAmount": 0,
+        "status": "unpaid",
+        "dueDate": "2025-07-30T23:59:59Z",
+        "createdAt": "2025-06-20T08:00:00Z",
+        "updatedAt": "2025-06-30T17:00:00Z"
+      }
+    ],
+    "processor": {
+      "name": "SWIFT - Banco Internacional",
+      "transactionId": "SWIFT-2025-PENDING-001",
+      "responseCode": "PENDING",
+      "responseMessage": "Transferencia en proceso"
+    },
+    "metadata": {
+      "tipoTransferencia": "internacional",
+      "codigoSwift": "SWIFT123",
+      "bancoDestino": "Banco Internacional",
+      "tiempoEstimado": "2-3 días hábiles"
+    }
+  }
+]

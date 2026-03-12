@@ -14,7 +14,7 @@ export const csrfService = {
      */
     async getCSRFData(): Promise<CSRFResponse> {
         try {
-            const response = await fetch(`${BASE_URL}/auth/csrf-token`, {
+            const response = await fetch(`${BASE_URL}/auth/csrf`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -39,7 +39,7 @@ export const csrfService = {
      */
     async getCSRFToken(): Promise<string> {
         try {
-            const response = await fetch(`${BASE_URL}/auth/csrf-token`, {
+            const response = await fetch(`${BASE_URL}/auth/csrf`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -64,7 +64,7 @@ export const csrfService = {
      */
     async getCSRFHeaderName(): Promise<string> {
         try {
-            const response = await fetch(`${BASE_URL}/auth/csrf-token`, {
+            const response = await fetch(`${BASE_URL}/auth/csrf`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {

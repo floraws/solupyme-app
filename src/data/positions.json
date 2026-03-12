@@ -1,0 +1,439 @@
+[
+  {
+    "id": "pos_001",
+    "name": "Desarrollador Full Stack Senior",
+    "description": "Responsable del desarrollo de aplicaciones web completas, tanto frontend como backend, liderando proyectos técnicos complejos",
+    "departmentId": "dept_tech",
+    "departmentName": "Tecnología",
+    "locationId": "loc_bog_001",
+    "locationName": "Bogotá - Oficina Principal",
+    "jobTitle": "Senior Full Stack Developer",
+    "jobLevel": "senior",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-12-01T14:30:00Z",
+    "responsibilities": [
+      "Desarrollar aplicaciones web full-stack usando tecnologías modernas",
+      "Liderar equipos técnicos junior y mentorizar desarrolladores",
+      "Definir arquitecturas de software y mejores prácticas",
+      "Colaborar con equipos de diseño y producto",
+      "Realizar code reviews y garantizar calidad del código"
+    ],
+    "requirements": [
+      "Título en Ingeniería de Sistemas o afines",
+      "Mínimo 5 años de experiencia en desarrollo full-stack",
+      "Dominio de JavaScript, React, Node.js, bases de datos",
+      "Experiencia con metodologías ágiles",
+      "Inglés técnico intermedio-avanzado"
+    ],
+    "salaryRange": {
+      "min": 8000000,
+      "max": 12000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Seguro de salud premium",
+      "Capacitación técnica continua",
+      "Trabajo híbrido",
+      "Equipos de última tecnología",
+      "Bonos por desempeño"
+    ],
+    "skills": [
+      "JavaScript/TypeScript",
+      "React/Next.js",
+      "Node.js",
+      "Bases de datos SQL/NoSQL",
+      "Git",
+      "Docker",
+      "AWS/Azure"
+    ],
+    "reportsTo": "pos_009",
+    "teamSize": 2,
+    "isRemote": true,
+    "createdBy": "usr_hr_001",
+    "updatedBy": "usr_hr_001"
+  },
+  {
+    "id": "pos_002",
+    "name": "Gerente de Proyectos",
+    "description": "Planifica, ejecuta y supervisa proyectos de desarrollo de software, asegurando entrega a tiempo y dentro del presupuesto",
+    "departmentId": "dept_pmo",
+    "departmentName": "Gestión de Proyectos",
+    "locationId": "loc_bog_001",
+    "locationName": "Bogotá - Oficina Principal",
+    "jobTitle": "Project Manager",
+    "jobLevel": "manager",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-20T09:15:00Z",
+    "updatedAt": "2024-11-15T16:45:00Z",
+    "responsibilities": [
+      "Planificar y gestionar cronogramas de proyectos de software",
+      "Coordinar equipos multidisciplinarios",
+      "Gestionar riesgos y cambios en el alcance",
+      "Reportar progreso a stakeholders y dirección",
+      "Implementar metodologías ágiles y mejores prácticas"
+    ],
+    "requirements": [
+      "Título profesional en Ingeniería, Administración o afines",
+      "Certificación PMP o equivalente",
+      "Mínimo 4 años de experiencia gestionando proyectos",
+      "Experiencia en metodologías ágiles (Scrum, Kanban)",
+      "Excelentes habilidades de liderazgo y comunicación"
+    ],
+    "salaryRange": {
+      "min": 7000000,
+      "max": 11000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Seguro de salud",
+      "Certificaciones profesionales pagadas",
+      "Horarios flexibles",
+      "Bonos por cumplimiento de objetivos",
+      "Capacitación en liderazgo"
+    ],
+    "skills": [
+      "Gestión de proyectos",
+      "Scrum/Agile",
+      "Liderazgo de equipos",
+      "Gestión de riesgos",
+      "Herramientas PM (Jira, Asana)",
+      "Comunicación efectiva"
+    ],
+    "reportsTo": null,
+    "teamSize": 8,
+    "isRemote": false,
+    "createdBy": "usr_hr_001",
+    "updatedBy": "usr_hr_002"
+  },
+  {
+    "id": "pos_003",
+    "name": "Especialista en Marketing Digital",
+    "description": "Gestiona campañas digitales integrales, optimiza SEO/SEM y desarrolla estrategias de contenido para redes sociales",
+    "departmentId": "dept_mkt",
+    "departmentName": "Marketing",
+    "locationId": "loc_med_001",
+    "locationName": "Medellín - Sede Norte",
+    "jobTitle": "Digital Marketing Specialist",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-02-01T11:30:00Z",
+    "updatedAt": "2024-12-10T13:20:00Z",
+    "responsibilities": [
+      "Desarrollar y ejecutar estrategias de marketing digital",
+      "Gestionar campañas en Google Ads, Facebook Ads y LinkedIn",
+      "Optimizar SEO y crear contenido para web y redes sociales",
+      "Analizar métricas de rendimiento y ROI",
+      "Colaborar con equipos de diseño y ventas"
+    ],
+    "requirements": [
+      "Título en Marketing, Comunicación o afines",
+      "Mínimo 3 años de experiencia en marketing digital",
+      "Certificaciones en Google Ads y Analytics",
+      "Conocimiento en herramientas de automatización",
+      "Creatividad y pensamiento analítico"
+    ],
+    "salaryRange": {
+      "min": 4500000,
+      "max": 7000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Capacitación en marketing digital",
+      "Presupuesto para herramientas premium",
+      "Trabajo híbrido",
+      "Bonos por resultados de campañas",
+      "Seguro de salud"
+    ],
+    "skills": [
+      "Google Ads",
+      "Facebook Ads",
+      "SEO/SEM",
+      "Google Analytics",
+      "Marketing automation",
+      "Content marketing",
+      "Social media management"
+    ],
+    "reportsTo": "pos_018",
+    "teamSize": 1,
+    "isRemote": true,
+    "createdBy": "usr_hr_002",
+    "updatedBy": "usr_hr_002"
+  },
+  {
+    "id": "pos_004",
+    "name": "Diseñadora UX/UI Senior",
+    "description": "Diseña interfaces de usuario excepcionales y experiencias digitales centradas en el usuario para productos web y móviles",
+    "departmentId": "dept_design",
+    "departmentName": "Diseño",
+    "locationId": "loc_bog_001",
+    "locationName": "Bogotá - Oficina Principal",
+    "jobTitle": "Senior UX/UI Designer",
+    "jobLevel": "senior",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-25T14:00:00Z",
+    "updatedAt": "2024-11-30T10:15:00Z",
+    "responsibilities": [
+      "Diseñar wireframes, prototipos y interfaces de alta fidelidad",
+      "Realizar investigación de usuarios y testing de usabilidad",
+      "Colaborar con developers para implementación de designs",
+      "Mantener y evolucionar design systems",
+      "Liderar proyectos de rediseño de productos existentes"
+    ],
+    "requirements": [
+      "Título en Diseño Gráfico, Industrial o Multimedia",
+      "Mínimo 4 años de experiencia en UX/UI",
+      "Dominio de Figma, Adobe Creative Suite",
+      "Portfolio sólido con casos de estudio",
+      "Conocimientos de HTML/CSS básico"
+    ],
+    "salaryRange": {
+      "min": 6500000,
+      "max": 10000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Suscripciones a herramientas de diseño",
+      "Capacitación en UX research",
+      "Trabajo híbrido",
+      "Bonos por proyectos exitosos",
+      "Equipos Mac de última generación"
+    ],
+    "skills": [
+      "Figma",
+      "Adobe Creative Suite",
+      "Prototipado",
+      "User research",
+      "Usability testing",
+      "Design systems",
+      "HTML/CSS básico"
+    ],
+    "reportsTo": "pos_002",
+    "teamSize": 2,
+    "isRemote": true,
+    "createdBy": "usr_hr_001",
+    "updatedBy": "usr_hr_003"
+  },
+  {
+    "id": "pos_005",
+    "name": "Ejecutivo de Ventas",
+    "description": "Gestiona cartera de clientes estratégicos, desarrolla nuevas oportunidades de negocio y alcanza metas de ventas establecidas",
+    "departmentId": "dept_sales",
+    "departmentName": "Ventas",
+    "locationId": "loc_cal_001",
+    "locationName": "Cali - Oficina Sur",
+    "jobTitle": "Sales Executive",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-02-10T08:45:00Z",
+    "updatedAt": "2024-12-05T15:30:00Z",
+    "responsibilities": [
+      "Prospectar y desarrollar nuevos clientes",
+      "Mantener relaciones con cartera de clientes existente",
+      "Negociar contratos y cerrar ventas",
+      "Alcanzar y superar metas mensuales de ventas",
+      "Colaborar con equipos de marketing y soporte"
+    ],
+    "requirements": [
+      "Título profesional en Administración, Ingeniería o afines",
+      "Mínimo 2 años de experiencia en ventas B2B",
+      "Experiencia en CRM y herramientas de ventas",
+      "Excelentes habilidades de negociación",
+      "Orientación a resultados y metas"
+    ],
+    "salaryRange": {
+      "min": 3500000,
+      "max": 6000000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Comisiones por ventas",
+      "Vehículo de la empresa",
+      "Viáticos para visitas",
+      "Bonos por cumplimiento de metas",
+      "Capacitación en técnicas de venta"
+    ],
+    "skills": [
+      "Ventas B2B",
+      "CRM (Salesforce, HubSpot)",
+      "Negociación",
+      "Prospección de clientes",
+      "Presentaciones comerciales",
+      "Cierre de ventas"
+    ],
+    "reportsTo": "pos_017",
+    "teamSize": 1,
+    "isRemote": false,
+    "createdBy": "usr_hr_002",
+    "updatedBy": "usr_hr_002"
+  },
+  {
+    "id": "pos_006",
+    "name": "Contadora Senior",
+    "description": "Maneja la contabilidad general, prepara estados financieros y asegura cumplimiento de obligaciones tributarias",
+    "departmentId": "dept_accounting",
+    "departmentName": "Contabilidad",
+    "locationId": "loc_bog_001",
+    "locationName": "Bogotá - Oficina Principal",
+    "jobTitle": "Senior Accountant",
+    "jobLevel": "senior",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-01-30T12:20:00Z",
+    "updatedAt": "2024-11-20T09:45:00Z",
+    "responsibilities": [
+      "Preparar estados financieros mensuales y anuales",
+      "Gestionar declaraciones tributarias y obligaciones fiscales",
+      "Supervisar proceso de cierre contable mensual",
+      "Analizar variaciones presupuestales y costos",
+      "Liderar auditorías internas y externas"
+    ],
+    "requirements": [
+      "Contador Público con tarjeta profesional vigente",
+      "Mínimo 5 años de experiencia en contabilidad",
+      "Conocimiento actualizado en NIIF y legislación tributaria",
+      "Experiencia en software contable (SAP, Siigo)",
+      "Especialización en áreas contables o tributarias"
+    ],
+    "salaryRange": {
+      "min": 5500000,
+      "max": 8500000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Seguro de responsabilidad profesional",
+      "Capacitación en normatividad tributaria",
+      "Horarios flexibles",
+      "Bonos por cierre oportuno",
+      "Afiliación a colegios profesionales"
+    ],
+    "skills": [
+      "Contabilidad general",
+      "NIIF",
+      "Legislación tributaria",
+      "SAP/ERP",
+      "Excel avanzado",
+      "Análisis financiero",
+      "Auditoría"
+    ],
+    "reportsTo": null,
+    "teamSize": 3,
+    "isRemote": false,
+    "createdBy": "usr_hr_001",
+    "updatedBy": "usr_hr_001"
+  },
+  {
+    "id": "pos_007",
+    "name": "Analista de Datos",
+    "description": "Analiza grandes volúmenes de datos para generar insights estratégicos, crear reportes ejecutivos y modelos predictivos",
+    "departmentId": "dept_tech",
+    "departmentName": "Tecnología",
+    "locationId": "loc_bog_001",
+    "locationName": "Bogotá - Oficina Principal",
+    "jobTitle": "Data Analyst",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-03-05T13:15:00Z",
+    "updatedAt": "2024-12-15T11:20:00Z",
+    "responsibilities": [
+      "Extraer, limpiar y analizar datos de múltiples fuentes",
+      "Crear dashboards interactivos y reportes automatizados",
+      "Desarrollar modelos estadísticos y predictivos",
+      "Colaborar con equipos de negocio para entender requerimientos",
+      "Presentar hallazgos y recomendaciones a la dirección"
+    ],
+    "requirements": [
+      "Título en Ingeniería, Estadística, Matemáticas o afines",
+      "Mínimo 2 años de experiencia en análisis de datos",
+      "Dominio de SQL, Python/R y herramientas de BI",
+      "Conocimientos en estadística y machine learning",
+      "Habilidades de visualización de datos"
+    ],
+    "salaryRange": {
+      "min": 4000000,
+      "max": 7500000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Capacitación en ciencia de datos",
+      "Licencias de software especializado",
+      "Trabajo híbrido",
+      "Bonos por proyectos de impacto",
+      "Conferencias y eventos técnicos"
+    ],
+    "skills": [
+      "SQL",
+      "Python/R",
+      "Power BI/Tableau",
+      "Excel avanzado",
+      "Machine learning",
+      "Estadística",
+      "Visualización de datos"
+    ],
+    "reportsTo": "pos_001",
+    "teamSize": 1,
+    "isRemote": true,
+    "createdBy": "usr_hr_003",
+    "updatedBy": "usr_hr_003"
+  },
+  {
+    "id": "pos_008",
+    "name": "Coordinador de Recursos Humanos",
+    "description": "Gestiona procesos de selección, nómina, bienestar laboral y desarrollo del talento humano en la organización",
+    "departmentId": "dept_hr",
+    "departmentName": "Recursos Humanos",
+    "locationId": "loc_bog_001",
+    "locationName": "Bogotá - Oficina Principal",
+    "jobTitle": "HR Coordinator",
+    "jobLevel": "mid",
+    "employmentType": "full-time",
+    "status": "active",
+    "createdAt": "2024-02-20T10:00:00Z",
+    "updatedAt": "2024-12-01T16:30:00Z",
+    "responsibilities": [
+      "Liderar procesos de reclutamiento y selección",
+      "Gestionar nómina y beneficios de empleados",
+      "Implementar programas de bienestar y desarrollo",
+      "Mantener compliance con legislación laboral",
+      "Mediar en conflictos laborales y disciplinarios"
+    ],
+    "requirements": [
+      "Título en Psicología, Administración o RRHH",
+      "Mínimo 3 años de experiencia en gestión humana",
+      "Conocimiento en legislación laboral colombiana",
+      "Experiencia con sistemas de nómina",
+      "Habilidades de comunicación y mediación"
+    ],
+    "salaryRange": {
+      "min": 3800000,
+      "max": 6200000,
+      "currency": "COP"
+    },
+    "benefits": [
+      "Capacitación en legislación laboral",
+      "Certificaciones en RRHH",
+      "Horarios flexibles",
+      "Seguro de salud",
+      "Programa de bienestar personal"
+    ],
+    "skills": [
+      "Reclutamiento y selección",
+      "Legislación laboral",
+      "Nómina",
+      "Desarrollo organizacional",
+      "Comunicación efectiva",
+      "Mediación de conflictos"
+    ],
+    "reportsTo": null,
+    "teamSize": 2,
+    "isRemote": false,
+    "createdBy": "usr_hr_001",
+    "updatedBy": "usr_hr_001"
+  }
+]

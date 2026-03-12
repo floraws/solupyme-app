@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -15,11 +15,14 @@ import {
   FormLayout
 } from "@/components/ui";
 import { accountService } from "@/services/account.service";
-import { countryService, stateService, cityService } from "@/services";
+import { regionService, cityService } from "@/services";
 import { useCSRF } from "@/hooks/useCSRF";
+import { useMessages } from "@/hooks/useMessages";
+import { useCountries } from "@/hooks/useCountries";
 import { AccountResponse } from "@/types/api/responses";
 import { SelectField } from "@/components/ui/SelectField";
-import { LabelValuePair } from "@/models";
+import { LabelValuePair } from "@/types/api/common";
+import { ServiceError } from '@/helpers/error-handler';
 
 // Esquema de validación con Zod
 const updateAccountSchema = z.object({
@@ -31,7 +34,7 @@ const updateAccountSchema = z.object({
   website: z.string().url("Debe ser una URL válida").or(z.literal("")).optional(),
 
   countryId: z.string().min(1, "El país es obligatorio"),
-  stateId: z.string().min(1, "El estado es obligatorio"),
+  regionId: z.string().min(1, "El region es obligatorio"),
   cityId: z.string().min(1, "La ciudad es obligatoria"),
 
   identifierType: z.string().optional(),
@@ -40,7 +43,7 @@ const updateAccountSchema = z.object({
     .regex(/^\d+$/, "Debe contener solo números")
     .optional()
     .or(z.literal("")),
-   
+
   contactName: z.string().optional(),
 
 });
@@ -53,84 +56,103 @@ const EditAccountPage = () => {
   const router = useRouter();
   const [account, setAccount] = useState<AccountResponse | null>(null);
   const [loadingAccount, setLoadingAccount] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+
+  // Hook para manejo de mensajes
+  const { error, message, showError, showSuccess, clearAllMessages } = useMessages();
+
+  // Hook reutilizable para cargar países
+  const { countries, loading: loadingCountries } = useCountries();
 
   // Estados para los selects jerárquicos
-  const [countries, setCountries] = useState<LabelValuePair[]>([]);
-  const [states, setStates] = useState<LabelValuePair[]>([]);
+  const [regions, setRegions] = useState<LabelValuePair[]>([]);
   const [cities, setCities] = useState<LabelValuePair[]>([]);
-  const [loadingCountries, setLoadingCountries] = useState(false);
-  const [loadingStates, setLoadingStates] = useState(false);
+  const [loadingRegions, setLoadingRegions] = useState(false);
   const [loadingCities, setLoadingCities] = useState(false);
-
+  const { token: csrfToken, loading: csrfLoading, error: csrfError } = useCSRF();
 
   const { register, handleSubmit, setValue, watch, formState: { errors, isSubmitting } } = useForm<UpdateAccountFormData>({
     resolver: zodResolver(updateAccountSchema)
   });
-  const [message, setMessage] = useState<string | null>(null);
 
   // Watch para los cambios en los selects
   const countryId = watch("countryId");
-  const stateId = watch("stateId");
+  const regionId = watch("regionId");
 
-  const { token: csrfToken, loading: csrfLoading, error: csrfError } = useCSRF();
-  // Cargar países al montar el componente
-  useEffect(() => {
-    const fetchCountries = async () => {
-      setLoadingCountries(true);
-      try {
-        const countriesData = await countryService.getLabelValuesList();
-        setCountries(countriesData);
-      } catch (error) {
-        console.error('Error loading countries:', error);
-      } finally {
-        setLoadingCountries(false);
-      }
-      setValue("stateId", "");
-      setValue("cityId", "");
-      setStates([]);
-      setCities([]);
-    };
-    fetchCountries();
-  }, [setValue]);
 
-  // Cargar estados cuando cambia el país
+  // Cargar regiones cuando cambia el país
   useEffect(() => {
     if (countryId) {
-      const fetchStates = async () => {
+      const fetchRegions = async () => {
         console.log("Cargando estados para el país:", countryId);
-        setLoadingStates(true);
+        setLoadingRegions(true);
         try {
-          const statesData = await stateService.getLabelValuesListByCountry(countryId);
-          setStates(statesData);
+          const statesData = await regionService.getLabelValuesListByCountry(countryId);
+          setRegions(statesData);
         } catch (error) {
           console.error('Error loading states:', error);
+          if (error instanceof ServiceError) {
+            switch (error.code) {
+              case 'NETWORK_ERROR':
+                showError('Error de conexión al cargar regiones.');
+                break;
+              case 'UNAUTHORIZED':
+                showError('Sesión expirada. Por favor, inicia sesión nuevamente.', false);
+                setTimeout(() => router.push('/login'), 2000);
+                break;
+              default:
+                showError('Error al cargar las regiones para el país seleccionado.');
+            }
+          } else {
+            showError('Error inesperado al cargar regiones.');
+          }
         } finally {
-          setLoadingStates(false);
+          setLoadingRegions(false);
         }
       };
-      fetchStates();
+      fetchRegions();
+    } else {
+      setRegions([]);
+      setCities([]);
+      setValue("regionId", "");
+      setValue("cityId", "");
     }
-  }, [countryId, setValue]);
+  }, [countryId, setValue, router, showError]);
 
   // Cargar ciudades cuando cambia el estado
   useEffect(() => {
-    if (stateId) {
+    if (regionId) {
       const fetchCities = async () => {
         setLoadingCities(true);
         try {
-          const citiesData = await cityService.getLabelValuesList(stateId);
+          const citiesData = await cityService.getLabelValuesList(regionId);
           setCities(citiesData);
-          setValue("cityId", "");
         } catch (error) {
           console.error('Error loading cities:', error);
+          if (error instanceof ServiceError) {
+            switch (error.code) {
+              case 'NETWORK_ERROR':
+                showError('Error de conexión al cargar ciudades.');
+                break;
+              case 'UNAUTHORIZED':
+                showError('Sesión expirada. Por favor, inicia sesión nuevamente.', false);
+                setTimeout(() => router.push('/login'), 2000);
+                break;
+              default:
+                showError('Error al cargar las ciudades para la región seleccionada.');
+            }
+          } else {
+            showError('Error inesperado al cargar ciudades.');
+          }
         } finally {
           setLoadingCities(false);
         }
       };
       fetchCities();
+    } else {
+      setCities([]);
+      setValue("cityId", "");
     }
-  }, [stateId, setValue]);
+  }, [regionId, setValue, router, showError]);
   // Cargar datos de la cuenta
   useEffect(() => {
     const id = params.id as string;
@@ -146,34 +168,99 @@ const EditAccountPage = () => {
           setValue("website", accountData.website ?? undefined);
           setValue("organizationType", accountData.organizationType ?? "1");
           setValue("identifierType", accountData.identifierType ?? "31");
-          setValue("identificationNumber", accountData.identificationNumber ?? undefined);
+          setValue("identificationNumber",
+            accountData.identificationNumber ? String(accountData.identificationNumber) : undefined
+          );
           setValue("contactName", accountData.contactName ?? undefined);
-          setValue("countryId", accountData.countryId ?? "");
-          setValue("stateId", accountData.stateId ?? "");
-          setValue("cityId", accountData.cityId ?? "");
+          if (accountData.countryId)
+            setValue("countryId", accountData.countryId);
+          if (accountData.regionId)
+            setValue("regionId", accountData.regionId);
+          if (accountData.cityId)
+            setValue("cityId", accountData.cityId);
         })
-        .catch(() => setError("Error al cargar la cuenta"))
+        .catch((error) => {
+          console.error('Error loading account:', error);
+          if (error instanceof ServiceError) {
+            switch (error.code) {
+              case 'NOT_FOUND':
+                showError("La cuenta no fue encontrada.", false);
+                break;
+              case 'UNAUTHORIZED':
+                showError('Sesión expirada. Por favor, inicia sesión nuevamente.', false);
+                setTimeout(() => router.push('/login'), 2000);
+                break;
+              case 'FORBIDDEN':
+                showError('No tienes permisos para ver esta cuenta.', false);
+                break;
+              default:
+                showError("Error al cargar los datos de la cuenta.", false);
+            }
+          } else {
+            showError("Error inesperado al cargar la cuenta.", false);
+          }
+        })
         .finally(() => {
           setLoadingAccount(false);
         });
     }
-  }, [params.id, setValue, countries, states, cities]);
+  }, [params.id, setValue, router, showError]);
 
   const onSubmit = async (data: UpdateAccountFormData) => {
     if (!account) return;
-    setMessage(null);
+    clearAllMessages();
+
     try {
-      accountService.update(params.id as string, data);
-      setMessage('Cuenta actualizada exitosamente');
+      await accountService.update(params.id as string, data);
+      showSuccess('Cuenta actualizada exitosamente');
       setAccount({ ...account, ...data });
       setTimeout(() => router.push("/accounts"), 1500);
     } catch (error: unknown) {
       console.error('Error updating account:', error);
-      const errorObj = error as { status?: number };
-      if (errorObj.status === 403) {
-        setMessage('Error de seguridad: Token CSRF inválido. Por favor, recarga la página.');
+
+      if (error instanceof ServiceError) {
+        // Manejo específico para diferentes tipos de errores de servicio
+        switch (error.code) {
+          case 'VALIDATION_ERROR':
+            showError(`Error de validación: ${error.message}`);
+            break;
+          case 'CONFLICT':
+            showError(`Ya existe una cuenta con estos datos: ${error.message}`);
+            break;
+          case 'UNAUTHORIZED':
+            showError('No tienes permisos para actualizar cuentas. Por favor, inicia sesión nuevamente.', false);
+            setTimeout(() => router.push('/login'), 2000);
+            break;
+          case 'FORBIDDEN':
+            showError('No tienes los permisos necesarios para realizar esta acción.');
+            break;
+          case 'NOT_FOUND':
+            showError('La cuenta no fue encontrada. Es posible que haya sido eliminada.', false);
+            setTimeout(() => router.push('/accounts'), 2000);
+            break;
+          case 'NETWORK_ERROR':
+            showError('Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.');
+            break;
+          case 'INTERNAL_SERVER_ERROR':
+            showError('Error interno del servidor. Por favor, intenta nuevamente en unos momentos.');
+            break;
+          default:
+            showError(error.message || 'Error desconocido al actualizar la cuenta');
+        }
+      } else if (error instanceof Error) {
+        // Manejo para errores estándar de JavaScript
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+          showError('Error de conexión. Por favor, verifica tu conexión a internet.');
+        } else if (error.name === 'AbortError') {
+          showError('La operación fue cancelada. Por favor, intenta nuevamente.');
+        } else {
+          showError(`Error inesperado: ${error.message}`);
+        }
+      } else if (typeof error === 'string') {
+        showError(error);
       } else {
-        setMessage('Error al actualizar la cuenta. Inténtalo de nuevo.');
+        // Fallback para errores desconocidos
+        showError('Ha ocurrido un error inesperado. Por favor, intenta nuevamente.');
       }
     }
   };
@@ -198,14 +285,17 @@ const EditAccountPage = () => {
       <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <Alert
           type="error"
+          title="Error al cargar la cuenta"
           message={error || "Cuenta no encontrada"}
           actions={
-            <Link
-              href="/accounts"
-              className="text-red-600 hover:text-red-800 font-medium"
-            >
-              Volver a la lista de cuentas
-            </Link>
+            <div className="flex items-center space-x-3 mt-4">
+              <Link
+                href="/accounts"
+                className="text-red-600 hover:text-red-800 font-medium text-sm"
+              >
+                Volver a la lista de cuentas
+              </Link>
+            </div>
           }
         />
       </div>
@@ -241,7 +331,7 @@ const EditAccountPage = () => {
               {account.countryName && (
                 <div>
                   <p className="font-medium text-gray-900">Ubicación:</p>
-                  <p>{account.cityName}, {account.stateName}, {account.countryName}</p>
+                  <p>{account.cityName}, {account.regionName}, {account.countryName}</p>
                 </div>
               )}
             </div>
@@ -250,14 +340,32 @@ const EditAccountPage = () => {
         onSubmit={handleSubmit(onSubmit)}
         showSidebar={true}
       >
-        {/* CSRF Error Alert */}
+        {/* Mostrar errores de CSRF y errores generales de forma prominente */}
         {csrfError && (
           <Alert
             type="error"
-            message={`Error de seguridad: ${csrfError}`}
+            title="Error de seguridad"
+            message={csrfError}
             className="mb-6"
           />
         )}
+        {error && (
+          <Alert
+            type="error"
+            title="Error al procesar la cuenta"
+            message={error}
+            className="mb-6"
+          />
+        )}
+        {message && (
+          <Alert
+            type={message.includes('exitosamente') ? 'success' : 'error'}
+            title={message.includes('exitosamente') ? 'Éxito' : 'Error'}
+            message={message}
+            className="mb-6"
+          />
+        )}
+
         {/* CSRF Token Hidden Field */}
         {csrfToken && (
           <input type="hidden" name="csrf_token" value={csrfToken} />
@@ -309,61 +417,81 @@ const EditAccountPage = () => {
           <h4 className="text-md font-semibold text-gray-800 mb-4">Ubicación</h4>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
             {/* País */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                País <span className="text-red-500">*</span>
-              </label>
-              <SelectField
-                label=""
-                {...register("countryId")}
-                error={errors.countryId?.message}
-                options={countries}
-                disabled={loadingCountries}
-              />
-              {loadingCountries && (
-                <p className="text-xs text-gray-500 mt-1">Cargando países...</p>
-              )}
-            </div>
-
+            {countries.length !== 0 && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  País <span className="text-red-500">*</span>
+                </label>
+                <SelectField
+                  label=""
+                  {...register("countryId")}
+                  error={errors.countryId?.message}
+                  options={countries}
+                  disabled={loadingCountries}
+                />
+                {loadingCountries && (
+                  <p className="text-xs text-gray-500 mt-1">Cargando países...</p>
+                )}
+              </div>
+            )}
+            {!countries.length && (
+              <div className="text-sm text-gray-500">
+                No hay países disponibles. Por favor, crea al menos un país en el sistema.
+              </div>
+            )}
             {/* Estado */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Estado/Departamento <span className="text-red-500">*</span>
-              </label>
-              <SelectField
-                label=""
-                {...register("stateId")}
-                error={errors.stateId?.message}
-                options={states}
-                disabled={!countryId || loadingStates}
-              />
-              {loadingStates && (
-                <p className="text-xs text-gray-500 mt-1">Cargando estados...</p>
-              )}
-              {!countryId && (
-                <p className="text-xs text-gray-500 mt-1">Selecciona un país primero</p>
-              )}
-            </div>
+            {regions.length !== 0 && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Estado/Departamento <span className="text-red-500">*</span>
+                </label>
+                <SelectField
+                  label=""
+                  {...register("regionId")}
+                  error={errors.regionId?.message}
+                  options={regions}
+                  disabled={!countryId || loadingRegions}
+                />
+                {loadingRegions && (
+                  <p className="text-xs text-gray-500 mt-1">Cargando estados...</p>
+                )}
+                {!countryId && (
+                  <p className="text-xs text-gray-500 mt-1">Selecciona un país primero</p>
+                )}
+              </div>
+            )}
+            {!regions.length && countryId && (
+              <div className="text-sm text-gray-500">
+                No hay estados disponibles. Por favor, crea al menos un estado/region/departamento en el sistema.
+              </div>
+            )}
 
             {/* Ciudad */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Ciudad <span className="text-red-500">*</span>
-              </label>
-              <SelectField
-                label=""
-                {...register("cityId")}
-                error={errors.cityId?.message}
-                options={cities}
-                disabled={!stateId || loadingCities}
-              />
-              {loadingCities && (
-                <p className="text-xs text-gray-500 mt-1">Cargando ciudades...</p>
-              )}
-              {!stateId && (
-                <p className="text-xs text-gray-500 mt-1">Selecciona un estado primero</p>
-              )}
-            </div>
+            {cities.length !== 0 && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Ciudad <span className="text-red-500">*</span>
+                </label>
+                <SelectField
+                  label=""
+                  {...register("cityId")}
+                  error={errors.cityId?.message}
+                  options={cities}
+                  disabled={!regionId || loadingCities}
+                />
+                {loadingCities && (
+                  <p className="text-xs text-gray-500 mt-1">Cargando ciudades...</p>
+                )}
+                {!regionId && (
+                  <p className="text-xs text-gray-500 mt-1">Selecciona un estado primero</p>
+                )}
+              </div>
+            )}
+            {!cities.length && countryId && regionId && (
+              <div className="text-sm text-gray-500">
+                No hay ciudades disponibles. Por favor, crea al menos una ciudad en el sistema.
+              </div>
+            )}
           </div>
         </div>
 
@@ -381,8 +509,8 @@ const EditAccountPage = () => {
                 {...register("organizationType")}
                 error={errors.organizationType?.message}
                 options={[
-                  { value: "1", label: "Persona Jurídica" },
-                  { value: "2", label: "Persona Natural" },
+                  { value: "BUSINESS", label: "Persona Jurídica" },
+                  { value: "PERSON", label: "Persona Natural" },
                 ]}
               />
             </div>
@@ -396,8 +524,8 @@ const EditAccountPage = () => {
                 {...register("identifierType")}
                 error={errors.identifierType?.message}
                 options={[
-                  { value: "13", label: "Cédula de ciudadanía" },
-                  { value: "31", label: "NIT" },
+                  { value: "CC", label: "Cédula de ciudadanía" },
+                  { value: "NIT", label: "NIT" },
                 ]}
               />
             </div>
@@ -427,14 +555,6 @@ const EditAccountPage = () => {
             />
           </div>
         </div>
-
-        {/* Message */}
-        {message && (
-          <Alert
-            type={message.includes('exitosamente') ? 'success' : 'error'}
-            message={message}
-          />
-        )}
 
         {/* Validation Errors */}
         {Object.keys(errors).length > 0 && (

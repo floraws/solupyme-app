@@ -1,3 +1,24 @@
+export interface BPartnerInvoiceOption {
+  value: string;
+  label: string;
+  description?: string;
+  category?: string;
+  icon?: string; 
+  email?: string;
+  phone?: string;
+  paymentTerms?: string; 
+  defaultCurrency?: string; 
+    
+}
+
+
+export interface BPartnerListResponse {
+    id: string;
+    name: string;
+    email?: string;
+    phone?: string;
+    address?: string;
+}
 export interface BPartnerResponse {
     id: string;
     name: string;
@@ -7,7 +28,7 @@ export interface BPartnerResponse {
     city?: string;
     country?: string;
     taxId?: string;
-    type: 'customer' | 'supplier' | 'both';
+    type: ('customer' | 'supplier' | 'employee' | 'producer' | 'transporter' | 'vendor' | 'contractor' | 'partner' | 'distributor' | 'reseller' | 'affiliate' | 'consultant' | 'freelancer' | 'agent' | 'broker' | 'manufacturer' | 'wholesaler' | 'retailer' | 'investor' | 'sponsor')[];
     createdAt: string;
     updatedAt: string;
     metadata?: Record<string, unknown>;

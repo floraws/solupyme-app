@@ -53,3 +53,9 @@ export type { TabsProps, TabItem } from './Tabs';
 
 export { SelectField } from './SelectField';
 export type { SelectFieldProps, SelectOption } from './SelectField';
+
+export { SearchableSelect } from './SearchableSelect';
+export type { SearchableSelectProps, SearchableOption } from './SearchableSelect';
+
+export { CheckboxGroup } from './CheckboxGroup';
+export type { CheckboxGroupProps, CheckboxOption } from './CheckboxGroup';

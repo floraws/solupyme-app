@@ -16,7 +16,7 @@ import {
   SelectField
 } from "@/components/ui";
 import { BPartnerResponse } from "@/types/api/responses/bpartner.response";
-import BPartnerService from "@/services/bpartner.service";
+import { bPartnerService } from "@/services/bpartner.service";
 
 export default function BPartnersPage() {
   useAuth();
@@ -45,8 +45,8 @@ export default function BPartnersPage() {
     try {
       setLoading(true);
       const [partnersData, statsData] = await Promise.all([
-        BPartnerService.getAll(),
-        BPartnerService.getStats()
+        bPartnerService.getAll(),
+        bPartnerService.getStats()
       ]);
       setBPartners(partnersData);
       setStats(statsData);
@@ -72,12 +72,12 @@ export default function BPartnersPage() {
 
     setDeletingId(bpartnerToDelete.id);
     try {
-      await BPartnerService.delete(bpartnerToDelete.id);
+      await bPartnerService.delete(bpartnerToDelete.id);
       setBPartners(prev => prev.filter(bp => bp.id !== bpartnerToDelete.id));
       setShowDeleteDialog(false);
       setBPartnerToDelete(null);
       // Recargar estadísticas
-      const newStats = await BPartnerService.getStats();
+      const newStats = await bPartnerService.getStats();
       setStats(newStats);
     } catch (err) {
       setError("Error al eliminar el socio de negocio");
@@ -285,7 +285,7 @@ export default function BPartnersPage() {
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <PageHeader
         title="Socios de Negocio"
-        subtitle="Gestiona la información de clientes, proveedores y socios comerciales"
+        subtitle="Gestiona la información de clientes, proveedores, colaboradores y/o socios comerciales"
         actions={
           <Link
             href="/bpartners/create"
@@ -301,7 +301,7 @@ export default function BPartnersPage() {
 
       {/* Estadísticas */}
       {stats && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <StatsCard
             title="Total"
             value={stats.total}
@@ -314,6 +314,10 @@ export default function BPartnersPage() {
             title="Proveedores"
             value={stats.suppliers}
           />
+          <StatsCard
+            title="Empleados"
+            value={stats.suppliers}
+          />          
           <StatsCard
             title="Activos"
             value={stats.active}

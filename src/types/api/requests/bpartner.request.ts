@@ -1,4 +1,12 @@
 export interface CreateBPartnerRequest {
+  code: string;
+  name: string;
+  email?: string;
+  phone?: string;
+  type: 'customer' | 'supplier' | 'employee';
+}
+
+export interface BPartnerRequest {
   name: string;
   email?: string;
   phone?: string;
@@ -6,7 +14,7 @@ export interface CreateBPartnerRequest {
   city?: string;
   country?: string;
   taxId?: string;
-  type: 'customer' | 'supplier' | 'both';
+  type: 'customer' | 'supplier' ;
   status?: 'active' | 'inactive' | 'pending';
   notes?: string;
   tags?: string[];

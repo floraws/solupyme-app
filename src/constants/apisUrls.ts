@@ -35,14 +35,14 @@ export const apiUrls = {
         getUserById: (id: string) => `/users/${id}`,
         addUser: (id: string) => `users/${id}`,
     },
-    states: {
-        getAll: '/states',
-        getById: (id: string) => `/states/${id}`,
-        insert: '/states',
-        update: (id: string) => `/states/${id}`,
-        delete: (id: string) => `/states/${id}`,
-        labelValuesListByCountry: (countryId: string) => `/states/label-value-list?countryId=${countryId}`,
-        createStatesColombia: '/states/create-states-co',
+    regions: {
+        getAll: '/regions',
+        getById: (id: string) => `/regions/${id}`,
+        insert: '/regions',
+        update: (id: string) => `/regions/${id}`,
+        delete: (id: string) => `/regions/${id}`,
+        labelValuesListByCountry: (countryId: string) => `/regions/label-value-list?countryId=${countryId}`,
+        createStatesColombia: '/regions/create-regions-co',
     },
     countries: {
         insert: '/countries',

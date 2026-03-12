@@ -10,7 +10,7 @@ export interface UpdateAccountRequest {
 
     identifierType?: string;
     organizationType?: string;
-    identificationNumber?: number;
+    identificationNumber?: string;
 
     contactName?: string | null | undefined;
 
