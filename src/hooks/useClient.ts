@@ -15,7 +15,25 @@ interface ClientStatus {
 const defaultClients: ClientResponse[] = [
     {
         id: "",
-        businessName: ""
+        businessName: "",
+        tradeName: "",
+        address: "",
+        email: "",
+        phone: "",
+        website: "",
+        countryId: "",
+        countryName: "",
+        regionId: "",
+        regionName: "",
+        cityId: "",
+        cityName: "",
+        organizationId: "",
+        organizationType: "",
+        identifierType: "",
+        identificationNumber: 0,
+        contactName: "",
+        contactEmail: "",
+        contactPhone: "",
     }
 ];
 

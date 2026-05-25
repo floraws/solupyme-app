@@ -1,3 +1,5 @@
+import { register } from "module";
+
 /**
  *
  */
@@ -7,6 +9,7 @@ export const apiUrls = {
         refresh: '/auth/refresh',
         csrf: '/auth/csrf'
     },
+    register: '/register',
     account: {
         update: (clientId: string) => `/accounts/${clientId}`,
         changePassword: '/accounts/change-password',
@@ -22,6 +25,7 @@ export const apiUrls = {
     },
     clients: {
         findByUserId: (id: string | null) => id ? `/clients/by-user?userId=${id}` : "",
+        findById: (id: string) => `/clients/${id}`,
     },
     airlines: {
         getAll: '/airlines',

@@ -12,7 +12,25 @@ import { useClient } from "@/hooks/useClient";
 const defaultClients: ClientResponse[] = [
     {
         id: "",
-        businessName: ""
+        businessName: "",
+        tradeName: "",
+        address: "",
+        phone: "",
+        email: "",
+        website: "",
+        countryId: "",
+        countryName: "",
+        regionId: "",
+        regionName: "",
+        cityId: "",
+        cityName: "",
+        organizationId: "",
+        organizationType: "",
+        identifierType: "",
+        identificationNumber: 0,
+        contactName: "",
+        contactEmail: "",
+        contactPhone: "",
     }
 ];
 

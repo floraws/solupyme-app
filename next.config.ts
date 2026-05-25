@@ -73,11 +73,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
 
-  // Configuración de ESLint
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-
   // Configuración de reescritura para API
   async rewrites() {
     return [

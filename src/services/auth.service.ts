@@ -1,9 +1,9 @@
 import { ACCESS_TOKEN, apiUrls, CLIENT_ID, USER_ID } from "../constants";
 import { fetchWrapper } from "@/helpers";
 import { decodeAccessToken } from "@/lib/utils";
-import { AuthRequest } from "@/types/api";
+import { AuthRequest, AuthResponse } from "@/types/api";
+import { ApiAuthResponse, StandardApiResponse } from "@/types/common";
 import Cookies from 'js-cookie';
-import { set } from "zod/v4";
 
 /**
  * Configuración de cookies seguras
@@ -19,23 +19,8 @@ const COOKIE_OPTIONS = {
  */
 const TOKEN_EXPIRY_THRESHOLD = 300;
 
-/**
- * Interfaz para la respuesta de autenticación
- */
-interface AuthResponse {
-    status: number;
-    userId?: string;
-    message: string;
-}
 
-/**
- * Interfaz para la respuesta del API de autenticación
- */
-interface ApiAuthResponse {
-    accessToken: string;
-    tokenType?: string;
-    expiresAt?: number;
-}
+
 
 /**
  * Almacena de forma segura los tokens en cookies y localStorage
@@ -182,20 +167,19 @@ async function login(data: AuthRequest): Promise<AuthResponse> {
     }
 
     try {
-        const response: ApiAuthResponse = await fetchWrapper.post(apiUrls.auth.login, data) as ApiAuthResponse;
-        
-        if (!response?.accessToken) {
+        const response = await fetchWrapper.post(apiUrls.auth.login, data) as StandardApiResponse<ApiAuthResponse>;
+        if (!response?.data?.accessToken) {
             throw new Error('Respuesta inválida del servidor: token no recibido');
         }
 
-        const payload = decodeAccessToken(response.accessToken);
+        const payload = decodeAccessToken(response.data.accessToken);
         
         if (!payload?.userId) {
             throw new Error('Token inválido: no contiene userId');
         }
 
         // Almacenar tokens de forma segura
-        storeTokenSecurely(response.accessToken, payload.userId);
+        storeTokenSecurely(response.data.accessToken, payload.userId);
         
         return { 
             status: 200, 
@@ -203,13 +187,13 @@ async function login(data: AuthRequest): Promise<AuthResponse> {
             message: "Login exitoso" 
         };
     } catch (error) {
-        console.error('Error en login:', error);
-        
         // Limpiar cualquier token que pueda haber quedado
         clearStoredTokens();
-        
-        const errorMessage = error instanceof Error ? error.message : "Error al iniciar sesión";
-        throw new Error(errorMessage);
+        const apiError = error as Error;
+        return { 
+            status: 401, 
+            message: apiError?.message || 'Error al iniciar sesión' 
+        };
     }
 }
 

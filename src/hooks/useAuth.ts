@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { authService } from '@/services/auth.service';
 import { AuthRequest } from '@/types/api/requests';
+import { AuthResponse } from '@/types/api/responses';
+import { ApiError } from '@/types/common';
 
 /**
  * Estado de autenticación
@@ -63,9 +65,11 @@ export function useAuth() {
    */
   const login = useCallback(async (credentials: AuthRequest) => {
     setAuthState(prev => ({ ...prev, isLoading: true, error: null }));
-
     try {
-      const result = await authService.login(credentials);
+      const result: AuthResponse = await authService.login(credentials);
+      if (result.status !== 200) {
+        throw new Error(result.message || 'Error al iniciar sesión');
+      }
       setAuthState({
         isAuthenticated: true,
         isLoading: false,
@@ -80,7 +84,6 @@ export function useAuth() {
       return result;
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Error al iniciar sesión';
-      
       setAuthState({
         isAuthenticated: false,
         isLoading: false,
@@ -88,8 +91,7 @@ export function useAuth() {
         error: errorMessage,
         tokenExpiringSoon: false,
       });
-
-      throw error;
+      throw new ApiError(errorMessage, 401);
     }
   }, []);
 
@@ -120,7 +122,7 @@ export function useAuth() {
     try {
       if (authService.isTokenExpiringSoon()) {
         const result = await authService.refreshToken();
-        
+
         if (result) {
           setAuthState(prev => ({
             ...prev,

@@ -7,11 +7,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
-
+import { ApiError } from "@/types/common";
+import Link from "next/link";
 const loginSchema = z.object({
   email: z
-    .string()
-    .min(1, "El correo electrónico es obligatorio")
     .email("Ingresa un correo electrónico válido"),
   password: z
     .string()
@@ -61,18 +60,20 @@ export default function LoginPage() {
       } else {
         setError("Error al iniciar sesión. Por favor, intenta nuevamente.");
       }
-    } catch (err) {
-      console.error("Error en login:", err);
-      if (err instanceof z.ZodError) {
-        err.errors.forEach((error) => {
-          setFieldError(error.path[0] as keyof LoginFormData, {
-            type: "manual",
-            message: error.message
-          });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        error.issues.forEach((issue) => {
+          const field = issue.path[0];
+          if (typeof field === "string") {
+            setFieldError(field as keyof LoginFormData, {
+              type: "manual",
+              message: issue.message
+            });
+          }
         });
-      } else if (err && typeof err === 'object' && 'status' in err) {
-        const apiError = err as { status: number; message?: string };
-        switch (apiError.status) {
+      } else if (error instanceof ApiError) {
+        const apiError = error as ApiError;
+        switch (apiError.statusCode) {
           case 401:
             setError("Credenciales incorrectas. Verifica tu email y contraseña.");
             break;
@@ -161,8 +162,8 @@ export default function LoginPage() {
             autoComplete="email"
             {...register("email")}
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 ${errors.email
-                ? "border-red-300 focus:ring-red-500 focus:border-red-500 bg-red-50"
-                : "border-gray-300 bg-white hover:border-gray-400"
+              ? "border-red-300 focus:ring-red-500 focus:border-red-500 bg-red-50"
+              : "border-gray-300 bg-white hover:border-gray-400"
               }`}
             placeholder="usuario@ejemplo.com"
             disabled={isLoading || !csrfToken}
@@ -188,8 +189,8 @@ export default function LoginPage() {
             autoComplete="current-password"
             {...register("password")}
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 ${errors.password
-                ? "border-red-300 focus:ring-red-500 focus:border-red-500 bg-red-50"
-                : "border-gray-300 bg-white hover:border-gray-400"
+              ? "border-red-300 focus:ring-red-500 focus:border-red-500 bg-red-50"
+              : "border-gray-300 bg-white hover:border-gray-400"
               }`}
             placeholder="••••••••"
             disabled={isLoading || !csrfToken}
@@ -241,6 +242,12 @@ export default function LoginPage() {
             <a href="/forgot-password" className="text-blue-600 hover:text-blue-500 font-medium hover:underline">
               Recuperar contraseña
             </a>
+          </p>
+          <p className="text-sm text-gray-600">
+            ¿No tienes cuenta?{" "}
+            <Link href="/register" className="text-blue-600 hover:text-blue-500 font-medium hover:underline">
+              Crear usuario
+            </Link>
           </p>
           <p className="text-xs text-gray-500">
             Al iniciar sesión, aceptas nuestros{" "}

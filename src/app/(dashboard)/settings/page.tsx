@@ -14,7 +14,7 @@ const settings = [
   {
     id: "P001",
     name: "Empresa",
-    link: "/accounts",
+    link: "/client",
     description: "Configuración de la empresa",
     icon: BuildingOfficeIcon
   },

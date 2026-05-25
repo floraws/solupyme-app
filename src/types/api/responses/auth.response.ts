@@ -5,3 +5,12 @@ export class AccessTokenResponse {
     'refresh_token': string;
     'scope': string;
 }
+
+/**
+ * Interfaz para la respuesta de autenticación
+ */
+export interface AuthResponse {
+    status: number;
+    userId?: string;
+    message: string;
+}
